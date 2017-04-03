@@ -1,0 +1,745 @@
+<project>
+  <packages>
+    <javaPackage name="com.sinergia.dcargo.util">
+      <projectName>sinergia-dcargo-model</projectName>
+      <path>src/com/sinergia/dcargo/util</path>
+      <classes>
+        <classifier name="HibernateHelper">
+          <stereotype>Persistence Helper</stereotype>
+          <variables>
+            <variable name="singleton">
+              <type class="com.sinergia.dcargo.util.HibernateHelper"/>
+              <multiplicity>0..1</multiplicity>
+              <modifiers>8</modifiers>
+              <access>2</access>
+              <value>new HibernateHelper()</value>
+            </variable>
+            <variable name="factory">
+              <type>javax.persistence.EntityManagerFactory</type>
+              <multiplicity>0..1</multiplicity>
+              <access>2</access>
+            </variable>
+            <variable name="currentEntityManager">
+              <type>ThreadLocal</type>
+              <multiplicity>0..1</multiplicity>
+              <access>2</access>
+              <value>new ThreadLocal();</value>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>2</access>
+              <generatedName>HibernateHelper</generatedName>
+              <method>
+                <statements>
+                  <javaCode></javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="main">
+              <type basicType="void"/>
+              <multiplicity>0</multiplicity>
+              <modifiers>8</modifiers>
+              <access>1</access>
+              <generatedName>main</generatedName>
+              <parameters>
+                <variable name="args">
+                  <type>String</type>
+                  <multiplicity>*</multiplicity>
+                  <access>1</access>
+                  <arrayCount>1</arrayCount>
+                </variable>
+              </parameters>
+              <exceptions>
+                <exception>Exception</exception>
+              </exceptions>
+              <method>
+                <statements>
+                  <javaCode>String sqlFile = null;</javaCode>
+                  <javaCode>if(args.length &gt; 0) { sqlFile = args[0]; }</javaCode>
+                  <javaCode>boolean print = (sqlFile == null);</javaCode>
+                  <javaCode>boolean export = (sqlFile == null);</javaCode>
+                  <javaCode></javaCode>
+                  <javaCode>org.hibernate.cfg.Configuration config = getInstance().getConfiguration();</javaCode>
+                  <javaCode>org.hibernate.tool.hbm2ddl.SchemaExport exporter = new org.hibernate.tool.hbm2ddl.SchemaExport(config);</javaCode>
+                  <javaCode>if(sqlFile != null) { exporter.setOutputFile(sqlFile); }</javaCode>
+                  <javaCode>exporter.create(print, export);</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="getInstance">
+              <type class="com.sinergia.dcargo.util.HibernateHelper"/>
+              <multiplicity>0..1</multiplicity>
+              <modifiers>8</modifiers>
+              <access>1</access>
+              <generatedName>getInstance</generatedName>
+              <method>
+                <statements>
+                  <javaCode>return singleton;</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="getFactory">
+              <type>javax.persistence.EntityManagerFactory</type>
+              <multiplicity>0..1</multiplicity>
+              <modifiers>32</modifiers>
+              <access>1</access>
+              <generatedName>getFactory</generatedName>
+              <method>
+                <statements>
+                  <javaCode>if(factory == null) { factory=javax.persistence.Persistence.createEntityManagerFactory(&quot;sinergia-dcargo-model&quot;); }</javaCode>
+                  <javaCode>return factory;</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="close">
+              <type basicType="void"/>
+              <multiplicity>0</multiplicity>
+              <modifiers>32</modifiers>
+              <access>1</access>
+              <generatedName>close</generatedName>
+              <method>
+                <statements>
+                  <javaCode>closeEntityManager();</javaCode>
+                  <javaCode>if (factory != null) { factory.close(); factory = null; }</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="getConfiguration">
+              <type>org.hibernate.cfg.Configuration</type>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <generatedName>getConfiguration</generatedName>
+              <exceptions>
+                <exception>org.hibernate.MappingException</exception>
+              </exceptions>
+              <method>
+                <statements>
+                  <javaCode>org.hibernate.cfg.AnnotationConfiguration config = new org.hibernate.cfg.AnnotationConfiguration();</javaCode>
+                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.model.Person.class);</javaCode>
+                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.model.User.class);</javaCode>
+                  <javaCode>return config;</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="getEntityManager">
+              <type>javax.persistence.EntityManager</type>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <generatedName>getEntityManager</generatedName>
+              <method>
+                <statements>
+                  <javaCode>javax.persistence.EntityManager entityManager=(javax.persistence.EntityManager)currentEntityManager.get();</javaCode>
+                  <javaCode>if(entityManager == null || !entityManager.isOpen()) { entityManager=getFactory().createEntityManager(); currentEntityManager.set(entityManager); }</javaCode>
+                  <javaCode>return entityManager;</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="closeEntityManager">
+              <type>void</type>
+              <multiplicity>0</multiplicity>
+              <access>1</access>
+              <generatedName>closeEntityManager</generatedName>
+              <method>
+                <statements>
+                  <javaCode>javax.persistence.EntityManager entityManager = (javax.persistence.EntityManager)currentEntityManager.get();</javaCode>
+                  <javaCode>if (entityManager != null &amp;&amp; entityManager.isOpen()) { entityManager.close(); }</javaCode>
+                  <javaCode>currentEntityManager.set(null);</javaCode>
+                </statements>
+              </method>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>HibernateHelper.java</name>
+            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.util{HibernateHelper.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+      </classes>
+      <rootName>src</rootName>
+      <generateHibernateHelper>true</generateHibernateHelper>
+    </javaPackage>
+    <javaPackage name="com.sinergia.dcargo.model">
+      <projectName>sinergia-dcargo-model</projectName>
+      <path>src/com/sinergia/dcargo/model</path>
+      <classes>
+        <classifier name="Person">
+          <stereotype>Persistent</stereotype>
+          <interfaces>
+            <type>java.io.Serializable</type>
+          </interfaces>
+          <variables>
+            <variable name="serialVersionUID">
+              <type>long</type>
+              <multiplicity>1</multiplicity>
+              <modifiers>24</modifiers>
+              <access>2</access>
+              <value>-1392364119</value>
+            </variable>
+            <variable name="id">
+              <type>Long</type>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <stereotype>id</stereotype>
+              <tags>
+                <tag name="@Id"/>
+                <tag name="@GeneratedValue"/>
+              </tags>
+            </variable>
+            <variable name="surnames">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="names">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="PERSISTENT_TEST_CLASS">
+              <type class="com.sinergia.dcargo.model.PersonaPersistentTest"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <inverse class="com.sinergia.dcargo.model.PersonaPersistentTest" name="PERSISTENT_TEST_TARGET"/>
+              <association>persistentTest</association>
+              <type>5</type>
+            </variable>
+            <variable name="nro">
+              <type class="java.lang.Integer"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <generatedName>Person</generatedName>
+              <method>
+                <statements>
+                  <javaCode></javaCode>
+                </statements>
+              </method>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>Person.java</name>
+            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.model{Person.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+        <classifier name="User">
+          <superclass class="com.sinergia.dcargo.model.Person"/>
+          <stereotype>Persistent</stereotype>
+          <interfaces>
+            <type>java.io.Serializable</type>
+          </interfaces>
+          <variables>
+            <variable name="serialVersionUID">
+              <type>long</type>
+              <multiplicity>1</multiplicity>
+              <modifiers>24</modifiers>
+              <access>2</access>
+              <value>-1105196257</value>
+            </variable>
+            <variable name="user">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="password">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="expirationDate">
+              <type class="java.util.Date"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="active">
+              <type class="java.lang.Boolean"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="administrator">
+              <type class="java.lang.Boolean"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <generatedName>User</generatedName>
+              <method>
+                <statements>
+                  <javaCode></javaCode>
+                </statements>
+              </method>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>User.java</name>
+            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.model{User.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+        <classifier name="PersonaPersistentTest">
+          <superclass>junit.framework.TestCase</superclass>
+          <stereotype>Persistent Test</stereotype>
+          <variables>
+            <variable name="PERSISTENT_TEST_TARGET">
+              <type class="com.sinergia.dcargo.model.Person"/>
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <inverse class="com.sinergia.dcargo.model.Person" name="PERSISTENT_TEST_CLASS"/>
+              <association>persistentTest</association>
+              <type>4</type>
+            </variable>
+            <variable name="persistenceHelper">
+              <type>com.sinergia.dcargo.util.HibernateHelper</type>
+              <multiplicity>1</multiplicity>
+              <access>2</access>
+            </variable>
+            <variable name="usuario">
+              <type class="com.sinergia.dcargo.model.User"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="user">
+              <type class="com.sinergia.dcargo.model.User"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="user1">
+              <type class="com.sinergia.dcargo.model.User"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="user2">
+              <type class="com.sinergia.dcargo.model.User"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="user3">
+              <type class="com.sinergia.dcargo.model.User"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="user4">
+              <type class="com.sinergia.dcargo.model.User"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="user5">
+              <type class="com.sinergia.dcargo.model.User"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="user6">
+              <type class="com.sinergia.dcargo.model.User"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <generatedName>PersonaPersistentTest</generatedName>
+              <method>
+                <statements>
+                  <javaCode>persistenceHelper = com.sinergia.dcargo.util.HibernateHelper.getInstance();</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="initObjects">
+              <type basicType="void"/>
+              <multiplicity>0</multiplicity>
+              <access>2</access>
+              <generatedName>initObjects</generatedName>
+              <objects>
+                <object name="usuario">
+                  <type class="com.sinergia.dcargo.model.User"/>
+                  <values>
+                    <surnames>&quot;PLACER ROSSENDI&quot;</surnames>
+                    <names>&quot;DAVID&quot;</names>
+                    <user>&quot;900009&quot;</user>
+                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
+                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
+                    <active>true</active>
+                    <administrator>true</administrator>
+                  </values>
+                </object>
+                <object name="user">
+                  <type class="com.sinergia.dcargo.model.User"/>
+                  <values>
+                    <user>&quot;100004&quot;</user>
+                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
+                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
+                    <active>true</active>
+                    <names>&quot;JUAN&quot;</names>
+                    <administrator>true</administrator>
+                    <surnames>&quot;ANTEZANA&quot;</surnames>
+                  </values>
+                </object>
+                <object name="user1">
+                  <type class="com.sinergia.dcargo.model.User"/>
+                  <values>
+                    <user>&quot;900008&quot;</user>
+                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
+                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
+                    <active>true</active>
+                    <administrator>true</administrator>
+                    <surnames>&quot;PLACER&quot;</surnames>
+                    <names>&quot;EDDY&quot;</names>
+                  </values>
+                </object>
+                <object name="user2">
+                  <type class="com.sinergia.dcargo.model.User"/>
+                  <values>
+                    <user>&quot;900010&quot;</user>
+                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
+                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
+                    <active>false</active>
+                    <administrator>false</administrator>
+                    <surnames>&quot;TELLEZ&quot;</surnames>
+                    <names>&quot;BLANCA&quot;</names>
+                  </values>
+                </object>
+                <object name="user3">
+                  <type class="com.sinergia.dcargo.model.User"/>
+                  <values>
+                    <user>&quot;900010&quot;</user>
+                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
+                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
+                    <active>true</active>
+                    <administrator>true</administrator>
+                    <surnames>&quot;QUIROGA&quot;</surnames>
+                    <names>&quot;CLAUDIA&quot;</names>
+                  </values>
+                </object>
+                <object name="user4">
+                  <type class="com.sinergia.dcargo.model.User"/>
+                  <values>
+                    <user>&quot;900012&quot;</user>
+                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
+                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
+                    <active>true</active>
+                    <administrator>true</administrator>
+                    <names>&quot;DITO&quot;</names>
+                  </values>
+                </object>
+                <object name="user5">
+                  <type class="com.sinergia.dcargo.model.User"/>
+                  <values>
+                    <user>&quot;900013&quot;</user>
+                    <surnames>&quot;MONTECINOS&quot;</surnames>
+                    <names>&quot;DANIELA&quot;</names>
+                    <administrator>true</administrator>
+                    <active>true</active>
+                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
+                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
+                  </values>
+                </object>
+                <object name="user6">
+                  <type class="com.sinergia.dcargo.model.User"/>
+                  <values>
+                    <user>&quot;900014&quot;</user>
+                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
+                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
+                    <active>true</active>
+                    <administrator>true</administrator>
+                    <names>&quot;JUAN&quot;</names>
+                  </values>
+                </object>
+                <objectDiagram name="Objects">
+                  <objectSymbol id="1">
+                    <x>557</x>
+                    <y>195</y>
+                    <object>user6</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="2">
+                    <x>562</x>
+                    <y>28</y>
+                    <object>user5</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="3">
+                    <x>280</x>
+                    <y>357</y>
+                    <object>user4</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="4">
+                    <x>282</x>
+                    <y>192</y>
+                    <object>user3</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="5">
+                    <x>282</x>
+                    <y>28</y>
+                    <object>user2</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="6">
+                    <x>10</x>
+                    <y>357</y>
+                    <object>user1</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="7">
+                    <x>7</x>
+                    <y>190</y>
+                    <object>user</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="8">
+                    <x>8</x>
+                    <y>29</y>
+                    <object>usuario</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <width>1400</width>
+                  <height>1000</height>
+                  <lineStyle>STRAIGHT</lineStyle>
+                  <attributeTypesVisible>true</attributeTypesVisible>
+                </objectDiagram>
+              </objects>
+            </operation>
+            <operation name="tearDown">
+              <type>void</type>
+              <multiplicity>0</multiplicity>
+              <access>4</access>
+              <generatedName>tearDown</generatedName>
+              <exceptions>
+                <exception>Exception</exception>
+              </exceptions>
+              <method>
+                <statements>
+                  <javaCode>if(persistenceHelper != null) { persistenceHelper.close(); }
+super.tearDown();
+</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="setUp">
+              <type>void</type>
+              <multiplicity>0</multiplicity>
+              <access>4</access>
+              <generatedName>setUp</generatedName>
+              <exceptions>
+                <exception>Exception</exception>
+              </exceptions>
+              <method>
+                <statements>
+                  <javaCode>super.setUp(); initObjects();
+</javaCode>
+                </statements>
+              </method>
+            </operation>
+            <operation name="test1">
+              <type basicType="void"/>
+              <multiplicity>0</multiplicity>
+              <access>1</access>
+              <generatedName>test1</generatedName>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>PersonaPersistentTest.java</name>
+            <compilationUnitId>=sinergia-dcargo-model/test&lt;com.sinergia.dcargo.model{PersonaPersistentTest.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+      </classes>
+      <diagrams>
+        <classDiagram name="Model">
+          <showAttributes>true</showAttributes>
+          <showOperations>true</showOperations>
+          <classSymbol id="1">
+            <x>36</x>
+            <y>50</y>
+            <class class="com.sinergia.dcargo.model.PersonaPersistentTest"/>
+            <attributes autoDisplay="289" accessVisible="true"/>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true">
+              <operation>initObjects()</operation>
+              <operation>tearDown()</operation>
+              <operation>setUp()</operation>
+              <operation>test1()</operation>
+            </operations>
+          </classSymbol>
+          <classSymbol id="2">
+            <x>328</x>
+            <y>286</y>
+            <class class="com.sinergia.dcargo.model.User"/>
+            <attributes autoDisplay="353" accessVisible="true">
+              <attribute>user</attribute>
+              <attribute>password</attribute>
+              <attribute>expirationDate</attribute>
+              <attribute>active</attribute>
+              <attribute>administrator</attribute>
+            </attributes>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
+          </classSymbol>
+          <classSymbol id="3">
+            <x>356</x>
+            <y>50</y>
+            <class class="com.sinergia.dcargo.model.Person"/>
+            <attributes autoDisplay="353" accessVisible="true">
+              <attribute>id</attribute>
+              <attribute>surnames</attribute>
+              <attribute>names</attribute>
+              <attribute>nro</attribute>
+            </attributes>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
+          </classSymbol>
+          <generalization id="4">
+            <x>390</x>
+            <y>348</y>
+            <point>
+              <connectX symbol="2"/>
+              <connectY symbol="2"/>
+              <x>-5</x>
+              <y>-1</y>
+              <atX>0.4952381</atX>
+              <atY>0.4918033</atY>
+            </point>
+            <point>
+              <connectX symbol="3"/>
+              <connectY symbol="3"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.37142858</atX>
+              <atY>0.7704918</atY>
+            </point>
+            <end-1>
+              <x>391</x>
+              <y>286</y>
+              <connectedSymbol symbol="2"/>
+            </end-1>
+            <end-2>
+              <x>394</x>
+              <y>162</y>
+              <connectedSymbol symbol="3"/>
+              <symbolType>1</symbolType>
+              <symbolLength>12</symbolLength>
+            </end-2>
+            <style>STRAIGHT</style>
+          </generalization>
+          <association id="5">
+            <x>104</x>
+            <y>106</y>
+            <assocEnd-0 class="com.sinergia.dcargo.model.Person" name="PERSISTENT_TEST_CLASS"/>
+            <assocEnd-1 class="com.sinergia.dcargo.model.PersonaPersistentTest" name="PERSISTENT_TEST_TARGET"/>
+            <showMultiplicity>true</showMultiplicity>
+            <point>
+              <connectX symbol="1"/>
+              <connectY symbol="1"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.5</atX>
+              <atY>0.5</atY>
+            </point>
+            <point>
+              <connectX symbol="3"/>
+              <connectY symbol="3"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.4952381</atX>
+              <atY>0.49473685</atY>
+            </point>
+            <end-1>
+              <x>172</x>
+              <y>105</y>
+              <connectedSymbol symbol="1"/>
+              <text>0..1</text>
+            </end-1>
+            <end-2>
+              <x>356</x>
+              <y>105</y>
+              <connectedSymbol symbol="3"/>
+              <symbolType>2</symbolType>
+              <symbolLength>8</symbolLength>
+            </end-2>
+            <dashed>true</dashed>
+            <style>STRAIGHT</style>
+          </association>
+          <width>1400</width>
+          <height>1000</height>
+          <lineStyle>STRAIGHT</lineStyle>
+        </classDiagram>
+      </diagrams>
+      <rootName>src</rootName>
+    </javaPackage>
+  </packages>
+  <basicTypes>
+    <basicType>void</basicType>
+    <basicType>int</basicType>
+  </basicTypes>
+  <codeGenerators>
+    <Java-Bean>
+      <generate-property-support>false</generate-property-support>
+    </Java-Bean>
+    <Unit-Test>
+      <src-dir>test</src-dir>
+      <add-junit3-libraries>false</add-junit3-libraries>
+    </Unit-Test>
+    <Persistent>
+      <create-hibernate-cfg-xml>false</create-hibernate-cfg-xml>
+      <add-hsqldb-libraries>true</add-hsqldb-libraries>
+      <platform>Java Persistence API</platform>
+      <create-persistence-xml>true</create-persistence-xml>
+      <src-dir>(default)</src-dir>
+      <create-helper-main>true</create-helper-main>
+      <annotate-getters>true</annotate-getters>
+      <generate-dto-associations-many>false</generate-dto-associations-many>
+      <generate-collections-as-set>true</generate-collections-as-set>
+      <generate-full-classnames>true</generate-full-classnames>
+      <add-hibernate3-libraries>true</add-hibernate3-libraries>
+      <generate-dto>false</generate-dto>
+      <generate-interfaces>false</generate-interfaces>
+    </Persistent>
+    <DAO>
+      <src-dir>(default)</src-dir>
+      <generate-interfaces>false</generate-interfaces>
+      <use-spring-templates>false</use-spring-templates>
+    </DAO>
+    <GWT-Service>
+      <version>1.5</version>
+    </GWT-Service>
+  </codeGenerators>
+  <properties>
+    <conf-dir>conf</conf-dir>
+    <platform>Java Persistence API</platform>
+    <root-package>com.sinergia.dcargo</root-package>
+    <create-hibernate-properties>true</create-hibernate-properties>
+    <create-log4j-properties>true</create-log4j-properties>
+    <project-name>sinergia-dcargo-model</project-name>
+    <create-model-diagram>true</create-model-diagram>
+  </properties>
+  <codeGeneration>
+    <generate-equals-and-hashcode>true</generate-equals-and-hashcode>
+    <source-compatibility>5.0</source-compatibility>
+    <grammar>None</grammar>
+  </codeGeneration>
+  <diagramProperties>
+    <link-with-java-editor>false</link-with-java-editor>
+  </diagramProperties>
+</project>
