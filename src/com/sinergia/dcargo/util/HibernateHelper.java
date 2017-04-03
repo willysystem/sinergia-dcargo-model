@@ -111,9 +111,11 @@ public class HibernateHelper {
 	 */
 	public org.hibernate.cfg.Configuration getConfiguration()
 			throws org.hibernate.MappingException {
-//				org.hibernate.cfg.AnnotationConfiguration config = new org.hibernate.cfg.AnnotationConfiguration();
-//				config.addAnnotatedClass(com.sinergia.dcargo.model.Person.class);
-//				config.addAnnotatedClass(com.sinergia.dcargo.model.User.class);
+				//org.hibernate.cfg.AnnotationConfiguration config = new org.hibernate.cfg.AnnotationConfiguration();
+				//config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Person.class);
+//				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.User.class);
+//				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Office.class);
+//				return config;
 				return null;
 			}
 	

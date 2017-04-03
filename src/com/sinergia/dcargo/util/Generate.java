@@ -7,13 +7,18 @@ import java.sql.SQLException;
 
 
 
+
+
+
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.boot.spi.MetadataImplementor;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
-import com.sinergia.dcargo.model.Person;
-import com.sinergia.dcargo.model.User;
+import com.sinergia.dcargo.client.shared.Office;
+import com.sinergia.dcargo.client.shared.Person;
+import com.sinergia.dcargo.client.shared.User;
+
 
 public class Generate {
 
@@ -22,7 +27,8 @@ public class Generate {
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://ec2-54-214-97-192.us-west-2.compute.amazonaws.com:3306/dcargo","root", "Monamis_123!");
+			//conn = DriverManager.getConnection("jdbc:mysql://ec2-54-214-97-192.us-west-2.compute.amazonaws.com:3306/dcargo","root", "Monamis_123!");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dcargo","root", "control123!");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -34,6 +40,7 @@ public class Generate {
 		
 		metadata.addAnnotatedClass(Person.class);
 		metadata.addAnnotatedClass(User.class);
+		metadata.addAnnotatedClass(Office.class);
 		
 		SchemaExport export = new SchemaExport(
 			    (MetadataImplementor) metadata.buildMetadata(),

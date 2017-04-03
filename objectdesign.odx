@@ -117,8 +117,9 @@
               <method>
                 <statements>
                   <javaCode>org.hibernate.cfg.AnnotationConfiguration config = new org.hibernate.cfg.AnnotationConfiguration();</javaCode>
-                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.model.Person.class);</javaCode>
-                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.model.User.class);</javaCode>
+                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Person.class);</javaCode>
+                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.client.shared.User.class);</javaCode>
+                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Office.class);</javaCode>
                   <javaCode>return config;</javaCode>
                 </statements>
               </method>
@@ -162,6 +163,20 @@
     <javaPackage name="com.sinergia.dcargo.model">
       <projectName>sinergia-dcargo-model</projectName>
       <path>src/com/sinergia/dcargo/model</path>
+      <diagrams>
+        <classDiagram name="Model">
+          <showAttributes>true</showAttributes>
+          <showOperations>true</showOperations>
+          <width>1400</width>
+          <height>1000</height>
+          <lineStyle>STRAIGHT</lineStyle>
+        </classDiagram>
+      </diagrams>
+      <rootName>src</rootName>
+    </javaPackage>
+    <javaPackage name="com.sinergia.dcargo.client.shared">
+      <projectName>sinergia-dcargo-model</projectName>
+      <path>src/com/sinergia/dcargo/client/shared</path>
       <classes>
         <classifier name="Person">
           <stereotype>Persistent</stereotype>
@@ -174,7 +189,7 @@
               <multiplicity>1</multiplicity>
               <modifiers>24</modifiers>
               <access>2</access>
-              <value>-1392364119</value>
+              <value>-560539382</value>
             </variable>
             <variable name="id">
               <type>Long</type>
@@ -196,18 +211,17 @@
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
-            <variable name="PERSISTENT_TEST_CLASS">
-              <type class="com.sinergia.dcargo.model.PersonaPersistentTest"/>
-              <multiplicity>0..1</multiplicity>
-              <access>1</access>
-              <inverse class="com.sinergia.dcargo.model.PersonaPersistentTest" name="PERSISTENT_TEST_TARGET"/>
-              <association>persistentTest</association>
-              <type>5</type>
-            </variable>
             <variable name="nro">
               <type class="java.lang.Integer"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
+            </variable>
+            <variable name="PERSISTENT_TEST_CLASS">
+              <type class="com.sinergia.dcargo.client.shared.PersonaPersistentTest"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <association>persistentTest</association>
+              <type>5</type>
             </variable>
           </variables>
           <operations>
@@ -224,120 +238,107 @@
           </operations>
           <generatedFiles>
             <name>Person.java</name>
-            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.model{Person.java</compilationUnitId>
-          </generatedFiles>
-        </classifier>
-        <classifier name="User">
-          <superclass class="com.sinergia.dcargo.model.Person"/>
-          <stereotype>Persistent</stereotype>
-          <interfaces>
-            <type>java.io.Serializable</type>
-          </interfaces>
-          <variables>
-            <variable name="serialVersionUID">
-              <type>long</type>
-              <multiplicity>1</multiplicity>
-              <modifiers>24</modifiers>
-              <access>2</access>
-              <value>-1105196257</value>
-            </variable>
-            <variable name="user">
-              <type class="java.lang.String"/>
-              <multiplicity>0..1</multiplicity>
-              <access>1</access>
-            </variable>
-            <variable name="password">
-              <type class="java.lang.String"/>
-              <multiplicity>0..1</multiplicity>
-              <access>1</access>
-            </variable>
-            <variable name="expirationDate">
-              <type class="java.util.Date"/>
-              <multiplicity>0..1</multiplicity>
-              <access>1</access>
-            </variable>
-            <variable name="active">
-              <type class="java.lang.Boolean"/>
-              <multiplicity>0..1</multiplicity>
-              <access>1</access>
-            </variable>
-            <variable name="administrator">
-              <type class="java.lang.Boolean"/>
-              <multiplicity>0..1</multiplicity>
-              <access>1</access>
-            </variable>
-          </variables>
-          <operations>
-            <operation name="constructor">
-              <multiplicity>1</multiplicity>
-              <access>1</access>
-              <generatedName>User</generatedName>
-              <method>
-                <statements>
-                  <javaCode></javaCode>
-                </statements>
-              </method>
-            </operation>
-          </operations>
-          <generatedFiles>
-            <name>User.java</name>
-            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.model{User.java</compilationUnitId>
+            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.client.shared{Person.java</compilationUnitId>
           </generatedFiles>
         </classifier>
         <classifier name="PersonaPersistentTest">
           <superclass>junit.framework.TestCase</superclass>
           <stereotype>Persistent Test</stereotype>
           <variables>
-            <variable name="PERSISTENT_TEST_TARGET">
-              <type class="com.sinergia.dcargo.model.Person"/>
-              <multiplicity>1</multiplicity>
-              <access>1</access>
-              <inverse class="com.sinergia.dcargo.model.Person" name="PERSISTENT_TEST_CLASS"/>
-              <association>persistentTest</association>
-              <type>4</type>
-            </variable>
             <variable name="persistenceHelper">
               <type>com.sinergia.dcargo.util.HibernateHelper</type>
               <multiplicity>1</multiplicity>
               <access>2</access>
             </variable>
+            <variable name="PERSISTENT_TEST_TARGET">
+              <type class="com.sinergia.dcargo.client.shared.Person"/>
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <association>persistentTest</association>
+              <type>4</type>
+            </variable>
             <variable name="usuario">
-              <type class="com.sinergia.dcargo.model.User"/>
+              <type class="com.sinergia.dcargo.client.shared.User"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user">
-              <type class="com.sinergia.dcargo.model.User"/>
+              <type class="com.sinergia.dcargo.client.shared.User"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user1">
-              <type class="com.sinergia.dcargo.model.User"/>
+              <type class="com.sinergia.dcargo.client.shared.User"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user2">
-              <type class="com.sinergia.dcargo.model.User"/>
+              <type class="com.sinergia.dcargo.client.shared.User"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user3">
-              <type class="com.sinergia.dcargo.model.User"/>
+              <type class="com.sinergia.dcargo.client.shared.User"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user4">
-              <type class="com.sinergia.dcargo.model.User"/>
+              <type class="com.sinergia.dcargo.client.shared.User"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user5">
-              <type class="com.sinergia.dcargo.model.User"/>
+              <type class="com.sinergia.dcargo.client.shared.User"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user6">
-              <type class="com.sinergia.dcargo.model.User"/>
+              <type class="com.sinergia.dcargo.client.shared.User"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="office">
+              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="office1">
+              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="office2">
+              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="office3">
+              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="office4">
+              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="office5">
+              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="office6">
+              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="office7">
+              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="office8">
+              <type class="com.sinergia.dcargo.client.shared.Office"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
@@ -360,7 +361,7 @@
               <generatedName>initObjects</generatedName>
               <objects>
                 <object name="usuario">
-                  <type class="com.sinergia.dcargo.model.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.User"/>
                   <values>
                     <surnames>&quot;PLACER ROSSENDI&quot;</surnames>
                     <names>&quot;DAVID&quot;</names>
@@ -372,7 +373,7 @@
                   </values>
                 </object>
                 <object name="user">
-                  <type class="com.sinergia.dcargo.model.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.User"/>
                   <values>
                     <user>&quot;100004&quot;</user>
                     <password>MD5.md5(&quot;EPLACER&quot;)</password>
@@ -384,7 +385,7 @@
                   </values>
                 </object>
                 <object name="user1">
-                  <type class="com.sinergia.dcargo.model.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.User"/>
                   <values>
                     <user>&quot;900008&quot;</user>
                     <password>MD5.md5(&quot;EPLACER&quot;)</password>
@@ -396,7 +397,7 @@
                   </values>
                 </object>
                 <object name="user2">
-                  <type class="com.sinergia.dcargo.model.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.User"/>
                   <values>
                     <user>&quot;900010&quot;</user>
                     <password>MD5.md5(&quot;EPLACER&quot;)</password>
@@ -405,10 +406,11 @@
                     <administrator>false</administrator>
                     <surnames>&quot;TELLEZ&quot;</surnames>
                     <names>&quot;BLANCA&quot;</names>
+                    <office ref="office6"/>
                   </values>
                 </object>
                 <object name="user3">
-                  <type class="com.sinergia.dcargo.model.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.User"/>
                   <values>
                     <user>&quot;900010&quot;</user>
                     <password>MD5.md5(&quot;EPLACER&quot;)</password>
@@ -417,10 +419,11 @@
                     <administrator>true</administrator>
                     <surnames>&quot;QUIROGA&quot;</surnames>
                     <names>&quot;CLAUDIA&quot;</names>
+                    <office ref="office4"/>
                   </values>
                 </object>
                 <object name="user4">
-                  <type class="com.sinergia.dcargo.model.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.User"/>
                   <values>
                     <user>&quot;900012&quot;</user>
                     <password>MD5.md5(&quot;EPLACER&quot;)</password>
@@ -431,7 +434,7 @@
                   </values>
                 </object>
                 <object name="user5">
-                  <type class="com.sinergia.dcargo.model.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.User"/>
                   <values>
                     <user>&quot;900013&quot;</user>
                     <surnames>&quot;MONTECINOS&quot;</surnames>
@@ -440,10 +443,11 @@
                     <active>true</active>
                     <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
                     <password>MD5.md5(&quot;EPLACER&quot;)</password>
+                    <office ref="office"/>
                   </values>
                 </object>
                 <object name="user6">
-                  <type class="com.sinergia.dcargo.model.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.User"/>
                   <values>
                     <user>&quot;900014&quot;</user>
                     <password>MD5.md5(&quot;EPLACER&quot;)</password>
@@ -451,50 +455,181 @@
                     <active>true</active>
                     <administrator>true</administrator>
                     <names>&quot;JUAN&quot;</names>
+                    <office ref="office8"/>
+                  </values>
+                </object>
+                <object name="office">
+                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <values>
+                    <name>&quot;SANTA CRUZ&quot;</name>
+                  </values>
+                </object>
+                <object name="office1">
+                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <values>
+                    <name>&quot;COCHABAMBA&quot;</name>
+                    <users ref="usuario"/>
+                    <users ref="user4"/>
+                  </values>
+                </object>
+                <object name="office2">
+                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <values>
+                    <name>&quot;LA PAZ&quot;</name>
+                    <users ref="user"/>
+                  </values>
+                </object>
+                <object name="office3">
+                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <values>
+                    <name>&quot;SUCRE&quot;</name>
+                    <users ref="user1"/>
+                  </values>
+                </object>
+                <object name="office4">
+                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <values>
+                    <name>&quot;MONTERO&quot;</name>
+                  </values>
+                </object>
+                <object name="office5">
+                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <values>
+                    <name>&quot;ORURO&quot;</name>
+                  </values>
+                </object>
+                <object name="office6">
+                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <values>
+                    <name>&quot;CHAPARE&quot;</name>
+                  </values>
+                </object>
+                <object name="office7">
+                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <values>
+                    <name>&quot;TARIJA&quot;</name>
+                  </values>
+                </object>
+                <object name="office8">
+                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <values>
+                    <name>&quot;EL ALTO&quot;</name>
                   </values>
                 </object>
                 <objectDiagram name="Objects">
                   <objectSymbol id="1">
-                    <x>557</x>
-                    <y>195</y>
-                    <object>user6</object>
+                    <x>562</x>
+                    <y>970</y>
+                    <object>office8</object>
                     <showTypes>false</showTypes>
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
                   <objectSymbol id="2">
                     <x>562</x>
-                    <y>28</y>
-                    <object>user5</object>
+                    <y>826</y>
+                    <object>office7</object>
                     <showTypes>false</showTypes>
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
                   <objectSymbol id="3">
-                    <x>280</x>
-                    <y>357</y>
-                    <object>user4</object>
+                    <x>567</x>
+                    <y>615</y>
+                    <object>office6</object>
                     <showTypes>false</showTypes>
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
                   <objectSymbol id="4">
-                    <x>282</x>
-                    <y>192</y>
-                    <object>user3</object>
+                    <x>564</x>
+                    <y>522</y>
+                    <object>office5</object>
                     <showTypes>false</showTypes>
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
                   <objectSymbol id="5">
-                    <x>282</x>
-                    <y>28</y>
-                    <object>user2</object>
+                    <x>556</x>
+                    <y>445</y>
+                    <object>office4</object>
                     <showTypes>false</showTypes>
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
                   <objectSymbol id="6">
+                    <x>560</x>
+                    <y>368</y>
+                    <object>office3</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="7">
+                    <x>554</x>
+                    <y>290</y>
+                    <object>office2</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="8">
+                    <x>542</x>
+                    <y>117</y>
+                    <object>office1</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="9">
+                    <x>542</x>
+                    <y>1137</y>
+                    <object>office</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="10">
+                    <x>10</x>
+                    <y>1031</y>
+                    <object>user6</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="11">
+                    <x>13</x>
+                    <y>1194</y>
+                    <object>user5</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="12">
+                    <x>12</x>
+                    <y>529</y>
+                    <object>user4</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="13">
+                    <x>13</x>
+                    <y>693</y>
+                    <object>user3</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="14">
+                    <x>11</x>
+                    <y>863</y>
+                    <object>user2</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="15">
                     <x>10</x>
                     <y>357</y>
                     <object>user1</object>
@@ -502,7 +637,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="7">
+                  <objectSymbol id="16">
                     <x>7</x>
                     <y>190</y>
                     <object>user</object>
@@ -510,7 +645,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="8">
+                  <objectSymbol id="17">
                     <x>8</x>
                     <y>29</y>
                     <object>usuario</object>
@@ -518,8 +653,284 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
+                  <link id="18">
+                    <x>563</x>
+                    <y>139</y>
+                    <association class="com.sinergia.dcargo.client.shared.Office" name="users"/>
+                    <point>
+                      <connectX symbol="8"/>
+                      <connectY symbol="8"/>
+                      <x>-50</x>
+                      <y>4</y>
+                      <atX>0.4965035</atX>
+                      <atY>0.5</atY>
+                    </point>
+                    <point>
+                      <connectX symbol="17"/>
+                      <connectY symbol="17"/>
+                      <x>0</x>
+                      <y>0</y>
+                      <atX>0.9744681</atX>
+                      <atY>0.5419355</atY>
+                    </point>
+                    <end-1>
+                      <x>542</x>
+                      <y>137</y>
+                      <connectedSymbol symbol="8"/>
+                      <text>office</text>
+                    </end-1>
+                    <end-2>
+                      <x>243</x>
+                      <y>113</y>
+                      <connectedSymbol symbol="17"/>
+                      <text>users</text>
+                    </end-2>
+                    <style>STRAIGHT</style>
+                  </link>
+                  <link id="19">
+                    <x>581</x>
+                    <y>141</y>
+                    <association class="com.sinergia.dcargo.client.shared.Office" name="users"/>
+                    <point>
+                      <connectX symbol="8"/>
+                      <connectY symbol="8"/>
+                      <x>-32</x>
+                      <y>6</y>
+                      <atX>0.4965035</atX>
+                      <atY>0.5</atY>
+                    </point>
+                    <point>
+                      <connectX symbol="12"/>
+                      <connectY symbol="12"/>
+                      <x>0</x>
+                      <y>0</y>
+                      <atX>0.9787234</atX>
+                      <atY>0.516129</atY>
+                    </point>
+                    <end-1>
+                      <x>572</x>
+                      <y>153</y>
+                      <connectedSymbol symbol="8"/>
+                      <text>office</text>
+                    </end-1>
+                    <end-2>
+                      <x>247</x>
+                      <y>602</y>
+                      <connectedSymbol symbol="12"/>
+                      <text>users</text>
+                    </end-2>
+                    <style>STRAIGHT</style>
+                  </link>
+                  <link id="20">
+                    <x>583</x>
+                    <y>308</y>
+                    <highlited>true</highlited>
+                    <association class="com.sinergia.dcargo.client.shared.Office" name="users"/>
+                    <point>
+                      <connectX symbol="7"/>
+                      <connectY symbol="7"/>
+                      <x>-20</x>
+                      <y>0</y>
+                      <atX>0.4949495</atX>
+                      <atY>0.5</atY>
+                    </point>
+                    <point>
+                      <connectX symbol="16"/>
+                      <connectY symbol="16"/>
+                      <x>0</x>
+                      <y>0</y>
+                      <atX>0.9404255</atX>
+                      <atY>0.58064514</atY>
+                    </point>
+                    <end-1>
+                      <x>554</x>
+                      <y>305</y>
+                      <connectedSymbol symbol="7"/>
+                      <text>office</text>
+                    </end-1>
+                    <end-2>
+                      <x>242</x>
+                      <y>281</y>
+                      <connectedSymbol symbol="16"/>
+                      <text>users</text>
+                    </end-2>
+                    <style>STRAIGHT</style>
+                  </link>
+                  <link id="21">
+                    <x>567</x>
+                    <y>389</y>
+                    <association class="com.sinergia.dcargo.client.shared.Office" name="users"/>
+                    <point>
+                      <connectX symbol="6"/>
+                      <connectY symbol="6"/>
+                      <x>-40</x>
+                      <y>3</y>
+                      <atX>0.49473685</atX>
+                      <atY>0.5</atY>
+                    </point>
+                    <point>
+                      <connectX symbol="15"/>
+                      <connectY symbol="15"/>
+                      <x>0</x>
+                      <y>0</y>
+                      <atX>0.85106385</atX>
+                      <atY>0.5354839</atY>
+                    </point>
+                    <end-1>
+                      <x>560</x>
+                      <y>390</y>
+                      <connectedSymbol symbol="6"/>
+                      <text>office</text>
+                    </end-1>
+                    <end-2>
+                      <x>245</x>
+                      <y>435</y>
+                      <connectedSymbol symbol="15"/>
+                      <text>users</text>
+                    </end-2>
+                    <style>STRAIGHT</style>
+                  </link>
+                  <link id="22">
+                    <x>220</x>
+                    <y>776</y>
+                    <highlited>true</highlited>
+                    <association class="com.sinergia.dcargo.client.shared.User" name="office"/>
+                    <point>
+                      <connectX symbol="13"/>
+                      <connectY symbol="13"/>
+                      <x>90</x>
+                      <y>6</y>
+                      <atX>0.49787235</atX>
+                      <atY>0.4967742</atY>
+                    </point>
+                    <point>
+                      <connectX symbol="5"/>
+                      <connectY symbol="5"/>
+                      <x>0</x>
+                      <y>0</y>
+                      <atX>0.2542373</atX>
+                      <atY>0.7222222</atY>
+                    </point>
+                    <end-1>
+                      <x>248</x>
+                      <y>752</y>
+                      <connectedSymbol symbol="13"/>
+                      <text>users</text>
+                    </end-1>
+                    <end-2>
+                      <x>574</x>
+                      <y>481</y>
+                      <connectedSymbol symbol="5"/>
+                      <text>office</text>
+                    </end-2>
+                    <style>STRAIGHT</style>
+                  </link>
+                  <link id="23">
+                    <x>219</x>
+                    <y>964</y>
+                    <highlited>true</highlited>
+                    <association class="com.sinergia.dcargo.client.shared.User" name="office"/>
+                    <point>
+                      <connectX symbol="14"/>
+                      <connectY symbol="14"/>
+                      <x>91</x>
+                      <y>24</y>
+                      <atX>0.49787235</atX>
+                      <atY>0.4967742</atY>
+                    </point>
+                    <point>
+                      <connectX symbol="3"/>
+                      <connectY symbol="3"/>
+                      <x>0</x>
+                      <y>0</y>
+                      <atX>0.3539823</atX>
+                      <atY>0.6111111</atY>
+                    </point>
+                    <end-1>
+                      <x>246</x>
+                      <y>941</y>
+                      <connectedSymbol symbol="14"/>
+                      <text>users</text>
+                    </end-1>
+                    <end-2>
+                      <x>590</x>
+                      <y>651</y>
+                      <connectedSymbol symbol="3"/>
+                      <text>office</text>
+                    </end-2>
+                    <style>STRAIGHT</style>
+                  </link>
+                  <link id="24">
+                    <x>213</x>
+                    <y>1134</y>
+                    <highlited>true</highlited>
+                    <association class="com.sinergia.dcargo.client.shared.User" name="office"/>
+                    <point>
+                      <connectX symbol="10"/>
+                      <connectY symbol="10"/>
+                      <x>86</x>
+                      <y>26</y>
+                      <atX>0.49787235</atX>
+                      <atY>0.4967742</atY>
+                    </point>
+                    <point>
+                      <connectX symbol="1"/>
+                      <connectY symbol="1"/>
+                      <x>0</x>
+                      <y>0</y>
+                      <atX>0.1904762</atX>
+                      <atY>0.3888889</atY>
+                    </point>
+                    <end-1>
+                      <x>245</x>
+                      <y>1120</y>
+                      <connectedSymbol symbol="10"/>
+                      <text>users</text>
+                    </end-1>
+                    <end-2>
+                      <x>562</x>
+                      <y>992</y>
+                      <connectedSymbol symbol="1"/>
+                      <text>office</text>
+                    </end-2>
+                    <style>STRAIGHT</style>
+                  </link>
+                  <link id="25">
+                    <x>239</x>
+                    <y>1208</y>
+                    <association class="com.sinergia.dcargo.client.shared.User" name="office"/>
+                    <point>
+                      <connectX symbol="11"/>
+                      <connectY symbol="11"/>
+                      <x>109</x>
+                      <y>-63</y>
+                      <atX>0.49787235</atX>
+                      <atY>0.4967742</atY>
+                    </point>
+                    <point>
+                      <connectX symbol="9"/>
+                      <connectY symbol="9"/>
+                      <x>0</x>
+                      <y>0</y>
+                      <atX>0.3129771</atX>
+                      <atY>0.5277778</atY>
+                    </point>
+                    <end-1>
+                      <x>248</x>
+                      <y>1206</y>
+                      <connectedSymbol symbol="11"/>
+                      <text>users</text>
+                    </end-1>
+                    <end-2>
+                      <x>542</x>
+                      <y>1162</y>
+                      <connectedSymbol symbol="9"/>
+                      <text>office</text>
+                    </end-2>
+                    <style>STRAIGHT</style>
+                  </link>
                   <width>1400</width>
-                  <height>1000</height>
+                  <height>2000</height>
                   <lineStyle>STRAIGHT</lineStyle>
                   <attributeTypesVisible>true</attributeTypesVisible>
                 </objectDiagram>
@@ -565,31 +976,145 @@ super.tearDown();
           </operations>
           <generatedFiles>
             <name>PersonaPersistentTest.java</name>
-            <compilationUnitId>=sinergia-dcargo-model/test&lt;com.sinergia.dcargo.model{PersonaPersistentTest.java</compilationUnitId>
+            <compilationUnitId>=sinergia-dcargo-model/test&lt;com.sinergia.dcargo.client.shared{PersonaPersistentTest.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+        <classifier name="User">
+          <superclass class="com.sinergia.dcargo.client.shared.Person"/>
+          <stereotype>Persistent</stereotype>
+          <interfaces>
+            <type>java.io.Serializable</type>
+          </interfaces>
+          <variables>
+            <variable name="serialVersionUID">
+              <type>long</type>
+              <multiplicity>1</multiplicity>
+              <modifiers>24</modifiers>
+              <access>2</access>
+              <value>-308800832</value>
+            </variable>
+            <variable name="user">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="password">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="expirationDate">
+              <type class="java.util.Date"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="active">
+              <type class="java.lang.Boolean"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="administrator">
+              <type class="java.lang.Boolean"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="office">
+              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <inverse class="com.sinergia.dcargo.client.shared.Office" name="users"/>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <generatedName>User</generatedName>
+              <method>
+                <statements>
+                  <javaCode></javaCode>
+                </statements>
+              </method>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>User.java</name>
+            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.client.shared{User.java</compilationUnitId>
+          </generatedFiles>
+        </classifier>
+        <classifier name="Office">
+          <stereotype>Persistent</stereotype>
+          <interfaces>
+            <type>java.io.Serializable</type>
+          </interfaces>
+          <variables>
+            <variable name="serialVersionUID">
+              <type>long</type>
+              <multiplicity>1</multiplicity>
+              <modifiers>24</modifiers>
+              <access>2</access>
+              <value>-588612495</value>
+            </variable>
+            <variable name="id">
+              <type>Long</type>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <stereotype>id</stereotype>
+              <tags>
+                <tag name="@Id"/>
+                <tag name="@GeneratedValue"/>
+              </tags>
+            </variable>
+            <variable name="name">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="users">
+              <type class="com.sinergia.dcargo.client.shared.User"/>
+              <multiplicity>*</multiplicity>
+              <access>1</access>
+              <value>new com.sinergia.dcargo.client.shared.User()</value>
+              <inverse class="com.sinergia.dcargo.client.shared.User" name="office"/>
+            </variable>
+          </variables>
+          <operations>
+            <operation name="constructor">
+              <multiplicity>1</multiplicity>
+              <access>1</access>
+              <generatedName>Office</generatedName>
+              <method>
+                <statements>
+                  <javaCode></javaCode>
+                </statements>
+              </method>
+            </operation>
+          </operations>
+          <generatedFiles>
+            <name>Office.java</name>
+            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.client.shared{Office.java</compilationUnitId>
           </generatedFiles>
         </classifier>
       </classes>
       <diagrams>
-        <classDiagram name="Model">
+        <classDiagram name="model">
           <showAttributes>true</showAttributes>
           <showOperations>true</showOperations>
           <classSymbol id="1">
-            <x>36</x>
-            <y>50</y>
-            <class class="com.sinergia.dcargo.model.PersonaPersistentTest"/>
-            <attributes autoDisplay="289" accessVisible="true"/>
-            <operations autoDisplay="37" accessVisible="true" parametersVisible="true">
-              <operation>initObjects()</operation>
-              <operation>tearDown()</operation>
-              <operation>setUp()</operation>
-              <operation>test1()</operation>
-            </operations>
+            <x>633</x>
+            <y>273</y>
+            <class class="com.sinergia.dcargo.client.shared.Office"/>
+            <attributes autoDisplay="353" accessVisible="true">
+              <attribute>id</attribute>
+              <attribute>name</attribute>
+            </attributes>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
           </classSymbol>
           <classSymbol id="2">
-            <x>328</x>
-            <y>286</y>
-            <class class="com.sinergia.dcargo.model.User"/>
-            <attributes autoDisplay="353" accessVisible="true">
+            <x>241</x>
+            <y>264</y>
+            <class class="com.sinergia.dcargo.client.shared.User"/>
+            <attributes autoDisplay="293" accessVisible="true">
               <attribute>user</attribute>
               <attribute>password</attribute>
               <attribute>expirationDate</attribute>
@@ -599,91 +1124,106 @@ super.tearDown();
             <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
           </classSymbol>
           <classSymbol id="3">
-            <x>356</x>
-            <y>50</y>
-            <class class="com.sinergia.dcargo.model.Person"/>
-            <attributes autoDisplay="353" accessVisible="true">
-              <attribute>id</attribute>
+            <x>31</x>
+            <y>59</y>
+            <class class="com.sinergia.dcargo.client.shared.PersonaPersistentTest"/>
+            <attributes autoDisplay="293" accessVisible="true"/>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true">
+              <operation>initObjects()</operation>
+              <operation>tearDown()</operation>
+              <operation>setUp()</operation>
+              <operation>test1()</operation>
+            </operations>
+          </classSymbol>
+          <classSymbol id="4">
+            <x>249</x>
+            <y>13</y>
+            <class class="com.sinergia.dcargo.client.shared.Person"/>
+            <attributes autoDisplay="293" accessVisible="true">
               <attribute>surnames</attribute>
               <attribute>names</attribute>
               <attribute>nro</attribute>
             </attributes>
             <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
           </classSymbol>
-          <generalization id="4">
-            <x>390</x>
-            <y>348</y>
+          <generalization id="5">
+            <x>314</x>
+            <y>281</y>
             <point>
               <connectX symbol="2"/>
               <connectY symbol="2"/>
-              <x>-5</x>
-              <y>-1</y>
-              <atX>0.4952381</atX>
-              <atY>0.4918033</atY>
+              <x>5</x>
+              <y>-47</y>
+              <atX>0.49635038</atX>
+              <atY>0.49612403</atY>
             </point>
             <point>
-              <connectX symbol="3"/>
-              <connectY symbol="3"/>
+              <connectX symbol="4"/>
+              <connectY symbol="4"/>
               <x>0</x>
               <y>0</y>
-              <atX>0.37142858</atX>
-              <atY>0.7704918</atY>
+              <atX>0.62857145</atX>
+              <atY>0.6631579</atY>
             </point>
             <end-1>
-              <x>391</x>
-              <y>286</y>
+              <x>314</x>
+              <y>264</y>
               <connectedSymbol symbol="2"/>
             </end-1>
             <end-2>
-              <x>394</x>
-              <y>162</y>
-              <connectedSymbol symbol="3"/>
+              <x>314</x>
+              <y>108</y>
+              <connectedSymbol symbol="4"/>
               <symbolType>1</symbolType>
               <symbolLength>12</symbolLength>
             </end-2>
             <style>STRAIGHT</style>
           </generalization>
-          <association id="5">
-            <x>104</x>
-            <y>106</y>
-            <assocEnd-0 class="com.sinergia.dcargo.model.Person" name="PERSISTENT_TEST_CLASS"/>
-            <assocEnd-1 class="com.sinergia.dcargo.model.PersonaPersistentTest" name="PERSISTENT_TEST_TARGET"/>
+          <association id="6">
+            <x>361</x>
+            <y>314</y>
+            <assocEnd-0 class="com.sinergia.dcargo.client.shared.Office" name="users"/>
+            <assocEnd-1 class="com.sinergia.dcargo.client.shared.User" name="office"/>
             <showMultiplicity>true</showMultiplicity>
+            <point>
+              <connectX symbol="2"/>
+              <connectY symbol="2"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.8759124</atX>
+              <atY>0.3875969</atY>
+            </point>
             <point>
               <connectX symbol="1"/>
               <connectY symbol="1"/>
               <x>0</x>
               <y>0</y>
-              <atX>0.5</atX>
-              <atY>0.5</atY>
-            </point>
-            <point>
-              <connectX symbol="3"/>
-              <connectY symbol="3"/>
-              <x>0</x>
-              <y>0</y>
-              <atX>0.4952381</atX>
-              <atY>0.49473685</atY>
+              <atX>0.028571429</atX>
+              <atY>0.3974359</atY>
             </point>
             <end-1>
-              <x>172</x>
-              <y>105</y>
-              <connectedSymbol symbol="1"/>
-              <text>0..1</text>
+              <x>378</x>
+              <y>304</y>
+              <w>35</w>
+              <h>34</h>
+              <connectedSymbol symbol="2"/>
+              <text>+users</text>
+              <text>*</text>
             </end-1>
             <end-2>
-              <x>356</x>
-              <y>105</y>
-              <connectedSymbol symbol="3"/>
-              <symbolType>2</symbolType>
-              <symbolLength>8</symbolLength>
+              <x>633</x>
+              <y>304</y>
+              <w>38</w>
+              <h>34</h>
+              <connectedSymbol symbol="1"/>
+              <text>+office</text>
+              <text>0..1</text>
             </end-2>
-            <dashed>true</dashed>
-            <style>STRAIGHT</style>
+            <style>RECTANGULAR</style>
           </association>
           <width>1400</width>
           <height>1000</height>
-          <lineStyle>STRAIGHT</lineStyle>
+          <lineStyle>RECTANGULAR</lineStyle>
         </classDiagram>
       </diagrams>
       <rootName>src</rootName>
