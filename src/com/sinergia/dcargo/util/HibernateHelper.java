@@ -111,12 +111,13 @@ public class HibernateHelper {
 	 */
 	public org.hibernate.cfg.Configuration getConfiguration()
 			throws org.hibernate.MappingException {
-				//org.hibernate.cfg.AnnotationConfiguration config = new org.hibernate.cfg.AnnotationConfiguration();
-				//config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Person.class);
-//				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.User.class);
-//				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Office.class);
+//				org.hibernate.cfg.AnnotationConfiguration config = new org.hibernate.cfg.AnnotationConfiguration();
+//				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Persona.class);
+//				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Usuario.class);
+//				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Oficina.class);
 //				return config;
 				return null;
+		
 			}
 	
 	/**

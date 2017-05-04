@@ -5,21 +5,20 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-
-
-
-
-
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.boot.spi.MetadataImplementor;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
-import com.sinergia.dcargo.client.shared.Office;
-import com.sinergia.dcargo.client.shared.Person;
-import com.sinergia.dcargo.client.shared.User;
+import com.sinergia.dcargo.client.shared.Oficina;
+import com.sinergia.dcargo.client.shared.Persona;
+import com.sinergia.dcargo.client.shared.Usuario;
 
-
+/**
+ * 
+ * @author willy
+ *
+ */
 public class Generate {
 
 	public static void main(String[] args) {
@@ -38,9 +37,9 @@ public class Generate {
 			        .applySetting("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect")
 			        .build());
 		
-		metadata.addAnnotatedClass(Person.class);
-		metadata.addAnnotatedClass(User.class);
-		metadata.addAnnotatedClass(Office.class);
+		metadata.addAnnotatedClass(Persona.class);
+		metadata.addAnnotatedClass(Usuario.class);
+		metadata.addAnnotatedClass(Oficina.class);
 		
 		SchemaExport export = new SchemaExport(
 			    (MetadataImplementor) metadata.buildMetadata(),

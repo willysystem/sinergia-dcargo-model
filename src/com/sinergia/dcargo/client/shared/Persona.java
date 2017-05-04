@@ -10,11 +10,11 @@ import javax.persistence.Transient;
  */
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 @javax.persistence.Entity
-public abstract class Person implements java.io.Serializable {
+public class Persona implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private static final long serialVersionUID = -560539382L;
+	private static final long serialVersionUID = -196851561L;
 	/**
 	 * @generated
 	 */
@@ -23,16 +23,16 @@ public abstract class Person implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private String surnames;
-	/**
-	 * @generated
-	 */
-	private String names;
+	private Integer nro;
 
 	/**
 	 * @generated
 	 */
-	private Integer nro;
+	private String apellidos;
+	/**
+	 * @generated
+	 */
+	private String nombres;
 
 	/**
 	 * @generated
@@ -54,42 +54,8 @@ public abstract class Person implements java.io.Serializable {
 	 * @generated
 	 */
 	public String toString() {
-		return "Person" + " id=" + id + " surnames=" + surnames + " names="
-				+ names + " nro=" + nro;
-	}
-
-	/**
-	 * @generated
-	 */
-	public Person() {
-	}
-
-	/**
-	 * @generated
-	 */
-	public String getSurnames() {
-		return this.surnames;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setSurnames(String surnames) {
-		this.surnames = surnames;
-	}
-
-	/**
-	 * @generated
-	 */
-	public String getNames() {
-		return this.names;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setNames(String names) {
-		this.names = names;
+		return "Persona" + " id=" + id + " apellidos=" + apellidos
+				+ " nombres=" + nombres + " nro=" + nro;
 	}
 
 	/**
@@ -105,5 +71,39 @@ public abstract class Person implements java.io.Serializable {
 	 */
 	public void setNro(Integer nro) {
 		this.nro = nro;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Persona() {
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getApellidos() {
+		return this.apellidos;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getNombres() {
+		return this.nombres;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
 	}
 }

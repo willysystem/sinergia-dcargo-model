@@ -15,93 +15,94 @@ public class PersonaPersistentTest extends junit.framework.TestCase {
 	/**
 	 * @generated
 	 */
-	public User usuario;
+	public Usuario usuario;
 
 	/**
 	 * @generated
 	 */
-	public User user;
+	public Usuario user;
 
 	/**
 	 * @generated
 	 */
-	public User user1;
+	public Usuario user1;
 
 	/**
 	 * @generated
 	 */
-	public User user2;
+	public Usuario user2;
 
 	/**
 	 * @generated
 	 */
-	public User user3;
+	public Usuario user3;
 
 	/**
 	 * @generated
 	 */
-	public User user4;
+	public Usuario user4;
 
 	/**
 	 * @generated
 	 */
-	public User user5;
+	public Usuario user5;
 
 	/**
 	 * @generated
 	 */
-	public User user6;
+	public Usuario user6;
 
 	/**
 	 * @generated
 	 */
-	public Office office;
+	public Oficina office;
 
 	/**
 	 * @generated
 	 */
-	public Office office1;
+	public Oficina office1;
 
 	/**
 	 * @generated
 	 */
-	public Office office2;
+	public Oficina office2;
 
 	/**
 	 * @generated
 	 */
-	public Office office3;
+	public Oficina office3;
 
 	/**
 	 * @generated
 	 */
-	public Office office4;
+	public Oficina office4;
 
 	/**
 	 * @generated
 	 */
-	public Office office5;
+	public Oficina office5;
 
 	/**
 	 * @generated
 	 */
-	public Office office6;
+	public Oficina office6;
 
 	/**
 	 * @generated
 	 */
-	public Office office7;
+	public Oficina office7;
 
 	/**
 	 * @generated
 	 */
-	public Office office8;
+	public Oficina office8;
 
 	/**
 	 * @generated
 	 */
 	public PersonaPersistentTest() {
-		persistenceHelper = com.sinergia.dcargo.util.HibernateHelper.getInstance();
+		persistenceHelper = com.sinergia.dcargo.util.HibernateHelper
+				.getInstance();
 	}
 
 	/**
@@ -112,86 +113,86 @@ public class PersonaPersistentTest extends junit.framework.TestCase {
 				.getEntityManager();
 		javax.persistence.EntityTransaction tx = entityManager.getTransaction();
 		tx.begin();
-		usuario = new com.sinergia.dcargo.client.shared.User();
-		user = new com.sinergia.dcargo.client.shared.User();
-		user1 = new com.sinergia.dcargo.client.shared.User();
-		user2 = new com.sinergia.dcargo.client.shared.User();
-		user3 = new com.sinergia.dcargo.client.shared.User();
-		user4 = new com.sinergia.dcargo.client.shared.User();
-		user5 = new com.sinergia.dcargo.client.shared.User();
-		user6 = new com.sinergia.dcargo.client.shared.User();
-		office = new com.sinergia.dcargo.client.shared.Office();
-		office1 = new com.sinergia.dcargo.client.shared.Office();
-		office2 = new com.sinergia.dcargo.client.shared.Office();
-		office3 = new com.sinergia.dcargo.client.shared.Office();
-		office4 = new com.sinergia.dcargo.client.shared.Office();
-		office5 = new com.sinergia.dcargo.client.shared.Office();
-		office6 = new com.sinergia.dcargo.client.shared.Office();
-		office7 = new com.sinergia.dcargo.client.shared.Office();
-		office8 = new com.sinergia.dcargo.client.shared.Office();
-		usuario.setUser("900009");
-		usuario.setPassword(MD5.md5("EPLACER"));
-		usuario.setExpirationDate(new java.util.Date("2/2/2020 00:00:00"));
-		usuario.setActive(true);
-		usuario.setAdministrator(true);
-		usuario.setSurnames("PLACER ROSSENDI");
-		usuario.setNames("DAVID");
-		user.setUser("100004");
-		user.setPassword(MD5.md5("EPLACER"));
-		user.setExpirationDate(new java.util.Date("2/2/2020 00:00:00"));
-		user.setActive(true);
-		user.setAdministrator(true);
-		user.setSurnames("ANTEZANA");
-		user.setNames("JUAN");
-		user1.setUser("900008");
-		user1.setPassword(MD5.md5("EPLACER"));
-		user1.setExpirationDate(new java.util.Date("2/2/2020 00:00:00"));
-		user1.setActive(true);
-		user1.setAdministrator(true);
-		user1.setSurnames("PLACER");
-		user1.setNames("EDDY");
-		user2.setUser("900010");
-		user2.setPassword(MD5.md5("EPLACER"));
-		user2.setExpirationDate(new java.util.Date("2/2/2020 00:00:00"));
-		user2.setActive(false);
-		user2.setAdministrator(false);
-		user2.setSurnames("TELLEZ");
-		user2.setNames("BLANCA");
-		user3.setUser("900010");
-		user3.setPassword(MD5.md5("EPLACER"));
-		user3.setExpirationDate(new java.util.Date("2/2/2020 00:00:00"));
-		user3.setActive(true);
-		user3.setAdministrator(true);
-		user3.setSurnames("QUIROGA");
-		user3.setNames("CLAUDIA");
-		user4.setUser("900012");
-		user4.setPassword(MD5.md5("EPLACER"));
-		user4.setExpirationDate(new java.util.Date("2/2/2020 00:00:00"));
-		user4.setActive(true);
-		user4.setAdministrator(true);
-		user4.setNames("DITO");
-		user5.setUser("900013");
-		user5.setPassword(MD5.md5("EPLACER"));
-		user5.setExpirationDate(new java.util.Date("2/2/2020 00:00:00"));
-		user5.setActive(true);
-		user5.setAdministrator(true);
-		user5.setSurnames("MONTECINOS");
-		user5.setNames("DANIELA");
-		user6.setUser("900014");
-		user6.setPassword(MD5.md5("EPLACER"));
-		user6.setExpirationDate(new java.util.Date("2/2/2020 00:00:00"));
-		user6.setActive(true);
-		user6.setAdministrator(true);
-		user6.setNames("JUAN");
-		office.setName("SANTA CRUZ");
-		office1.setName("COCHABAMBA");
-		office2.setName("LA PAZ");
-		office3.setName("SUCRE");
-		office4.setName("MONTERO");
-		office5.setName("ORURO");
-		office6.setName("CHAPARE");
-		office7.setName("TARIJA");
-		office8.setName("EL ALTO");
+		usuario = new com.sinergia.dcargo.client.shared.Usuario();
+		user = new com.sinergia.dcargo.client.shared.Usuario();
+		user1 = new com.sinergia.dcargo.client.shared.Usuario();
+		user2 = new com.sinergia.dcargo.client.shared.Usuario();
+		user3 = new com.sinergia.dcargo.client.shared.Usuario();
+		user4 = new com.sinergia.dcargo.client.shared.Usuario();
+		user5 = new com.sinergia.dcargo.client.shared.Usuario();
+		user6 = new com.sinergia.dcargo.client.shared.Usuario();
+		office = new com.sinergia.dcargo.client.shared.Oficina();
+		office1 = new com.sinergia.dcargo.client.shared.Oficina();
+		office2 = new com.sinergia.dcargo.client.shared.Oficina();
+		office3 = new com.sinergia.dcargo.client.shared.Oficina();
+		office4 = new com.sinergia.dcargo.client.shared.Oficina();
+		office5 = new com.sinergia.dcargo.client.shared.Oficina();
+		office6 = new com.sinergia.dcargo.client.shared.Oficina();
+		office7 = new com.sinergia.dcargo.client.shared.Oficina();
+		office8 = new com.sinergia.dcargo.client.shared.Oficina();
+		usuario.setNombreUsuario("900009");
+		usuario.setContrasenia(MD5.md5("EPLACER"));
+		usuario.setFechaExpiracion(new java.util.Date("2/2/2020 00:00:00"));
+		usuario.setActivo(true);
+		usuario.setAdministrador(true);
+		usuario.setApellidos("PLACER ROSSENDI");
+		usuario.setNombres("DAVID");
+		user.setNombreUsuario("100004");
+		user.setContrasenia(MD5.md5("EPLACER"));
+		user.setFechaExpiracion(new java.util.Date("2/2/2020 00:00:00"));
+		user.setActivo(true);
+		user.setAdministrador(true);
+		user.setApellidos("ANTEZANA");
+		user.setNombres("JUAN");
+		user1.setNombreUsuario("900008");
+		user1.setContrasenia(MD5.md5("EPLACER"));
+		user1.setFechaExpiracion(new java.util.Date("2/2/2020 00:00:00"));
+		user1.setActivo(true);
+		user1.setAdministrador(true);
+		user1.setApellidos("PLACER");
+		user1.setNombres("EDDY");
+		user2.setNombreUsuario("900010");
+		user2.setContrasenia(MD5.md5("EPLACER"));
+		user2.setFechaExpiracion(new java.util.Date("2/2/2020 00:00:00"));
+		user2.setActivo(false);
+		user2.setAdministrador(false);
+		user2.setApellidos("TELLEZ");
+		user2.setNombres("BLANCA");
+		user3.setNombreUsuario("900010");
+		user3.setContrasenia(MD5.md5("EPLACER"));
+		user3.setFechaExpiracion(new java.util.Date("2/2/2020 00:00:00"));
+		user3.setActivo(true);
+		user3.setAdministrador(true);
+		user3.setApellidos("QUIROGA");
+		user3.setNombres("CLAUDIA");
+		user4.setNombreUsuario("900012");
+		user4.setContrasenia(MD5.md5("EPLACER"));
+		user4.setFechaExpiracion(new java.util.Date("2/2/2020 00:00:00"));
+		user4.setActivo(true);
+		user4.setAdministrador(true);
+		user4.setNombres("DITO");
+		user5.setNombreUsuario("900013");
+		user5.setContrasenia(MD5.md5("EPLACER"));
+		user5.setFechaExpiracion(new java.util.Date("2/2/2020 00:00:00"));
+		user5.setActivo(true);
+		user5.setAdministrador(true);
+		user5.setApellidos("MONTECINOS");
+		user5.setNombres("DANIELA");
+		user6.setNombreUsuario("900014");
+		user6.setContrasenia(MD5.md5("EPLACER"));
+		user6.setFechaExpiracion(new java.util.Date("2/2/2020 00:00:00"));
+		user6.setActivo(true);
+		user6.setAdministrador(true);
+		user6.setNombres("JUAN");
+		office.setNombre("SANTA CRUZ");
+		office1.setNombre("COCHABAMBA");
+		office2.setNombre("LA PAZ");
+		office3.setNombre("SUCRE");
+		office4.setNombre("MONTERO");
+		office5.setNombre("ORURO");
+		office6.setNombre("CHAPARE");
+		office7.setNombre("TARIJA");
+		office8.setNombre("EL ALTO");
 		entityManager.persist(usuario);
 		entityManager.persist(user);
 		entityManager.persist(user1);

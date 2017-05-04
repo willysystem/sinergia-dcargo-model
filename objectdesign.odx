@@ -117,9 +117,9 @@
               <method>
                 <statements>
                   <javaCode>org.hibernate.cfg.AnnotationConfiguration config = new org.hibernate.cfg.AnnotationConfiguration();</javaCode>
-                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Person.class);</javaCode>
-                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.client.shared.User.class);</javaCode>
-                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Office.class);</javaCode>
+                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Persona.class);</javaCode>
+                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Usuario.class);</javaCode>
+                  <javaCode>config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Oficina.class);</javaCode>
                   <javaCode>return config;</javaCode>
                 </statements>
               </method>
@@ -178,7 +178,7 @@
       <projectName>sinergia-dcargo-model</projectName>
       <path>src/com/sinergia/dcargo/client/shared</path>
       <classes>
-        <classifier name="Person">
+        <classifier name="Persona">
           <stereotype>Persistent</stereotype>
           <interfaces>
             <type>java.io.Serializable</type>
@@ -189,7 +189,7 @@
               <multiplicity>1</multiplicity>
               <modifiers>24</modifiers>
               <access>2</access>
-              <value>-560539382</value>
+              <value>-196851561</value>
             </variable>
             <variable name="id">
               <type>Long</type>
@@ -201,12 +201,12 @@
                 <tag name="@GeneratedValue"/>
               </tags>
             </variable>
-            <variable name="surnames">
+            <variable name="apellidos">
               <type class="java.lang.String"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
-            <variable name="names">
+            <variable name="nombres">
               <type class="java.lang.String"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
@@ -228,7 +228,7 @@
             <operation name="constructor">
               <multiplicity>1</multiplicity>
               <access>1</access>
-              <generatedName>Person</generatedName>
+              <generatedName>Persona</generatedName>
               <method>
                 <statements>
                   <javaCode></javaCode>
@@ -237,8 +237,8 @@
             </operation>
           </operations>
           <generatedFiles>
-            <name>Person.java</name>
-            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.client.shared{Person.java</compilationUnitId>
+            <name>Persona.java</name>
+            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.client.shared{Persona.java</compilationUnitId>
           </generatedFiles>
         </classifier>
         <classifier name="PersonaPersistentTest">
@@ -251,94 +251,94 @@
               <access>2</access>
             </variable>
             <variable name="PERSISTENT_TEST_TARGET">
-              <type class="com.sinergia.dcargo.client.shared.Person"/>
+              <type class="com.sinergia.dcargo.client.shared.Persona"/>
               <multiplicity>1</multiplicity>
               <access>1</access>
               <association>persistentTest</association>
               <type>4</type>
             </variable>
             <variable name="usuario">
-              <type class="com.sinergia.dcargo.client.shared.User"/>
+              <type class="com.sinergia.dcargo.client.shared.Usuario"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user">
-              <type class="com.sinergia.dcargo.client.shared.User"/>
+              <type class="com.sinergia.dcargo.client.shared.Usuario"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user1">
-              <type class="com.sinergia.dcargo.client.shared.User"/>
+              <type class="com.sinergia.dcargo.client.shared.Usuario"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user2">
-              <type class="com.sinergia.dcargo.client.shared.User"/>
+              <type class="com.sinergia.dcargo.client.shared.Usuario"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user3">
-              <type class="com.sinergia.dcargo.client.shared.User"/>
+              <type class="com.sinergia.dcargo.client.shared.Usuario"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user4">
-              <type class="com.sinergia.dcargo.client.shared.User"/>
+              <type class="com.sinergia.dcargo.client.shared.Usuario"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user5">
-              <type class="com.sinergia.dcargo.client.shared.User"/>
+              <type class="com.sinergia.dcargo.client.shared.Usuario"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="user6">
-              <type class="com.sinergia.dcargo.client.shared.User"/>
+              <type class="com.sinergia.dcargo.client.shared.Usuario"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="office">
-              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <type class="com.sinergia.dcargo.client.shared.Oficina"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="office1">
-              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <type class="com.sinergia.dcargo.client.shared.Oficina"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="office2">
-              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <type class="com.sinergia.dcargo.client.shared.Oficina"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="office3">
-              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <type class="com.sinergia.dcargo.client.shared.Oficina"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="office4">
-              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <type class="com.sinergia.dcargo.client.shared.Oficina"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="office5">
-              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <type class="com.sinergia.dcargo.client.shared.Oficina"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="office6">
-              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <type class="com.sinergia.dcargo.client.shared.Oficina"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="office7">
-              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <type class="com.sinergia.dcargo.client.shared.Oficina"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="office8">
-              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <type class="com.sinergia.dcargo.client.shared.Oficina"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
@@ -361,159 +361,159 @@
               <generatedName>initObjects</generatedName>
               <objects>
                 <object name="usuario">
-                  <type class="com.sinergia.dcargo.client.shared.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.Usuario"/>
                   <values>
-                    <surnames>&quot;PLACER ROSSENDI&quot;</surnames>
-                    <names>&quot;DAVID&quot;</names>
-                    <user>&quot;900009&quot;</user>
-                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
-                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
-                    <active>true</active>
-                    <administrator>true</administrator>
+                    <apellidos>&quot;PLACER ROSSENDI&quot;</apellidos>
+                    <nombres>&quot;DAVID&quot;</nombres>
+                    <nombreUsuario>&quot;900009&quot;</nombreUsuario>
+                    <contrasenia>MD5.md5(&quot;EPLACER&quot;)</contrasenia>
+                    <fechaExpiracion>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</fechaExpiracion>
+                    <activo>true</activo>
+                    <administrador>true</administrador>
                   </values>
                 </object>
                 <object name="user">
-                  <type class="com.sinergia.dcargo.client.shared.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.Usuario"/>
                   <values>
-                    <user>&quot;100004&quot;</user>
-                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
-                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
-                    <active>true</active>
-                    <names>&quot;JUAN&quot;</names>
-                    <administrator>true</administrator>
-                    <surnames>&quot;ANTEZANA&quot;</surnames>
+                    <nombreUsuario>&quot;100004&quot;</nombreUsuario>
+                    <contrasenia>MD5.md5(&quot;EPLACER&quot;)</contrasenia>
+                    <fechaExpiracion>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</fechaExpiracion>
+                    <activo>true</activo>
+                    <nombres>&quot;JUAN&quot;</nombres>
+                    <administrador>true</administrador>
+                    <apellidos>&quot;ANTEZANA&quot;</apellidos>
                   </values>
                 </object>
                 <object name="user1">
-                  <type class="com.sinergia.dcargo.client.shared.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.Usuario"/>
                   <values>
-                    <user>&quot;900008&quot;</user>
-                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
-                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
-                    <active>true</active>
-                    <administrator>true</administrator>
-                    <surnames>&quot;PLACER&quot;</surnames>
-                    <names>&quot;EDDY&quot;</names>
+                    <nombreUsuario>&quot;900008&quot;</nombreUsuario>
+                    <contrasenia>MD5.md5(&quot;EPLACER&quot;)</contrasenia>
+                    <fechaExpiracion>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</fechaExpiracion>
+                    <activo>true</activo>
+                    <administrador>true</administrador>
+                    <apellidos>&quot;PLACER&quot;</apellidos>
+                    <nombres>&quot;EDDY&quot;</nombres>
                   </values>
                 </object>
                 <object name="user2">
-                  <type class="com.sinergia.dcargo.client.shared.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.Usuario"/>
                   <values>
-                    <user>&quot;900010&quot;</user>
-                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
-                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
-                    <active>false</active>
-                    <administrator>false</administrator>
-                    <surnames>&quot;TELLEZ&quot;</surnames>
-                    <names>&quot;BLANCA&quot;</names>
+                    <nombreUsuario>&quot;900010&quot;</nombreUsuario>
+                    <contrasenia>MD5.md5(&quot;EPLACER&quot;)</contrasenia>
+                    <fechaExpiracion>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</fechaExpiracion>
+                    <activo>false</activo>
+                    <administrador>false</administrador>
+                    <apellidos>&quot;TELLEZ&quot;</apellidos>
+                    <nombres>&quot;BLANCA&quot;</nombres>
                     <office ref="office6"/>
                   </values>
                 </object>
                 <object name="user3">
-                  <type class="com.sinergia.dcargo.client.shared.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.Usuario"/>
                   <values>
-                    <user>&quot;900010&quot;</user>
-                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
-                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
-                    <active>true</active>
-                    <administrator>true</administrator>
-                    <surnames>&quot;QUIROGA&quot;</surnames>
-                    <names>&quot;CLAUDIA&quot;</names>
+                    <nombreUsuario>&quot;900010&quot;</nombreUsuario>
+                    <contrasenia>MD5.md5(&quot;EPLACER&quot;)</contrasenia>
+                    <fechaExpiracion>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</fechaExpiracion>
+                    <activo>true</activo>
+                    <administrador>true</administrador>
+                    <apellidos>&quot;QUIROGA&quot;</apellidos>
+                    <nombres>&quot;CLAUDIA&quot;</nombres>
                     <office ref="office4"/>
                   </values>
                 </object>
                 <object name="user4">
-                  <type class="com.sinergia.dcargo.client.shared.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.Usuario"/>
                   <values>
-                    <user>&quot;900012&quot;</user>
-                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
-                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
-                    <active>true</active>
-                    <administrator>true</administrator>
-                    <names>&quot;DITO&quot;</names>
+                    <nombreUsuario>&quot;900012&quot;</nombreUsuario>
+                    <contrasenia>MD5.md5(&quot;EPLACER&quot;)</contrasenia>
+                    <fechaExpiracion>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</fechaExpiracion>
+                    <activo>true</activo>
+                    <administrador>true</administrador>
+                    <nombres>&quot;DITO&quot;</nombres>
                   </values>
                 </object>
                 <object name="user5">
-                  <type class="com.sinergia.dcargo.client.shared.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.Usuario"/>
                   <values>
-                    <user>&quot;900013&quot;</user>
-                    <surnames>&quot;MONTECINOS&quot;</surnames>
-                    <names>&quot;DANIELA&quot;</names>
-                    <administrator>true</administrator>
-                    <active>true</active>
-                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
-                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
+                    <nombreUsuario>&quot;900013&quot;</nombreUsuario>
+                    <apellidos>&quot;MONTECINOS&quot;</apellidos>
+                    <nombres>&quot;DANIELA&quot;</nombres>
+                    <administrador>true</administrador>
+                    <activo>true</activo>
+                    <fechaExpiracion>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</fechaExpiracion>
+                    <contrasenia>MD5.md5(&quot;EPLACER&quot;)</contrasenia>
                     <office ref="office"/>
                   </values>
                 </object>
                 <object name="user6">
-                  <type class="com.sinergia.dcargo.client.shared.User"/>
+                  <type class="com.sinergia.dcargo.client.shared.Usuario"/>
                   <values>
-                    <user>&quot;900014&quot;</user>
-                    <password>MD5.md5(&quot;EPLACER&quot;)</password>
-                    <expirationDate>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</expirationDate>
-                    <active>true</active>
-                    <administrator>true</administrator>
-                    <names>&quot;JUAN&quot;</names>
+                    <nombreUsuario>&quot;900014&quot;</nombreUsuario>
+                    <contrasenia>MD5.md5(&quot;EPLACER&quot;)</contrasenia>
+                    <fechaExpiracion>new java.util.Date(&quot;2/2/2020 00:00:00&quot;)</fechaExpiracion>
+                    <activo>true</activo>
+                    <administrador>true</administrador>
+                    <nombres>&quot;JUAN&quot;</nombres>
                     <office ref="office8"/>
                   </values>
                 </object>
                 <object name="office">
-                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <type class="com.sinergia.dcargo.client.shared.Oficina"/>
                   <values>
-                    <name>&quot;SANTA CRUZ&quot;</name>
+                    <nombre>&quot;SANTA CRUZ&quot;</nombre>
                   </values>
                 </object>
                 <object name="office1">
-                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <type class="com.sinergia.dcargo.client.shared.Oficina"/>
                   <values>
-                    <name>&quot;COCHABAMBA&quot;</name>
+                    <nombre>&quot;COCHABAMBA&quot;</nombre>
                     <users ref="usuario"/>
                     <users ref="user4"/>
                   </values>
                 </object>
                 <object name="office2">
-                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <type class="com.sinergia.dcargo.client.shared.Oficina"/>
                   <values>
-                    <name>&quot;LA PAZ&quot;</name>
+                    <nombre>&quot;LA PAZ&quot;</nombre>
                     <users ref="user"/>
                   </values>
                 </object>
                 <object name="office3">
-                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <type class="com.sinergia.dcargo.client.shared.Oficina"/>
                   <values>
-                    <name>&quot;SUCRE&quot;</name>
+                    <nombre>&quot;SUCRE&quot;</nombre>
                     <users ref="user1"/>
                   </values>
                 </object>
                 <object name="office4">
-                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <type class="com.sinergia.dcargo.client.shared.Oficina"/>
                   <values>
-                    <name>&quot;MONTERO&quot;</name>
+                    <nombre>&quot;MONTERO&quot;</nombre>
                   </values>
                 </object>
                 <object name="office5">
-                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <type class="com.sinergia.dcargo.client.shared.Oficina"/>
                   <values>
-                    <name>&quot;ORURO&quot;</name>
+                    <nombre>&quot;ORURO&quot;</nombre>
                   </values>
                 </object>
                 <object name="office6">
-                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <type class="com.sinergia.dcargo.client.shared.Oficina"/>
                   <values>
-                    <name>&quot;CHAPARE&quot;</name>
+                    <nombre>&quot;CHAPARE&quot;</nombre>
                   </values>
                 </object>
                 <object name="office7">
-                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <type class="com.sinergia.dcargo.client.shared.Oficina"/>
                   <values>
-                    <name>&quot;TARIJA&quot;</name>
+                    <nombre>&quot;TARIJA&quot;</nombre>
                   </values>
                 </object>
                 <object name="office8">
-                  <type class="com.sinergia.dcargo.client.shared.Office"/>
+                  <type class="com.sinergia.dcargo.client.shared.Oficina"/>
                   <values>
-                    <name>&quot;EL ALTO&quot;</name>
+                    <nombre>&quot;EL ALTO&quot;</nombre>
                   </values>
                 </object>
                 <objectDiagram name="Objects">
@@ -654,9 +654,9 @@
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
                   <link id="18">
-                    <x>563</x>
+                    <x>568</x>
                     <y>139</y>
-                    <association class="com.sinergia.dcargo.client.shared.Office" name="users"/>
+                    <association class="com.sinergia.dcargo.client.shared.Oficina" name="users"/>
                     <point>
                       <connectX symbol="8"/>
                       <connectY symbol="8"/>
@@ -675,22 +675,26 @@
                     </point>
                     <end-1>
                       <x>542</x>
-                      <y>137</y>
+                      <y>136</y>
+                      <w>30</w>
+                      <h>17</h>
                       <connectedSymbol symbol="8"/>
                       <text>office</text>
                     </end-1>
                     <end-2>
-                      <x>243</x>
+                      <x>250</x>
                       <y>113</y>
+                      <w>27</w>
+                      <h>17</h>
                       <connectedSymbol symbol="17"/>
                       <text>users</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
                   <link id="19">
-                    <x>581</x>
+                    <x>586</x>
                     <y>141</y>
-                    <association class="com.sinergia.dcargo.client.shared.Office" name="users"/>
+                    <association class="com.sinergia.dcargo.client.shared.Oficina" name="users"/>
                     <point>
                       <connectX symbol="8"/>
                       <connectY symbol="8"/>
@@ -708,24 +712,27 @@
                       <atY>0.516129</atY>
                     </point>
                     <end-1>
-                      <x>572</x>
+                      <x>577</x>
                       <y>153</y>
+                      <w>30</w>
+                      <h>17</h>
                       <connectedSymbol symbol="8"/>
                       <text>office</text>
                     </end-1>
                     <end-2>
-                      <x>247</x>
-                      <y>602</y>
+                      <x>254</x>
+                      <y>600</y>
+                      <w>27</w>
+                      <h>17</h>
                       <connectedSymbol symbol="12"/>
                       <text>users</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
                   <link id="20">
-                    <x>583</x>
+                    <x>588</x>
                     <y>308</y>
-                    <highlited>true</highlited>
-                    <association class="com.sinergia.dcargo.client.shared.Office" name="users"/>
+                    <association class="com.sinergia.dcargo.client.shared.Oficina" name="users"/>
                     <point>
                       <connectX symbol="7"/>
                       <connectY symbol="7"/>
@@ -745,21 +752,25 @@
                     <end-1>
                       <x>554</x>
                       <y>305</y>
+                      <w>30</w>
+                      <h>17</h>
                       <connectedSymbol symbol="7"/>
                       <text>office</text>
                     </end-1>
                     <end-2>
-                      <x>242</x>
+                      <x>249</x>
                       <y>281</y>
+                      <w>27</w>
+                      <h>17</h>
                       <connectedSymbol symbol="16"/>
                       <text>users</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
                   <link id="21">
-                    <x>567</x>
+                    <x>572</x>
                     <y>389</y>
-                    <association class="com.sinergia.dcargo.client.shared.Office" name="users"/>
+                    <association class="com.sinergia.dcargo.client.shared.Oficina" name="users"/>
                     <point>
                       <connectX symbol="6"/>
                       <connectY symbol="6"/>
@@ -779,22 +790,25 @@
                     <end-1>
                       <x>560</x>
                       <y>390</y>
+                      <w>30</w>
+                      <h>17</h>
                       <connectedSymbol symbol="6"/>
                       <text>office</text>
                     </end-1>
                     <end-2>
-                      <x>245</x>
-                      <y>435</y>
+                      <x>252</x>
+                      <y>434</y>
+                      <w>27</w>
+                      <h>17</h>
                       <connectedSymbol symbol="15"/>
                       <text>users</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
                   <link id="22">
-                    <x>220</x>
+                    <x>223</x>
                     <y>776</y>
-                    <highlited>true</highlited>
-                    <association class="com.sinergia.dcargo.client.shared.User" name="office"/>
+                    <association class="com.sinergia.dcargo.client.shared.Usuario" name="office"/>
                     <point>
                       <connectX symbol="13"/>
                       <connectY symbol="13"/>
@@ -812,24 +826,27 @@
                       <atY>0.7222222</atY>
                     </point>
                     <end-1>
-                      <x>248</x>
-                      <y>752</y>
+                      <x>255</x>
+                      <y>749</y>
+                      <w>27</w>
+                      <h>17</h>
                       <connectedSymbol symbol="13"/>
                       <text>users</text>
                     </end-1>
                     <end-2>
-                      <x>574</x>
+                      <x>577</x>
                       <y>481</y>
+                      <w>30</w>
+                      <h>17</h>
                       <connectedSymbol symbol="5"/>
                       <text>office</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
                   <link id="23">
-                    <x>219</x>
+                    <x>222</x>
                     <y>964</y>
-                    <highlited>true</highlited>
-                    <association class="com.sinergia.dcargo.client.shared.User" name="office"/>
+                    <association class="com.sinergia.dcargo.client.shared.Usuario" name="office"/>
                     <point>
                       <connectX symbol="14"/>
                       <connectY symbol="14"/>
@@ -847,24 +864,27 @@
                       <atY>0.6111111</atY>
                     </point>
                     <end-1>
-                      <x>246</x>
-                      <y>941</y>
+                      <x>253</x>
+                      <y>937</y>
+                      <w>27</w>
+                      <h>17</h>
                       <connectedSymbol symbol="14"/>
                       <text>users</text>
                     </end-1>
                     <end-2>
-                      <x>590</x>
+                      <x>594</x>
                       <y>651</y>
+                      <w>30</w>
+                      <h>17</h>
                       <connectedSymbol symbol="3"/>
                       <text>office</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
                   <link id="24">
-                    <x>213</x>
+                    <x>216</x>
                     <y>1134</y>
-                    <highlited>true</highlited>
-                    <association class="com.sinergia.dcargo.client.shared.User" name="office"/>
+                    <association class="com.sinergia.dcargo.client.shared.Usuario" name="office"/>
                     <point>
                       <connectX symbol="10"/>
                       <connectY symbol="10"/>
@@ -882,23 +902,27 @@
                       <atY>0.3888889</atY>
                     </point>
                     <end-1>
-                      <x>245</x>
-                      <y>1120</y>
+                      <x>252</x>
+                      <y>1119</y>
+                      <w>27</w>
+                      <h>17</h>
                       <connectedSymbol symbol="10"/>
                       <text>users</text>
                     </end-1>
                     <end-2>
                       <x>562</x>
                       <y>992</y>
+                      <w>30</w>
+                      <h>17</h>
                       <connectedSymbol symbol="1"/>
                       <text>office</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
                   <link id="25">
-                    <x>239</x>
+                    <x>242</x>
                     <y>1208</y>
-                    <association class="com.sinergia.dcargo.client.shared.User" name="office"/>
+                    <association class="com.sinergia.dcargo.client.shared.Usuario" name="office"/>
                     <point>
                       <connectX symbol="11"/>
                       <connectY symbol="11"/>
@@ -916,14 +940,18 @@
                       <atY>0.5277778</atY>
                     </point>
                     <end-1>
-                      <x>248</x>
+                      <x>255</x>
                       <y>1206</y>
+                      <w>27</w>
+                      <h>17</h>
                       <connectedSymbol symbol="11"/>
                       <text>users</text>
                     </end-1>
                     <end-2>
                       <x>542</x>
                       <y>1162</y>
+                      <w>30</w>
+                      <h>17</h>
                       <connectedSymbol symbol="9"/>
                       <text>office</text>
                     </end-2>
@@ -979,8 +1007,8 @@ super.tearDown();
             <compilationUnitId>=sinergia-dcargo-model/test&lt;com.sinergia.dcargo.client.shared{PersonaPersistentTest.java</compilationUnitId>
           </generatedFiles>
         </classifier>
-        <classifier name="User">
-          <superclass class="com.sinergia.dcargo.client.shared.Person"/>
+        <classifier name="Usuario">
+          <superclass class="com.sinergia.dcargo.client.shared.Persona"/>
           <stereotype>Persistent</stereotype>
           <interfaces>
             <type>java.io.Serializable</type>
@@ -991,45 +1019,45 @@ super.tearDown();
               <multiplicity>1</multiplicity>
               <modifiers>24</modifiers>
               <access>2</access>
-              <value>-308800832</value>
+              <value>348744729</value>
             </variable>
-            <variable name="user">
+            <variable name="nombreUsuario">
               <type class="java.lang.String"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
-            <variable name="password">
+            <variable name="contrasenia">
               <type class="java.lang.String"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
-            <variable name="expirationDate">
+            <variable name="fechaExpiracion">
               <type class="java.util.Date"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
-            <variable name="active">
+            <variable name="activo">
               <type class="java.lang.Boolean"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
-            <variable name="administrator">
+            <variable name="administrador">
               <type class="java.lang.Boolean"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="office">
-              <type class="com.sinergia.dcargo.client.shared.Office"/>
+              <type class="com.sinergia.dcargo.client.shared.Oficina"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
-              <inverse class="com.sinergia.dcargo.client.shared.Office" name="users"/>
+              <inverse class="com.sinergia.dcargo.client.shared.Oficina" name="users"/>
             </variable>
           </variables>
           <operations>
             <operation name="constructor">
               <multiplicity>1</multiplicity>
               <access>1</access>
-              <generatedName>User</generatedName>
+              <generatedName>Usuario</generatedName>
               <method>
                 <statements>
                   <javaCode></javaCode>
@@ -1038,11 +1066,11 @@ super.tearDown();
             </operation>
           </operations>
           <generatedFiles>
-            <name>User.java</name>
-            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.client.shared{User.java</compilationUnitId>
+            <name>Usuario.java</name>
+            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.client.shared{Usuario.java</compilationUnitId>
           </generatedFiles>
         </classifier>
-        <classifier name="Office">
+        <classifier name="Oficina">
           <stereotype>Persistent</stereotype>
           <interfaces>
             <type>java.io.Serializable</type>
@@ -1053,7 +1081,7 @@ super.tearDown();
               <multiplicity>1</multiplicity>
               <modifiers>24</modifiers>
               <access>2</access>
-              <value>-588612495</value>
+              <value>-1064520202</value>
             </variable>
             <variable name="id">
               <type>Long</type>
@@ -1065,24 +1093,24 @@ super.tearDown();
                 <tag name="@GeneratedValue"/>
               </tags>
             </variable>
-            <variable name="name">
+            <variable name="nombre">
               <type class="java.lang.String"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
             <variable name="users">
-              <type class="com.sinergia.dcargo.client.shared.User"/>
+              <type class="com.sinergia.dcargo.client.shared.Usuario"/>
               <multiplicity>*</multiplicity>
               <access>1</access>
               <value>new com.sinergia.dcargo.client.shared.User()</value>
-              <inverse class="com.sinergia.dcargo.client.shared.User" name="office"/>
+              <inverse class="com.sinergia.dcargo.client.shared.Usuario" name="office"/>
             </variable>
           </variables>
           <operations>
             <operation name="constructor">
               <multiplicity>1</multiplicity>
               <access>1</access>
-              <generatedName>Office</generatedName>
+              <generatedName>Oficina</generatedName>
               <method>
                 <statements>
                   <javaCode></javaCode>
@@ -1091,8 +1119,8 @@ super.tearDown();
             </operation>
           </operations>
           <generatedFiles>
-            <name>Office.java</name>
-            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.client.shared{Office.java</compilationUnitId>
+            <name>Oficina.java</name>
+            <compilationUnitId>=sinergia-dcargo-model/src&lt;com.sinergia.dcargo.client.shared{Oficina.java</compilationUnitId>
           </generatedFiles>
         </classifier>
       </classes>
@@ -1103,23 +1131,23 @@ super.tearDown();
           <classSymbol id="1">
             <x>633</x>
             <y>273</y>
-            <class class="com.sinergia.dcargo.client.shared.Office"/>
+            <class class="com.sinergia.dcargo.client.shared.Oficina"/>
             <attributes autoDisplay="353" accessVisible="true">
               <attribute>id</attribute>
-              <attribute>name</attribute>
+              <attribute>nombre</attribute>
             </attributes>
             <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
           </classSymbol>
           <classSymbol id="2">
-            <x>241</x>
-            <y>264</y>
-            <class class="com.sinergia.dcargo.client.shared.User"/>
+            <x>238</x>
+            <y>261</y>
+            <class class="com.sinergia.dcargo.client.shared.Usuario"/>
             <attributes autoDisplay="293" accessVisible="true">
-              <attribute>user</attribute>
-              <attribute>password</attribute>
-              <attribute>expirationDate</attribute>
-              <attribute>active</attribute>
-              <attribute>administrator</attribute>
+              <attribute>nombreUsuario</attribute>
+              <attribute>contrasenia</attribute>
+              <attribute>fechaExpiracion</attribute>
+              <attribute>activo</attribute>
+              <attribute>administrador</attribute>
             </attributes>
             <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
           </classSymbol>
@@ -1138,17 +1166,17 @@ super.tearDown();
           <classSymbol id="4">
             <x>249</x>
             <y>13</y>
-            <class class="com.sinergia.dcargo.client.shared.Person"/>
+            <class class="com.sinergia.dcargo.client.shared.Persona"/>
             <attributes autoDisplay="293" accessVisible="true">
-              <attribute>surnames</attribute>
-              <attribute>names</attribute>
+              <attribute>apellidos</attribute>
+              <attribute>nombres</attribute>
               <attribute>nro</attribute>
             </attributes>
             <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
           </classSymbol>
           <generalization id="5">
-            <x>314</x>
-            <y>281</y>
+            <x>312</x>
+            <y>278</y>
             <point>
               <connectX symbol="2"/>
               <connectY symbol="2"/>
@@ -1166,12 +1194,12 @@ super.tearDown();
               <atY>0.6631579</atY>
             </point>
             <end-1>
-              <x>314</x>
-              <y>264</y>
+              <x>312</x>
+              <y>261</y>
               <connectedSymbol symbol="2"/>
             </end-1>
             <end-2>
-              <x>314</x>
+              <x>312</x>
               <y>108</y>
               <connectedSymbol symbol="4"/>
               <symbolType>1</symbolType>
@@ -1180,10 +1208,10 @@ super.tearDown();
             <style>STRAIGHT</style>
           </generalization>
           <association id="6">
-            <x>361</x>
-            <y>314</y>
-            <assocEnd-0 class="com.sinergia.dcargo.client.shared.Office" name="users"/>
-            <assocEnd-1 class="com.sinergia.dcargo.client.shared.User" name="office"/>
+            <x>360</x>
+            <y>311</y>
+            <assocEnd-0 class="com.sinergia.dcargo.client.shared.Oficina" name="users"/>
+            <assocEnd-1 class="com.sinergia.dcargo.client.shared.Usuario" name="office"/>
             <showMultiplicity>true</showMultiplicity>
             <point>
               <connectX symbol="2"/>
