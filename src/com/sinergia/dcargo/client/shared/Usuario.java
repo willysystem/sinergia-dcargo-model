@@ -44,6 +44,11 @@ public class Usuario extends Persona implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
+	private java.util.Set<LugarDatos> lugaresDatos = new java.util.HashSet<LugarDatos>();
+
+	/**
+	 * @generated
+	 */
 	public String toString() {
 		return "Usuario" + " nombreUsuario=" + nombreUsuario + " contrasenia="
 				+ contrasenia + " fechaExpiracion=" + fechaExpiracion
@@ -139,5 +144,36 @@ public class Usuario extends Persona implements java.io.Serializable {
 	 */
 	public void setNombreUsuario(String nombreUsuario) {
 		this.nombreUsuario = nombreUsuario;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "usuario")
+	public java.util.Set<LugarDatos> getLugaresDatos() {
+		return this.lugaresDatos;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setLugaresDatos(java.util.Set<LugarDatos> lugaresDatos) {
+		this.lugaresDatos = lugaresDatos;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addLugaresDatos(LugarDatos lugaresDatos) {
+		getLugaresDatos().add(lugaresDatos);
+		lugaresDatos.setUsuario(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeLugaresDatos(LugarDatos lugaresDatos) {
+		getLugaresDatos().remove(lugaresDatos);
+		lugaresDatos.setUsuario(null);
 	}
 }

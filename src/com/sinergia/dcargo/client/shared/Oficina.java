@@ -1,5 +1,7 @@
 package com.sinergia.dcargo.client.shared;
 
+import javax.persistence.GenerationType;
+
 
 /**
  * @generated
@@ -23,6 +25,11 @@ public class Oficina implements java.io.Serializable {
 	 * @generated
 	 */
 	private String nombre;
+
+	/**
+	 * @generated
+	 */
+	private java.util.Set<LugarDatos> lugaresDatos = new java.util.HashSet<LugarDatos>();
 
 	/**
 	 * @generated
@@ -96,5 +103,36 @@ public class Oficina implements java.io.Serializable {
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "oficina")
+	public java.util.Set<LugarDatos> getLugaresDatos() {
+		return this.lugaresDatos;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setLugaresDatos(java.util.Set<LugarDatos> lugaresDatos) {
+		this.lugaresDatos = lugaresDatos;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addLugaresDatos(LugarDatos lugaresDatos) {
+		getLugaresDatos().add(lugaresDatos);
+		lugaresDatos.setOficina(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeLugaresDatos(LugarDatos lugaresDatos) {
+		getLugaresDatos().remove(lugaresDatos);
+		lugaresDatos.setOficina(null);
 	}
 }

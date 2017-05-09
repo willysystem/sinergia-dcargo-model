@@ -5,13 +5,28 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
+
+
+
+
+
+
+
+import javax.persistence.EntityManagerFactory;
+
+import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.boot.spi.MetadataImplementor;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
+import com.sinergia.dcargo.client.shared.Cliente;
+import com.sinergia.dcargo.client.shared.Conocimiento;
+import com.sinergia.dcargo.client.shared.Guia;
+import com.sinergia.dcargo.client.shared.LugarDatos;
 import com.sinergia.dcargo.client.shared.Oficina;
 import com.sinergia.dcargo.client.shared.Persona;
+import com.sinergia.dcargo.client.shared.TipoPago;
 import com.sinergia.dcargo.client.shared.Usuario;
 
 /**
@@ -36,10 +51,14 @@ public class Generate {
 			    new StandardServiceRegistryBuilder()
 			        .applySetting("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect")
 			        .build());
-		
-		metadata.addAnnotatedClass(Persona.class);
-		metadata.addAnnotatedClass(Usuario.class);
+		metadata.addAnnotatedClass(Cliente.class);
+		metadata.addAnnotatedClass(Conocimiento.class);
+		metadata.addAnnotatedClass(Guia.class);
+		metadata.addAnnotatedClass(LugarDatos.class);
 		metadata.addAnnotatedClass(Oficina.class);
+		metadata.addAnnotatedClass(Persona.class);
+		metadata.addAnnotatedClass(TipoPago.class);
+		metadata.addAnnotatedClass(Usuario.class);
 		
 		SchemaExport export = new SchemaExport(
 			    (MetadataImplementor) metadata.buildMetadata(),
@@ -47,6 +66,8 @@ public class Generate {
 		);
 		export.create(true, true);
 		
+
+
 			
 	}
 
