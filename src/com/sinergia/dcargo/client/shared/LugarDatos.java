@@ -1,5 +1,7 @@
 package com.sinergia.dcargo.client.shared;
 
+import javax.persistence.GenerationType;
+
 
 /**
  * @generated
@@ -45,7 +47,7 @@ public class LugarDatos implements java.io.Serializable {
 	 * @generated
 	 */
 	@javax.persistence.Id
-	@javax.persistence.GeneratedValue
+	@javax.persistence.GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Long getId() {
 		return this.id;
 	}

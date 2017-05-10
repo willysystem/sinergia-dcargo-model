@@ -1338,6 +1338,11 @@ super.tearDown();
               <value>new com.sinergia.dcargo.client.shared.Lugar()</value>
               <inverse class="com.sinergia.dcargo.client.shared.LugarDatos" name="cliente"/>
             </variable>
+            <variable name="codigo">
+              <type class="java.lang.Integer"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
           </variables>
           <operations>
             <operation name="constructor">
@@ -1571,6 +1576,7 @@ super.tearDown();
               <attribute>telefono</attribute>
               <attribute>nit</attribute>
               <attribute>ci</attribute>
+              <attribute>codigo</attribute>
             </attributes>
             <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
           </classSymbol>
@@ -1742,7 +1748,7 @@ super.tearDown();
             </point>
             <end-1>
               <x>522</x>
-              <y>173</y>
+              <y>180</y>
               <w>76</w>
               <h>34</h>
               <connectedSymbol symbol="1"/>
@@ -1751,7 +1757,7 @@ super.tearDown();
             </end-1>
             <end-2>
               <x>359</x>
-              <y>173</y>
+              <y>180</y>
               <w>43</w>
               <h>34</h>
               <connectedSymbol symbol="4"/>

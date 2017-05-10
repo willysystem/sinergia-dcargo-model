@@ -1,5 +1,7 @@
 package com.sinergia.dcargo.client.shared;
 
+import javax.persistence.GenerationType;
+
 
 /**
  * @generated
@@ -44,6 +46,11 @@ public class Cliente implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
+	private Integer codigo;
+
+	/**
+	 * @generated
+	 */
 	public Cliente() {
 	}
 
@@ -51,7 +58,7 @@ public class Cliente implements java.io.Serializable {
 	 * @generated
 	 */
 	@javax.persistence.Id
-	@javax.persistence.GeneratedValue
+	@javax.persistence.GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Long getId() {
 		return this.id;
 	}
@@ -83,7 +90,7 @@ public class Cliente implements java.io.Serializable {
 	public String toString() {
 		return "Cliente" + " id=" + id + " nombre=" + nombre + " direccion="
 				+ direccion + " telefono=" + telefono + " nit=" + nit + " ci="
-				+ ci;
+				+ ci + " codigo=" + codigo;
 	}
 
 	/**
@@ -171,5 +178,19 @@ public class Cliente implements java.io.Serializable {
 	public void removeLugaresDatos(LugarDatos lugaresDatos) {
 		getLugaresDatos().remove(lugaresDatos);
 		lugaresDatos.setCliente(null);
+	}
+
+	/**
+	 * @generated
+	 */
+	public Integer getCodigo() {
+		return this.codigo;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
 }
