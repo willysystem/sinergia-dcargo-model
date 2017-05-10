@@ -100,6 +100,26 @@ public class PersonaPersistentTest extends junit.framework.TestCase {
 	/**
 	 * @generated
 	 */
+	public TipoPago tipoPago;
+
+	/**
+	 * @generated
+	 */
+	public TipoPago tipoPago1;
+
+	/**
+	 * @generated
+	 */
+	public TipoPago tipoPago2;
+
+	/**
+	 * @generated
+	 */
+	public TipoPago tipoPago3;
+
+	/**
+	 * @generated
+	 */
 	public PersonaPersistentTest() {
 		persistenceHelper = com.sinergia.dcargo.util.HibernateHelper
 				.getInstance();
@@ -130,6 +150,10 @@ public class PersonaPersistentTest extends junit.framework.TestCase {
 		office6 = new com.sinergia.dcargo.client.shared.Oficina();
 		office7 = new com.sinergia.dcargo.client.shared.Oficina();
 		office8 = new com.sinergia.dcargo.client.shared.Oficina();
+		tipoPago = new com.sinergia.dcargo.client.shared.TipoPago();
+		tipoPago1 = new com.sinergia.dcargo.client.shared.TipoPago();
+		tipoPago2 = new com.sinergia.dcargo.client.shared.TipoPago();
+		tipoPago3 = new com.sinergia.dcargo.client.shared.TipoPago();
 		usuario.setNombreUsuario("900009");
 		usuario.setContrasenia(MD5.md5("EPLACER"));
 		usuario.setFechaExpiracion(new java.util.Date("2/2/2020 00:00:00"));
@@ -193,6 +217,10 @@ public class PersonaPersistentTest extends junit.framework.TestCase {
 		office6.setNombre("CHAPARE");
 		office7.setNombre("TARIJA");
 		office8.setNombre("EL ALTO");
+		tipoPago.setDescripcion("Cancelado");
+		tipoPago1.setDescripcion("En destino");
+		tipoPago2.setDescripcion("CC Origen");
+		tipoPago3.setDescripcion("Origen-Dest");
 		entityManager.persist(usuario);
 		entityManager.persist(user);
 		entityManager.persist(user1);
@@ -210,6 +238,10 @@ public class PersonaPersistentTest extends junit.framework.TestCase {
 		entityManager.persist(office6);
 		entityManager.persist(office7);
 		entityManager.persist(office8);
+		entityManager.persist(tipoPago);
+		entityManager.persist(tipoPago1);
+		entityManager.persist(tipoPago2);
+		entityManager.persist(tipoPago3);
 		user2.setOffice(office6);
 		office6.getUsers().add(user2);
 		user3.setOffice(office4);

@@ -347,6 +347,26 @@
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
+            <variable name="tipoPago">
+              <type class="com.sinergia.dcargo.client.shared.TipoPago"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="tipoPago1">
+              <type class="com.sinergia.dcargo.client.shared.TipoPago"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="tipoPago2">
+              <type class="com.sinergia.dcargo.client.shared.TipoPago"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
+            <variable name="tipoPago3">
+              <type class="com.sinergia.dcargo.client.shared.TipoPago"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
           </variables>
           <operations>
             <operation name="constructor">
@@ -521,8 +541,64 @@
                     <nombre>&quot;EL ALTO&quot;</nombre>
                   </values>
                 </object>
+                <object name="tipoPago">
+                  <type class="com.sinergia.dcargo.client.shared.TipoPago"/>
+                  <values>
+                    <descripcion>&quot;Cancelado&quot;</descripcion>
+                  </values>
+                </object>
+                <object name="tipoPago1">
+                  <type class="com.sinergia.dcargo.client.shared.TipoPago"/>
+                  <values>
+                    <descripcion>&quot;En destino&quot;</descripcion>
+                  </values>
+                </object>
+                <object name="tipoPago2">
+                  <type class="com.sinergia.dcargo.client.shared.TipoPago"/>
+                  <values>
+                    <descripcion>&quot;CC Origen&quot;</descripcion>
+                  </values>
+                </object>
+                <object name="tipoPago3">
+                  <type class="com.sinergia.dcargo.client.shared.TipoPago"/>
+                  <values>
+                    <descripcion>&quot;Origen-Dest&quot;</descripcion>
+                  </values>
+                </object>
                 <objectDiagram name="Objects">
                   <objectSymbol id="1">
+                    <x>1009</x>
+                    <y>341</y>
+                    <object>tipoPago3</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="2">
+                    <x>1013</x>
+                    <y>271</y>
+                    <object>tipoPago2</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="3">
+                    <x>1010</x>
+                    <y>197</y>
+                    <object>tipoPago1</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="4">
+                    <x>1006</x>
+                    <y>114</y>
+                    <object>tipoPago</object>
+                    <showTypes>false</showTypes>
+                    <showObjectName>true</showObjectName>
+                    <attributesVisible>ALL</attributesVisible>
+                  </objectSymbol>
+                  <objectSymbol id="5">
                     <x>562</x>
                     <y>970</y>
                     <object>office8</object>
@@ -530,7 +606,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="2">
+                  <objectSymbol id="6">
                     <x>562</x>
                     <y>826</y>
                     <object>office7</object>
@@ -538,7 +614,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="3">
+                  <objectSymbol id="7">
                     <x>567</x>
                     <y>615</y>
                     <object>office6</object>
@@ -546,7 +622,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="4">
+                  <objectSymbol id="8">
                     <x>564</x>
                     <y>522</y>
                     <object>office5</object>
@@ -554,7 +630,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="5">
+                  <objectSymbol id="9">
                     <x>556</x>
                     <y>445</y>
                     <object>office4</object>
@@ -562,7 +638,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="6">
+                  <objectSymbol id="10">
                     <x>560</x>
                     <y>368</y>
                     <object>office3</object>
@@ -570,7 +646,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="7">
+                  <objectSymbol id="11">
                     <x>554</x>
                     <y>290</y>
                     <object>office2</object>
@@ -578,7 +654,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="8">
+                  <objectSymbol id="12">
                     <x>542</x>
                     <y>117</y>
                     <object>office1</object>
@@ -586,7 +662,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="9">
+                  <objectSymbol id="13">
                     <x>542</x>
                     <y>1137</y>
                     <object>office</object>
@@ -594,7 +670,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="10">
+                  <objectSymbol id="14">
                     <x>10</x>
                     <y>1031</y>
                     <object>user6</object>
@@ -602,7 +678,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="11">
+                  <objectSymbol id="15">
                     <x>13</x>
                     <y>1194</y>
                     <object>user5</object>
@@ -610,7 +686,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="12">
+                  <objectSymbol id="16">
                     <x>12</x>
                     <y>529</y>
                     <object>user4</object>
@@ -618,7 +694,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="13">
+                  <objectSymbol id="17">
                     <x>13</x>
                     <y>693</y>
                     <object>user3</object>
@@ -626,7 +702,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="14">
+                  <objectSymbol id="18">
                     <x>11</x>
                     <y>863</y>
                     <object>user2</object>
@@ -634,7 +710,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="15">
+                  <objectSymbol id="19">
                     <x>10</x>
                     <y>357</y>
                     <object>user1</object>
@@ -642,7 +718,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="16">
+                  <objectSymbol id="20">
                     <x>7</x>
                     <y>190</y>
                     <object>user</object>
@@ -650,7 +726,7 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <objectSymbol id="17">
+                  <objectSymbol id="21">
                     <x>8</x>
                     <y>29</y>
                     <object>usuario</object>
@@ -658,21 +734,21 @@
                     <showObjectName>true</showObjectName>
                     <attributesVisible>ALL</attributesVisible>
                   </objectSymbol>
-                  <link id="18">
+                  <link id="22">
                     <x>568</x>
                     <y>139</y>
                     <association class="com.sinergia.dcargo.client.shared.Oficina" name="users"/>
                     <point>
-                      <connectX symbol="8"/>
-                      <connectY symbol="8"/>
+                      <connectX symbol="12"/>
+                      <connectY symbol="12"/>
                       <x>-50</x>
                       <y>4</y>
                       <atX>0.4965035</atX>
                       <atY>0.5</atY>
                     </point>
                     <point>
-                      <connectX symbol="17"/>
-                      <connectY symbol="17"/>
+                      <connectX symbol="21"/>
+                      <connectY symbol="21"/>
                       <x>0</x>
                       <y>0</y>
                       <atX>0.9744681</atX>
@@ -683,7 +759,7 @@
                       <y>136</y>
                       <w>30</w>
                       <h>17</h>
-                      <connectedSymbol symbol="8"/>
+                      <connectedSymbol symbol="12"/>
                       <text>office</text>
                     </end-1>
                     <end-2>
@@ -691,26 +767,26 @@
                       <y>113</y>
                       <w>27</w>
                       <h>17</h>
-                      <connectedSymbol symbol="17"/>
+                      <connectedSymbol symbol="21"/>
                       <text>users</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
-                  <link id="19">
+                  <link id="23">
                     <x>586</x>
                     <y>141</y>
                     <association class="com.sinergia.dcargo.client.shared.Oficina" name="users"/>
                     <point>
-                      <connectX symbol="8"/>
-                      <connectY symbol="8"/>
+                      <connectX symbol="12"/>
+                      <connectY symbol="12"/>
                       <x>-32</x>
                       <y>6</y>
                       <atX>0.4965035</atX>
                       <atY>0.5</atY>
                     </point>
                     <point>
-                      <connectX symbol="12"/>
-                      <connectY symbol="12"/>
+                      <connectX symbol="16"/>
+                      <connectY symbol="16"/>
                       <x>0</x>
                       <y>0</y>
                       <atX>0.9787234</atX>
@@ -721,7 +797,7 @@
                       <y>153</y>
                       <w>30</w>
                       <h>17</h>
-                      <connectedSymbol symbol="8"/>
+                      <connectedSymbol symbol="12"/>
                       <text>office</text>
                     </end-1>
                     <end-2>
@@ -729,26 +805,26 @@
                       <y>600</y>
                       <w>27</w>
                       <h>17</h>
-                      <connectedSymbol symbol="12"/>
+                      <connectedSymbol symbol="16"/>
                       <text>users</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
-                  <link id="20">
+                  <link id="24">
                     <x>588</x>
                     <y>308</y>
                     <association class="com.sinergia.dcargo.client.shared.Oficina" name="users"/>
                     <point>
-                      <connectX symbol="7"/>
-                      <connectY symbol="7"/>
+                      <connectX symbol="11"/>
+                      <connectY symbol="11"/>
                       <x>-20</x>
                       <y>0</y>
                       <atX>0.4949495</atX>
                       <atY>0.5</atY>
                     </point>
                     <point>
-                      <connectX symbol="16"/>
-                      <connectY symbol="16"/>
+                      <connectX symbol="20"/>
+                      <connectY symbol="20"/>
                       <x>0</x>
                       <y>0</y>
                       <atX>0.9404255</atX>
@@ -759,7 +835,7 @@
                       <y>305</y>
                       <w>30</w>
                       <h>17</h>
-                      <connectedSymbol symbol="7"/>
+                      <connectedSymbol symbol="11"/>
                       <text>office</text>
                     </end-1>
                     <end-2>
@@ -767,26 +843,26 @@
                       <y>281</y>
                       <w>27</w>
                       <h>17</h>
-                      <connectedSymbol symbol="16"/>
+                      <connectedSymbol symbol="20"/>
                       <text>users</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
-                  <link id="21">
+                  <link id="25">
                     <x>572</x>
                     <y>389</y>
                     <association class="com.sinergia.dcargo.client.shared.Oficina" name="users"/>
                     <point>
-                      <connectX symbol="6"/>
-                      <connectY symbol="6"/>
+                      <connectX symbol="10"/>
+                      <connectY symbol="10"/>
                       <x>-40</x>
                       <y>3</y>
                       <atX>0.49473685</atX>
                       <atY>0.5</atY>
                     </point>
                     <point>
-                      <connectX symbol="15"/>
-                      <connectY symbol="15"/>
+                      <connectX symbol="19"/>
+                      <connectY symbol="19"/>
                       <x>0</x>
                       <y>0</y>
                       <atX>0.85106385</atX>
@@ -797,7 +873,7 @@
                       <y>390</y>
                       <w>30</w>
                       <h>17</h>
-                      <connectedSymbol symbol="6"/>
+                      <connectedSymbol symbol="10"/>
                       <text>office</text>
                     </end-1>
                     <end-2>
@@ -805,26 +881,26 @@
                       <y>434</y>
                       <w>27</w>
                       <h>17</h>
-                      <connectedSymbol symbol="15"/>
+                      <connectedSymbol symbol="19"/>
                       <text>users</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
-                  <link id="22">
+                  <link id="26">
                     <x>223</x>
                     <y>776</y>
                     <association class="com.sinergia.dcargo.client.shared.Usuario" name="office"/>
                     <point>
-                      <connectX symbol="13"/>
-                      <connectY symbol="13"/>
+                      <connectX symbol="17"/>
+                      <connectY symbol="17"/>
                       <x>90</x>
                       <y>6</y>
                       <atX>0.49787235</atX>
                       <atY>0.4967742</atY>
                     </point>
                     <point>
-                      <connectX symbol="5"/>
-                      <connectY symbol="5"/>
+                      <connectX symbol="9"/>
+                      <connectY symbol="9"/>
                       <x>0</x>
                       <y>0</y>
                       <atX>0.2542373</atX>
@@ -835,7 +911,7 @@
                       <y>749</y>
                       <w>27</w>
                       <h>17</h>
-                      <connectedSymbol symbol="13"/>
+                      <connectedSymbol symbol="17"/>
                       <text>users</text>
                     </end-1>
                     <end-2>
@@ -843,26 +919,26 @@
                       <y>481</y>
                       <w>30</w>
                       <h>17</h>
-                      <connectedSymbol symbol="5"/>
+                      <connectedSymbol symbol="9"/>
                       <text>office</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
-                  <link id="23">
+                  <link id="27">
                     <x>222</x>
                     <y>964</y>
                     <association class="com.sinergia.dcargo.client.shared.Usuario" name="office"/>
                     <point>
-                      <connectX symbol="14"/>
-                      <connectY symbol="14"/>
+                      <connectX symbol="18"/>
+                      <connectY symbol="18"/>
                       <x>91</x>
                       <y>24</y>
                       <atX>0.49787235</atX>
                       <atY>0.4967742</atY>
                     </point>
                     <point>
-                      <connectX symbol="3"/>
-                      <connectY symbol="3"/>
+                      <connectX symbol="7"/>
+                      <connectY symbol="7"/>
                       <x>0</x>
                       <y>0</y>
                       <atX>0.3539823</atX>
@@ -873,7 +949,7 @@
                       <y>937</y>
                       <w>27</w>
                       <h>17</h>
-                      <connectedSymbol symbol="14"/>
+                      <connectedSymbol symbol="18"/>
                       <text>users</text>
                     </end-1>
                     <end-2>
@@ -881,26 +957,26 @@
                       <y>651</y>
                       <w>30</w>
                       <h>17</h>
-                      <connectedSymbol symbol="3"/>
+                      <connectedSymbol symbol="7"/>
                       <text>office</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
-                  <link id="24">
+                  <link id="28">
                     <x>216</x>
                     <y>1134</y>
                     <association class="com.sinergia.dcargo.client.shared.Usuario" name="office"/>
                     <point>
-                      <connectX symbol="10"/>
-                      <connectY symbol="10"/>
+                      <connectX symbol="14"/>
+                      <connectY symbol="14"/>
                       <x>86</x>
                       <y>26</y>
                       <atX>0.49787235</atX>
                       <atY>0.4967742</atY>
                     </point>
                     <point>
-                      <connectX symbol="1"/>
-                      <connectY symbol="1"/>
+                      <connectX symbol="5"/>
+                      <connectY symbol="5"/>
                       <x>0</x>
                       <y>0</y>
                       <atX>0.1904762</atX>
@@ -911,7 +987,7 @@
                       <y>1119</y>
                       <w>27</w>
                       <h>17</h>
-                      <connectedSymbol symbol="10"/>
+                      <connectedSymbol symbol="14"/>
                       <text>users</text>
                     </end-1>
                     <end-2>
@@ -919,26 +995,26 @@
                       <y>992</y>
                       <w>30</w>
                       <h>17</h>
-                      <connectedSymbol symbol="1"/>
+                      <connectedSymbol symbol="5"/>
                       <text>office</text>
                     </end-2>
                     <style>STRAIGHT</style>
                   </link>
-                  <link id="25">
+                  <link id="29">
                     <x>242</x>
                     <y>1208</y>
                     <association class="com.sinergia.dcargo.client.shared.Usuario" name="office"/>
                     <point>
-                      <connectX symbol="11"/>
-                      <connectY symbol="11"/>
+                      <connectX symbol="15"/>
+                      <connectY symbol="15"/>
                       <x>109</x>
                       <y>-63</y>
                       <atX>0.49787235</atX>
                       <atY>0.4967742</atY>
                     </point>
                     <point>
-                      <connectX symbol="9"/>
-                      <connectY symbol="9"/>
+                      <connectX symbol="13"/>
+                      <connectY symbol="13"/>
                       <x>0</x>
                       <y>0</y>
                       <atX>0.3129771</atX>
@@ -949,7 +1025,7 @@
                       <y>1206</y>
                       <w>27</w>
                       <h>17</h>
-                      <connectedSymbol symbol="11"/>
+                      <connectedSymbol symbol="15"/>
                       <text>users</text>
                     </end-1>
                     <end-2>
@@ -957,7 +1033,7 @@
                       <y>1162</y>
                       <w>30</w>
                       <h>17</h>
-                      <connectedSymbol symbol="9"/>
+                      <connectedSymbol symbol="13"/>
                       <text>office</text>
                     </end-2>
                     <style>STRAIGHT</style>
@@ -1438,6 +1514,11 @@ super.tearDown();
               <access>1</access>
               <inverse class="com.sinergia.dcargo.client.shared.Guia" name="tipoPago"/>
             </variable>
+            <variable name="descripcion">
+              <type class="java.lang.String"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+            </variable>
           </variables>
           <operations>
             <operation name="constructor">
@@ -1553,6 +1634,7 @@ super.tearDown();
             <class class="com.sinergia.dcargo.client.shared.TipoPago"/>
             <attributes autoDisplay="353" accessVisible="true">
               <attribute>id</attribute>
+              <attribute>descripcion</attribute>
             </attributes>
             <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
           </classSymbol>
@@ -2047,7 +2129,7 @@ super.tearDown();
             </point>
             <end-1>
               <x>1033</x>
-              <y>212</y>
+              <y>220</y>
               <w>31</w>
               <h>34</h>
               <connectedSymbol symbol="5"/>
@@ -2056,7 +2138,7 @@ super.tearDown();
             </end-1>
             <end-2>
               <x>1169</x>
-              <y>212</y>
+              <y>220</y>
               <w>56</w>
               <h>34</h>
               <connectedSymbol symbol="2"/>

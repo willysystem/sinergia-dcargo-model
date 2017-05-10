@@ -25,6 +25,11 @@ public class TipoPago implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
+	private String descripcion;
+
+	/**
+	 * @generated
+	 */
 	public TipoPago() {
 	}
 
@@ -48,7 +53,7 @@ public class TipoPago implements java.io.Serializable {
 	 * @generated
 	 */
 	public String toString() {
-		return "TipoPago" + " id=" + id;
+		return "TipoPago" + " id=" + id + " descripcion=" + descripcion;
 	}
 
 	/**
@@ -64,5 +69,19 @@ public class TipoPago implements java.io.Serializable {
 	 */
 	public void setGuia(Guia guia) {
 		this.guia = guia;
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getDescripcion() {
+		return this.descripcion;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 }
