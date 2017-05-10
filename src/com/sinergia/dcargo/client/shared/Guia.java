@@ -19,7 +19,7 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private String nroGuia;
+	private Integer nroGuia;
 
 	/**
 	 * @generated
@@ -34,10 +34,6 @@ public class Guia implements java.io.Serializable {
 	 */
 	private String adjunto;
 
-	/**
-	 * @generated
-	 */
-	private Boolean nulo;
 	/**
 	 * @generated
 	 */
@@ -63,15 +59,15 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private LugarDatos lugarConsignatario;
+	private LugarDato lugarConsignatario;
 	/**
 	 * @generated
 	 */
-	private LugarDatos lugarRemitente;
+	private LugarDato lugarRemitente;
 	/**
 	 * @generated
 	 */
-	private LugarDatos lugarConsignatarioOtro;
+	private LugarDato lugarConsignatarioOtro;
 
 	/**
 	 * @generated
@@ -102,6 +98,21 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
+	private java.util.Date fecha;
+
+	/**
+	 * @generated
+	 */
+	private Double totalGuia;
+
+	/**
+	 * @generated
+	 */
+	private Boolean activo;
+
+	/**
+	 * @generated
+	 */
 	public Guia() {
 	}
 
@@ -111,19 +122,20 @@ public class Guia implements java.io.Serializable {
 	public String toString() {
 		return "Guia" + " id=" + id + " nroGuia=" + nroGuia + " totalPeso="
 				+ totalPeso + " totalCantidad=" + totalCantidad + " adjunto="
-				+ adjunto + " nulo=" + nulo + " nroFactura=" + nroFactura
+				+ adjunto + " activo=" + activo + " nroFactura=" + nroFactura
 				+ " fechaRegistro=" + fechaRegistro + " totalMinimo="
 				+ totalMinimo + " fechaEntrega=" + fechaEntrega + " ciEntrega="
 				+ ciEntrega + " novedadEntrega=" + novedadEntrega
 				+ " resumenContenido=" + resumenContenido + " saldoDestino="
-				+ saldoDestino + " pagoOrigen=" + pagoOrigen;
+				+ saldoDestino + " pagoOrigen=" + pagoOrigen + " fecha="
+				+ fecha + " totalGuia=" + totalGuia;
 	}
 
 	/**
 	 * @generated
 	 */
 	@javax.persistence.Id
-	@javax.persistence.GeneratedValue(strategy=GenerationType.IDENTITY)
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
 	public Long getId() {
 		return this.id;
 	}
@@ -138,14 +150,14 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	public String getNroGuia() {
+	public Integer getNroGuia() {
 		return this.nroGuia;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setNroGuia(String nroGuia) {
+	public void setNroGuia(Integer nroGuia) {
 		this.nroGuia = nroGuia;
 	}
 
@@ -189,20 +201,6 @@ public class Guia implements java.io.Serializable {
 	 */
 	public void setAdjunto(String adjunto) {
 		this.adjunto = adjunto;
-	}
-
-	/**
-	 * @generated
-	 */
-	public Boolean getNulo() {
-		return this.nulo;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setNulo(Boolean nulo) {
-		this.nulo = nulo;
 	}
 
 	/**
@@ -279,14 +277,14 @@ public class Guia implements java.io.Serializable {
 	 * @generated
 	 */
 	@javax.persistence.OneToOne
-	public LugarDatos getLugarConsignatario() {
+	public LugarDato getLugarConsignatario() {
 		return this.lugarConsignatario;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setLugarConsignatario(LugarDatos lugarConsignatario) {
+	public void setLugarConsignatario(LugarDato lugarConsignatario) {
 		this.lugarConsignatario = lugarConsignatario;
 	}
 
@@ -294,14 +292,14 @@ public class Guia implements java.io.Serializable {
 	 * @generated
 	 */
 	@javax.persistence.OneToOne
-	public LugarDatos getLugarRemitente() {
+	public LugarDato getLugarRemitente() {
 		return this.lugarRemitente;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setLugarRemitente(LugarDatos lugarRemitente) {
+	public void setLugarRemitente(LugarDato lugarRemitente) {
 		this.lugarRemitente = lugarRemitente;
 	}
 
@@ -309,14 +307,14 @@ public class Guia implements java.io.Serializable {
 	 * @generated
 	 */
 	@javax.persistence.OneToOne
-	public LugarDatos getLugarConsignatarioOtro() {
+	public LugarDato getLugarConsignatarioOtro() {
 		return this.lugarConsignatarioOtro;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setLugarConsignatarioOtro(LugarDatos lugarConsignatarioOtro) {
+	public void setLugarConsignatarioOtro(LugarDato lugarConsignatarioOtro) {
 		this.lugarConsignatarioOtro = lugarConsignatarioOtro;
 	}
 
@@ -404,5 +402,47 @@ public class Guia implements java.io.Serializable {
 	 */
 	public void setPagoOrigen(Double pagoOrigen) {
 		this.pagoOrigen = pagoOrigen;
+	}
+
+	/**
+	 * @generated
+	 */
+	public java.util.Date getFecha() {
+		return this.fecha;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setFecha(java.util.Date fecha) {
+		this.fecha = fecha;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Double getTotalGuia() {
+		return this.totalGuia;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setTotalGuia(Double totalGuia) {
+		this.totalGuia = totalGuia;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Boolean getActivo() {
+		return this.activo;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setActivo(Boolean activo) {
+		this.activo = activo;
 	}
 }

@@ -7,11 +7,11 @@ import javax.persistence.GenerationType;
  * @generated
  */
 @javax.persistence.Entity
-public class LugarDatos implements java.io.Serializable {
+public class LugarDato implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private static final long serialVersionUID = -581967999L;
+	private static final long serialVersionUID = -1127151822L;
 	/**
 	 * @generated
 	 */
@@ -47,7 +47,7 @@ public class LugarDatos implements java.io.Serializable {
 	 * @generated
 	 */
 	@javax.persistence.Id
-	@javax.persistence.GeneratedValue(strategy=GenerationType.IDENTITY)
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
 	public Long getId() {
 		return this.id;
 	}
@@ -63,7 +63,7 @@ public class LugarDatos implements java.io.Serializable {
 	 * @generated
 	 */
 	public String toString() {
-		return "LugarDatos" + " id=" + id;
+		return "LugarDato" + " id=" + id;
 	}
 
 	/**
@@ -114,12 +114,6 @@ public class LugarDatos implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	public LugarDatos() {
-	}
-
-	/**
-	 * @generated
-	 */
 	@javax.persistence.OneToOne(mappedBy = "lugarConsignatario")
 	public Guia getGuia() {
 		return this.guia;
@@ -160,5 +154,11 @@ public class LugarDatos implements java.io.Serializable {
 	 */
 	public void setGuia2(Guia guia2) {
 		this.guia2 = guia2;
+	}
+
+	/**
+	 * @generated
+	 */
+	public LugarDato() {
 	}
 }

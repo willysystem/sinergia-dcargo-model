@@ -37,7 +37,7 @@ public class TipoPago implements java.io.Serializable {
 	 * @generated
 	 */
 	@javax.persistence.Id
-	@javax.persistence.GeneratedValue(strategy=GenerationType.IDENTITY)
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
 	public Long getId() {
 		return this.id;
 	}

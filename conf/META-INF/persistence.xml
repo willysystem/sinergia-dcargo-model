@@ -9,11 +9,12 @@
 		<class>com.sinergia.dcargo.client.shared.Cliente</class>
 		<class>com.sinergia.dcargo.client.shared.Conocimiento</class>
 		<class>com.sinergia.dcargo.client.shared.Guia</class>
-		<class>com.sinergia.dcargo.client.shared.LugarDatos</class>
+		<class>com.sinergia.dcargo.client.shared.LugarDato</class>
 		<class>com.sinergia.dcargo.client.shared.Oficina</class>
 		<class>com.sinergia.dcargo.client.shared.Persona</class>
 		<class>com.sinergia.dcargo.client.shared.TipoPago</class>		
 		<class>com.sinergia.dcargo.client.shared.Usuario</class>
+		<class>com.sinergia.dcargo.client.shared.Transportista</class>
 		<properties>
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />

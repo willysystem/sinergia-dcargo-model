@@ -41,7 +41,7 @@ public class Cliente implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private java.util.Set<LugarDatos> lugaresDatos = new java.util.HashSet<LugarDatos>();
+	private java.util.Set<LugarDato> lugaresDatos = new java.util.HashSet<LugarDato>();
 
 	/**
 	 * @generated
@@ -58,7 +58,7 @@ public class Cliente implements java.io.Serializable {
 	 * @generated
 	 */
 	@javax.persistence.Id
-	@javax.persistence.GeneratedValue(strategy=GenerationType.IDENTITY)
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
 	public Long getId() {
 		return this.id;
 	}
@@ -153,21 +153,21 @@ public class Cliente implements java.io.Serializable {
 	 * @generated
 	 */
 	@javax.persistence.OneToMany(mappedBy = "cliente")
-	public java.util.Set<LugarDatos> getLugaresDatos() {
+	public java.util.Set<LugarDato> getLugaresDatos() {
 		return this.lugaresDatos;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setLugaresDatos(java.util.Set<LugarDatos> lugaresDatos) {
+	public void setLugaresDatos(java.util.Set<LugarDato> lugaresDatos) {
 		this.lugaresDatos = lugaresDatos;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void addLugaresDatos(LugarDatos lugaresDatos) {
+	public void addLugaresDatos(LugarDato lugaresDatos) {
 		getLugaresDatos().add(lugaresDatos);
 		lugaresDatos.setCliente(this);
 	}
@@ -175,7 +175,7 @@ public class Cliente implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	public void removeLugaresDatos(LugarDatos lugaresDatos) {
+	public void removeLugaresDatos(LugarDato lugaresDatos) {
 		getLugaresDatos().remove(lugaresDatos);
 		lugaresDatos.setCliente(null);
 	}

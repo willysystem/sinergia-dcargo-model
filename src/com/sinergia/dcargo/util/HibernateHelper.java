@@ -119,8 +119,10 @@ public class HibernateHelper {
 //				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Cliente.class);
 //				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Conocimiento.class);
 //				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.TipoPago.class);
-//				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.LugarDatos.class);
+//				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.LugarDato.class);
+//				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Transportista.class);
 //				return config;
+		
 				return null;
 			}
 	
