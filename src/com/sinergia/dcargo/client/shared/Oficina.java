@@ -34,6 +34,15 @@ public class Oficina implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
+	private java.util.Set<Conocimiento> conocimientosOrigen = new java.util.HashSet<Conocimiento>();
+	/**
+	 * @generated
+	 */
+	private java.util.Set<Conocimiento> conocimientosDestino = new java.util.HashSet<Conocimiento>();
+
+	/**
+	 * @generated
+	 */
 	@javax.persistence.Id
 	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
 	public Long getId() {
@@ -134,5 +143,69 @@ public class Oficina implements java.io.Serializable {
 	public void removeLugaresDatos(LugarDato lugaresDatos) {
 		getLugaresDatos().remove(lugaresDatos);
 		lugaresDatos.setOficina(null);
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "oficinaOrigen")
+	public java.util.Set<Conocimiento> getConocimientosOrigen() {
+		return this.conocimientosOrigen;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setConocimientosOrigen(
+			java.util.Set<Conocimiento> conocimientosOrigen) {
+		this.conocimientosOrigen = conocimientosOrigen;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addConocimientosOrigen(Conocimiento conocimientosOrigen) {
+		getConocimientosOrigen().add(conocimientosOrigen);
+		conocimientosOrigen.setOficinaOrigen(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeConocimientosOrigen(Conocimiento conocimientosOrigen) {
+		getConocimientosOrigen().remove(conocimientosOrigen);
+		conocimientosOrigen.setOficinaOrigen(null);
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "oficinaDestino")
+	public java.util.Set<Conocimiento> getConocimientosDestino() {
+		return this.conocimientosDestino;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setConocimientosDestino(
+			java.util.Set<Conocimiento> conocimientosDestino) {
+		this.conocimientosDestino = conocimientosDestino;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addConocimientosDestino(Conocimiento conocimientosDestino) {
+		getConocimientosDestino().add(conocimientosDestino);
+		conocimientosDestino.setOficinaDestino(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeConocimientosDestino(Conocimiento conocimientosDestino) {
+		getConocimientosDestino().remove(conocimientosDestino);
+		conocimientosDestino.setOficinaDestino(null);
 	}
 }

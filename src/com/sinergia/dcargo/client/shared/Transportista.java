@@ -1,7 +1,5 @@
 package com.sinergia.dcargo.client.shared;
 
-import javax.persistence.GenerationType;
-
 
 /**
  * @generated
@@ -70,6 +68,11 @@ public class Transportista implements java.io.Serializable {
 	 * @generated
 	 */
 	private java.util.Set<Conocimiento> conocimientos = new java.util.HashSet<Conocimiento>();
+
+	/**
+	 * @generated
+	 */
+	private java.util.Set<Conocimiento> conocimientosChofer = new java.util.HashSet<Conocimiento>();
 
 	/**
 	 * @generated
@@ -303,4 +306,38 @@ public class Transportista implements java.io.Serializable {
 		getConocimientos().remove(conocimientos);
 		conocimientos.setTransportista(null);
 	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "transportistaChofer")
+	public java.util.Set<Conocimiento> getConocimientosChofer() {
+		return this.conocimientosChofer;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setConocimientosChofer(
+			java.util.Set<Conocimiento> conocimientosChofer) {
+		this.conocimientosChofer = conocimientosChofer;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addConocimientosChofer(Conocimiento conocimientosChofer) {
+		getConocimientosChofer().add(conocimientosChofer);
+		conocimientosChofer.setTransportistaChofer(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeConocimientosChofer(Conocimiento conocimientosChofer) {
+		getConocimientosChofer().remove(conocimientosChofer);
+		conocimientosChofer.setTransportistaChofer(null);
+	}
+
+
 }

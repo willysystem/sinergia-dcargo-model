@@ -33,15 +33,15 @@ public class LugarDato implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private Guia guia;
+	private java.util.Set<Guia> guias = new java.util.HashSet<Guia>();
 	/**
 	 * @generated
 	 */
-	private Guia guia1;
+	private java.util.Set<Guia> guias1 = new java.util.HashSet<Guia>();
 	/**
 	 * @generated
 	 */
-	private Guia guia2;
+	private java.util.Set<Guia> guias2 = new java.util.HashSet<Guia>();
 
 	/**
 	 * @generated
@@ -114,51 +114,99 @@ public class LugarDato implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	@javax.persistence.OneToOne(mappedBy = "lugarConsignatario")
-	public Guia getGuia() {
-		return this.guia;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setGuia(Guia guia) {
-		this.guia = guia;
-	}
-
-	/**
-	 * @generated
-	 */
-	@javax.persistence.OneToOne(mappedBy = "lugarRemitente")
-	public Guia getGuia1() {
-		return this.guia1;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setGuia1(Guia guia1) {
-		this.guia1 = guia1;
-	}
-
-	/**
-	 * @generated
-	 */
-	@javax.persistence.OneToOne(mappedBy = "lugarConsignatarioOtro")
-	public Guia getGuia2() {
-		return this.guia2;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setGuia2(Guia guia2) {
-		this.guia2 = guia2;
-	}
-
-	/**
-	 * @generated
-	 */
 	public LugarDato() {
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "lugarConsignatario")
+	public java.util.Set<Guia> getGuias() {
+		return this.guias;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setGuias(java.util.Set<Guia> guias) {
+		this.guias = guias;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addGuias(Guia guias) {
+		getGuias().add(guias);
+		guias.setLugarConsignatario(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeGuias(Guia guias) {
+		getGuias().remove(guias);
+		guias.setLugarConsignatario(null);
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "lugarRemitente")
+	public java.util.Set<Guia> getGuias1() {
+		return this.guias1;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setGuias1(java.util.Set<Guia> guias1) {
+		this.guias1 = guias1;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addGuias1(Guia guias1) {
+		getGuias1().add(guias1);
+		guias1.setLugarRemitente(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeGuias1(Guia guias1) {
+		getGuias1().remove(guias1);
+		guias1.setLugarRemitente(null);
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "lugarConsignatarioOtro")
+	public java.util.Set<Guia> getGuias2() {
+		return this.guias2;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setGuias2(java.util.Set<Guia> guias2) {
+		this.guias2 = guias2;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addGuias2(Guia guias2) {
+		getGuias2().add(guias2);
+		guias2.setLugarConsignatarioOtro(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeGuias2(Guia guias2) {
+		getGuias2().remove(guias2);
+		guias2.setLugarConsignatarioOtro(null);
 	}
 }

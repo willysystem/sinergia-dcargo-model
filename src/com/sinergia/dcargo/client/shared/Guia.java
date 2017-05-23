@@ -46,7 +46,7 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private Integer totalMinimo;
+	private Double totalMinimo;
 	/**
 	 * @generated
 	 */
@@ -113,6 +113,33 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
+	private String notaEntrega;
+
+	/**
+	 * @generated
+	 */
+	private Integer nro;
+
+	/**
+	 * @generated
+	 */
+	private String origen;
+	/**
+	 * @generated
+	 */
+	private String destino;
+	/**
+	 * @generated
+	 */
+	private String remitente;
+	/**
+	 * @generated
+	 */
+	private String consignatario;
+
+	/**
+	 * @generated
+	 */
 	public Guia() {
 	}
 
@@ -128,7 +155,10 @@ public class Guia implements java.io.Serializable {
 				+ ciEntrega + " novedadEntrega=" + novedadEntrega
 				+ " resumenContenido=" + resumenContenido + " saldoDestino="
 				+ saldoDestino + " pagoOrigen=" + pagoOrigen + " fecha="
-				+ fecha + " totalGuia=" + totalGuia;
+				+ fecha + " totalGuia=" + totalGuia + " notaEntrega="
+				+ notaEntrega + " nro=" + nro + " origen=" + origen
+				+ " destino=" + destino + " remitente=" + remitente
+				+ " consignatario=" + consignatario;
 	}
 
 	/**
@@ -234,14 +264,14 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	public Integer getTotalMinimo() {
+	public Double getTotalMinimo() {
 		return this.totalMinimo;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setTotalMinimo(Integer totalMinimo) {
+	public void setTotalMinimo(Double totalMinimo) {
 		this.totalMinimo = totalMinimo;
 	}
 
@@ -276,7 +306,7 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	@javax.persistence.OneToOne
+	@javax.persistence.ManyToOne
 	public LugarDato getLugarConsignatario() {
 		return this.lugarConsignatario;
 	}
@@ -291,7 +321,7 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	@javax.persistence.OneToOne
+	@javax.persistence.ManyToOne
 	public LugarDato getLugarRemitente() {
 		return this.lugarRemitente;
 	}
@@ -306,7 +336,7 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	@javax.persistence.OneToOne
+	@javax.persistence.ManyToOne
 	public LugarDato getLugarConsignatarioOtro() {
 		return this.lugarConsignatarioOtro;
 	}
@@ -444,5 +474,94 @@ public class Guia implements java.io.Serializable {
 	 */
 	public void setActivo(Boolean activo) {
 		this.activo = activo;
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getNotaEntrega() {
+		return this.notaEntrega;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setNotaEntrega(String notaEntrega) {
+		this.notaEntrega = notaEntrega;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.Transient
+	public Integer getNro() {
+		return this.nro;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setNro(Integer nro) {
+		this.nro = nro;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.Transient
+	public String getOrigen() {
+		return this.origen;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setOrigen(String origen) {
+		this.origen = origen;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.Transient
+	public String getDestino() {
+		return this.destino;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setDestino(String destino) {
+		this.destino = destino;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.Transient
+	public String getRemitente() {
+		return this.remitente;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setRemitente(String remitente) {
+		this.remitente = remitente;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.Transient
+	public String getConsignatario() {
+		return this.consignatario;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setConsignatario(String consignatario) {
+		this.consignatario = consignatario;
 	}
 }

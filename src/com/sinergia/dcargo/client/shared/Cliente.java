@@ -51,6 +51,11 @@ public class Cliente implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
+	private Integer nro;
+
+	/**
+	 * @generated
+	 */
 	public Cliente() {
 	}
 
@@ -90,7 +95,7 @@ public class Cliente implements java.io.Serializable {
 	public String toString() {
 		return "Cliente" + " id=" + id + " nombre=" + nombre + " direccion="
 				+ direccion + " telefono=" + telefono + " nit=" + nit + " ci="
-				+ ci + " codigo=" + codigo;
+				+ ci + " codigo=" + codigo + " nro=" + nro;
 	}
 
 	/**
@@ -192,5 +197,20 @@ public class Cliente implements java.io.Serializable {
 	 */
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.Transient
+	public Integer getNro() {
+		return this.nro;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setNro(Integer nro) {
+		this.nro = nro;
 	}
 }

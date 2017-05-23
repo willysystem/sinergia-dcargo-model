@@ -175,7 +175,7 @@ public class PersonaPersistentTest extends junit.framework.TestCase {
 		user1.setAdministrador(true);
 		user1.setApellidos("PLACER");
 		user1.setNombres("EDDY");
-		user2.setNombreUsuario("900010");
+		user2.setNombreUsuario("900011");
 		user2.setContrasenia(MD5.md5("EPLACER"));
 		user2.setFechaExpiracion(new java.util.Date("2/2/2020 00:00:00"));
 		user2.setActivo(false);

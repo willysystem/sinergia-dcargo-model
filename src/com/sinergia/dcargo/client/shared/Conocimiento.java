@@ -1,6 +1,6 @@
 package com.sinergia.dcargo.client.shared;
 
-import javax.persistence.GenerationType;
+import javax.persistence.TemporalType;
 
 
 /**
@@ -25,7 +25,7 @@ public class Conocimiento implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private String nroConocimiento;
+	private Integer nroConocimiento;
 	/**
 	 * @generated
 	 */
@@ -54,7 +54,60 @@ public class Conocimiento implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
+	private Oficina oficinaOrigen;
+	/**
+	 * @generated
+	 */
+	private Oficina oficinaDestino;
+
+	/**
+	 * @generated
+	 */
+	private Double flete;
+	/**
+	 * @generated
+	 */
+	private Double acuenta;
+	/**
+	 * @generated
+	 */
+	private Double endestino;
+	/**
+	 * @generated
+	 */
+	private Double saldo;
+	/**
+	 * @generated
+	 */
+	private Usuario usuario;
+
+	/**
+	 * @generated
+	 */
+	private java.util.Date fechaRegistro;
+
+	/**
+	 * @generated
+	 */
+	private String adjunto2;
+	/**
+	 * @generated
+	 */
+	private String aclaracion;
+	/**
+	 * @generated
+	 */
+	private String aclaracion2;
+
+	/**
+	 * @generated
+	 */
 	private Transportista transportista;
+
+	/**
+	 * @generated
+	 */
+	private Transportista transportistaChofer;
 
 	/**
 	 * @generated
@@ -85,7 +138,11 @@ public class Conocimiento implements java.io.Serializable {
 		return "Conocimiento" + " id=" + id + " nroConocimiento="
 				+ nroConocimiento + " fecha=" + fecha + " multa=" + multa
 				+ " dias=" + dias + " observacion=" + observacion + " adjunto="
-				+ adjunto + " activo=" + activo;
+				+ adjunto + " activo=" + activo + " flete=" + flete
+				+ " acuenta=" + acuenta + " endestino=" + endestino + " saldo="
+				+ saldo + " fechaRegistro=" + fechaRegistro + " adjunto2="
+				+ adjunto2 + " aclaracion=" + aclaracion + " aclaracion2="
+				+ aclaracion2;
 	}
 
 	/**
@@ -122,14 +179,14 @@ public class Conocimiento implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	public String getNroConocimiento() {
+	public Integer getNroConocimiento() {
 		return this.nroConocimiento;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setNroConocimiento(String nroConocimiento) {
+	public void setNroConocimiento(Integer nroConocimiento) {
 		this.nroConocimiento = nroConocimiento;
 	}
 
@@ -221,6 +278,164 @@ public class Conocimiento implements java.io.Serializable {
 	 * @generated
 	 */
 	@javax.persistence.ManyToOne
+	public Oficina getOficinaOrigen() {
+		return this.oficinaOrigen;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setOficinaOrigen(Oficina oficinaOrigen) {
+		this.oficinaOrigen = oficinaOrigen;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.ManyToOne
+	public Oficina getOficinaDestino() {
+		return this.oficinaDestino;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setOficinaDestino(Oficina oficinaDestino) {
+		this.oficinaDestino = oficinaDestino;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Double getFlete() {
+		return this.flete;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setFlete(Double flete) {
+		this.flete = flete;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Double getAcuenta() {
+		return this.acuenta;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setAcuenta(Double acuenta) {
+		this.acuenta = acuenta;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Double getEndestino() {
+		return this.endestino;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setEndestino(Double endestino) {
+		this.endestino = endestino;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Double getSaldo() {
+		return this.saldo;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.ManyToOne
+	public Usuario getUsuario() {
+		return this.usuario;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.Temporal(value = TemporalType.TIMESTAMP)
+	public java.util.Date getFechaRegistro() {
+		return this.fechaRegistro;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setFechaRegistro(java.util.Date fechaRegistro) {
+		this.fechaRegistro = fechaRegistro;
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getAdjunto2() {
+		return this.adjunto2;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setAdjunto2(String adjunto2) {
+		this.adjunto2 = adjunto2;
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getAclaracion() {
+		return this.aclaracion;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setAclaracion(String aclaracion) {
+		this.aclaracion = aclaracion;
+	}
+
+	/**
+	 * @generated
+	 */
+	public String getAclaracion2() {
+		return this.aclaracion2;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setAclaracion2(String aclaracion2) {
+		this.aclaracion2 = aclaracion2;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.ManyToOne
 	public Transportista getTransportista() {
 		return this.transportista;
 	}
@@ -231,4 +446,20 @@ public class Conocimiento implements java.io.Serializable {
 	public void setTransportista(Transportista transportista) {
 		this.transportista = transportista;
 	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.ManyToOne
+	public Transportista getTransportistaChofer() {
+		return this.transportistaChofer;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setTransportistaChofer(Transportista transportistaChofer) {
+		this.transportistaChofer = transportistaChofer;
+	}
+
 }
