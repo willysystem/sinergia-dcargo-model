@@ -124,7 +124,8 @@ public class HibernateHelper {
 //				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Unidad.class);
 //				config.addAnnotatedClass(com.sinergia.dcargo.client.shared.Precio.class);
 //				return config;
-		return null;
+		
+				return null;
 			}
 	
 	/**

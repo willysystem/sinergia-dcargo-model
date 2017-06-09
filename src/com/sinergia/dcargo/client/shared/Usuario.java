@@ -30,11 +30,6 @@ public class Usuario extends Persona implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private Boolean activo;
-
-	/**
-	 * @generated
-	 */
 	private Boolean administrador;
 
 	/**
@@ -60,10 +55,27 @@ public class Usuario extends Persona implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
+	private Character estado;
+
+	/**
+	 * @generated
+	 */
+	private String descripcionEstado;
+
+	/**
+	 * @generated
+	 */
+	private Boolean activo;
+
+	/**
+	 * @generated
+	 */
 	public String toString() {
 		return "Usuario" + " nombreUsuario=" + nombreUsuario + " contrasenia="
 				+ contrasenia + " fechaExpiracion=" + fechaExpiracion
-				+ " activo=" + activo + " administrador=" + administrador;
+				+ " estado=" + estado + " administrador=" + administrador
+				+ " descripcionEstado=" + descripcionEstado + " activo="
+				+ activo;
 	}
 
 	/**
@@ -113,20 +125,6 @@ public class Usuario extends Persona implements java.io.Serializable {
 	 */
 	public void setFechaExpiracion(java.util.Date fechaExpiracion) {
 		this.fechaExpiracion = fechaExpiracion;
-	}
-
-	/**
-	 * @generated
-	 */
-	public Boolean getActivo() {
-		return this.activo;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setActivo(Boolean activo) {
-		this.activo = activo;
 	}
 
 	/**
@@ -248,5 +246,49 @@ public class Usuario extends Persona implements java.io.Serializable {
 	public void removeGuiasEntrega(Guia guiasEntrega) {
 		getGuiasEntrega().remove(guiasEntrega);
 		guiasEntrega.setUsuarioEntrega(null);
+	}
+
+	/**
+	 * @generated
+	 */
+	public Character getEstado() {
+		return this.estado;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setEstado(Character estado) {
+		this.estado = estado;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.Transient
+	public String getDescripcionEstado() {
+		return this.descripcionEstado;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setDescripcionEstado(String descripcionEstado) {
+		this.descripcionEstado = descripcionEstado;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.Transient
+	public Boolean getActivo() {
+		return this.activo;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setActivo(Boolean activo) {
+		this.activo = activo;
 	}
 }
