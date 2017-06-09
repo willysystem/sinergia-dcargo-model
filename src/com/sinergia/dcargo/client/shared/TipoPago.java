@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
  * @generated
  */
 @javax.persistence.Entity
+@javax.persistence.Table(name = "tipopago")
 public class TipoPago implements java.io.Serializable {
 	/**
 	 * @generated
@@ -20,12 +21,12 @@ public class TipoPago implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private Guia guia;
+	private String descripcion;
 
 	/**
 	 * @generated
 	 */
-	private String descripcion;
+	private java.util.Set<Guia> guias = new java.util.HashSet<Guia>();
 
 	/**
 	 * @generated
@@ -59,21 +60,6 @@ public class TipoPago implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	@javax.persistence.OneToOne(mappedBy = "tipoPago")
-	public Guia getGuia() {
-		return this.guia;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setGuia(Guia guia) {
-		this.guia = guia;
-	}
-
-	/**
-	 * @generated
-	 */
 	public String getDescripcion() {
 		return this.descripcion;
 	}
@@ -83,5 +69,36 @@ public class TipoPago implements java.io.Serializable {
 	 */
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "tipoPago")
+	public java.util.Set<Guia> getGuias() {
+		return this.guias;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setGuias(java.util.Set<Guia> guias) {
+		this.guias = guias;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addGuias(Guia guias) {
+		getGuias().add(guias);
+		guias.setTipoPago(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeGuias(Guia guias) {
+		getGuias().remove(guias);
+		guias.setTipoPago(null);
 	}
 }

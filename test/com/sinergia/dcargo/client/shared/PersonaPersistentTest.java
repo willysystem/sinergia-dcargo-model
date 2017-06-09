@@ -120,6 +120,96 @@ public class PersonaPersistentTest extends junit.framework.TestCase {
 	/**
 	 * @generated
 	 */
+	public Unidad unidad;
+
+	/**
+	 * @generated
+	 */
+	public Unidad unidad1;
+
+	/**
+	 * @generated
+	 */
+	public Unidad unidad2;
+
+	/**
+	 * @generated
+	 */
+	public Unidad unidad3;
+
+	/**
+	 * @generated
+	 */
+	public Unidad unidad4;
+
+	/**
+	 * @generated
+	 */
+	public Unidad unidad5;
+
+	/**
+	 * @generated
+	 */
+	public Unidad unidad6;
+
+	/**
+	 * @generated
+	 */
+	public Unidad unidad7;
+
+	/**
+	 * @generated
+	 */
+	public Precio precio;
+
+	/**
+	 * @generated
+	 */
+	public Precio precio1;
+
+	/**
+	 * @generated
+	 */
+	public Precio precio2;
+
+	/**
+	 * @generated
+	 */
+	public Precio precio3;
+
+	/**
+	 * @generated
+	 */
+	public Precio precio4;
+
+	/**
+	 * @generated
+	 */
+	public Precio precio5;
+
+	/**
+	 * @generated
+	 */
+	public Precio precio6;
+
+	/**
+	 * @generated
+	 */
+	public Precio precio7;
+
+	/**
+	 * @generated
+	 */
+	public Precio precio8;
+
+	/**
+	 * @generated
+	 */
+	public Precio precio9;
+
+	/**
+	 * @generated
+	 */
 	public PersonaPersistentTest() {
 		persistenceHelper = com.sinergia.dcargo.util.HibernateHelper
 				.getInstance();
@@ -154,6 +244,24 @@ public class PersonaPersistentTest extends junit.framework.TestCase {
 		tipoPago1 = new com.sinergia.dcargo.client.shared.TipoPago();
 		tipoPago2 = new com.sinergia.dcargo.client.shared.TipoPago();
 		tipoPago3 = new com.sinergia.dcargo.client.shared.TipoPago();
+		unidad = new com.sinergia.dcargo.client.shared.Unidad();
+		unidad1 = new com.sinergia.dcargo.client.shared.Unidad();
+		unidad2 = new com.sinergia.dcargo.client.shared.Unidad();
+		unidad3 = new com.sinergia.dcargo.client.shared.Unidad();
+		unidad4 = new com.sinergia.dcargo.client.shared.Unidad();
+		unidad5 = new com.sinergia.dcargo.client.shared.Unidad();
+		unidad6 = new com.sinergia.dcargo.client.shared.Unidad();
+		unidad7 = new com.sinergia.dcargo.client.shared.Unidad();
+		precio = new com.sinergia.dcargo.client.shared.Precio();
+		precio1 = new com.sinergia.dcargo.client.shared.Precio();
+		precio2 = new com.sinergia.dcargo.client.shared.Precio();
+		precio3 = new com.sinergia.dcargo.client.shared.Precio();
+		precio4 = new com.sinergia.dcargo.client.shared.Precio();
+		precio5 = new com.sinergia.dcargo.client.shared.Precio();
+		precio6 = new com.sinergia.dcargo.client.shared.Precio();
+		precio7 = new com.sinergia.dcargo.client.shared.Precio();
+		precio8 = new com.sinergia.dcargo.client.shared.Precio();
+		precio9 = new com.sinergia.dcargo.client.shared.Precio();
 		usuario.setNombreUsuario("900009");
 		usuario.setContrasenia(MD5.md5("EPLACER"));
 		usuario.setFechaExpiracion(new java.util.Date("2/2/2020 00:00:00"));
@@ -221,6 +329,34 @@ public class PersonaPersistentTest extends junit.framework.TestCase {
 		tipoPago1.setDescripcion("En destino");
 		tipoPago2.setDescripcion("CC Origen");
 		tipoPago3.setDescripcion("Origen-Dest");
+		unidad.setAbreviatura("Kg.");
+		unidad1.setAbreviatura("Lt.");
+		unidad2.setAbreviatura("Bu.");
+		unidad3.setAbreviatura("Vo");
+		unidad4.setAbreviatura("Va");
+		unidad5.setAbreviatura("m3");
+		unidad6.setAbreviatura("QQ");
+		unidad7.setAbreviatura("Ni");
+		precio.setDescripcion("30 ctv.");
+		precio.setPrecio(0.3);
+		precio1.setDescripcion("40 ctv.");
+		precio1.setPrecio(0.4);
+		precio2.setDescripcion("50 ctv.");
+		precio2.setPrecio(0.5);
+		precio3.setDescripcion("50 m3");
+		precio3.setPrecio(50.0);
+		precio4.setDescripcion("70 m3");
+		precio4.setPrecio(70.0);
+		precio5.setDescripcion("100 m3");
+		precio5.setPrecio(100.0);
+		precio6.setDescripcion("120 m3");
+		precio6.setPrecio(120.0);
+		precio7.setDescripcion("35 ctv");
+		precio7.setPrecio(0.35);
+		precio8.setDescripcion("12 qq");
+		precio8.setPrecio(12.0);
+		precio9.setDescripcion("80 m3");
+		precio9.setPrecio(80.0);
 		entityManager.persist(usuario);
 		entityManager.persist(user);
 		entityManager.persist(user1);
@@ -242,6 +378,24 @@ public class PersonaPersistentTest extends junit.framework.TestCase {
 		entityManager.persist(tipoPago1);
 		entityManager.persist(tipoPago2);
 		entityManager.persist(tipoPago3);
+		entityManager.persist(unidad);
+		entityManager.persist(unidad1);
+		entityManager.persist(unidad2);
+		entityManager.persist(unidad3);
+		entityManager.persist(unidad4);
+		entityManager.persist(unidad5);
+		entityManager.persist(unidad6);
+		entityManager.persist(unidad7);
+		entityManager.persist(precio);
+		entityManager.persist(precio1);
+		entityManager.persist(precio2);
+		entityManager.persist(precio3);
+		entityManager.persist(precio4);
+		entityManager.persist(precio5);
+		entityManager.persist(precio6);
+		entityManager.persist(precio7);
+		entityManager.persist(precio8);
+		entityManager.persist(precio9);
 		user2.setOffice(office6);
 		office6.getUsers().add(user2);
 		user3.setOffice(office4);

@@ -11,6 +11,7 @@ import javax.persistence.Transient;
  */
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 @javax.persistence.Entity
+@javax.persistence.Table(name = "persona")
 public class Persona implements java.io.Serializable {
 	/**
 	 * @generated

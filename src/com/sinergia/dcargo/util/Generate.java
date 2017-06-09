@@ -12,11 +12,13 @@ import org.hibernate.tool.hbm2ddl.SchemaExport;
 import com.sinergia.dcargo.client.shared.Cliente;
 import com.sinergia.dcargo.client.shared.Conocimiento;
 import com.sinergia.dcargo.client.shared.Guia;
-import com.sinergia.dcargo.client.shared.LugarDato;
+import com.sinergia.dcargo.client.shared.Item;
 import com.sinergia.dcargo.client.shared.Oficina;
 import com.sinergia.dcargo.client.shared.Persona;
+import com.sinergia.dcargo.client.shared.Precio;
 import com.sinergia.dcargo.client.shared.TipoPago;
 import com.sinergia.dcargo.client.shared.Transportista;
+import com.sinergia.dcargo.client.shared.Unidad;
 import com.sinergia.dcargo.client.shared.Usuario;
 
 /**
@@ -31,8 +33,8 @@ public class Generate {
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			//conn = DriverManager.getConnection("jdbc:mysql://ec2-54-214-97-192.us-west-2.compute.amazonaws.com:3306/dcargo","root", "Monamis_123!");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dcargo","root", "control123!");
+			conn = DriverManager.getConnection("jdbc:mysql://ec2-34-209-245-202.us-west-2.compute.amazonaws.com:3306/dcargo","root", "Monamis_123!");
+//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dcargo","root", "control123!");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -44,12 +46,14 @@ public class Generate {
 		metadata.addAnnotatedClass(Cliente.class);
 		metadata.addAnnotatedClass(Conocimiento.class);
 		metadata.addAnnotatedClass(Guia.class);
-		metadata.addAnnotatedClass(LugarDato.class);
 		metadata.addAnnotatedClass(Oficina.class);
 		metadata.addAnnotatedClass(Persona.class);
 		metadata.addAnnotatedClass(TipoPago.class);
 		metadata.addAnnotatedClass(Usuario.class);
 		metadata.addAnnotatedClass(Transportista.class);
+		metadata.addAnnotatedClass(Unidad.class);
+		metadata.addAnnotatedClass(Item.class);
+		metadata.addAnnotatedClass(Precio.class);
 		
 		SchemaExport export = new SchemaExport(
 			    (MetadataImplementor) metadata.buildMetadata(),

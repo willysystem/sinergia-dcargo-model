@@ -1,5 +1,6 @@
 package com.sinergia.dcargo.client.shared;
 
+import javax.persistence.CascadeType;
 import javax.persistence.GenerationType;
 
 
@@ -7,6 +8,7 @@ import javax.persistence.GenerationType;
  * @generated
  */
 @javax.persistence.Entity
+@javax.persistence.Table(name = "guia")
 public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
@@ -55,19 +57,6 @@ public class Guia implements java.io.Serializable {
 	 * @generated
 	 */
 	private String ciEntrega;
-
-	/**
-	 * @generated
-	 */
-	private LugarDato lugarConsignatario;
-	/**
-	 * @generated
-	 */
-	private LugarDato lugarRemitente;
-	/**
-	 * @generated
-	 */
-	private LugarDato lugarConsignatarioOtro;
 
 	/**
 	 * @generated
@@ -123,19 +112,35 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private String origen;
+	private Cliente remitente;
 	/**
 	 * @generated
 	 */
-	private String destino;
+	private Cliente consignatario;
+
 	/**
 	 * @generated
 	 */
-	private String remitente;
+	private Usuario usuarioRegistro;
 	/**
 	 * @generated
 	 */
-	private String consignatario;
+	private Usuario usuarioEntrega;
+
+	/**
+	 * @generated
+	 */
+	private Oficina oficinaOrigen;
+
+	/**
+	 * @generated
+	 */
+	private Oficina oficinaDestino;
+
+	/**
+	 * @generated
+	 */
+	private java.util.Set<Item> items = new java.util.HashSet<Item>();
 
 	/**
 	 * @generated
@@ -156,9 +161,7 @@ public class Guia implements java.io.Serializable {
 				+ " resumenContenido=" + resumenContenido + " saldoDestino="
 				+ saldoDestino + " pagoOrigen=" + pagoOrigen + " fecha="
 				+ fecha + " totalGuia=" + totalGuia + " notaEntrega="
-				+ notaEntrega + " nro=" + nro + " origen=" + origen
-				+ " destino=" + destino + " remitente=" + remitente
-				+ " consignatario=" + consignatario;
+				+ notaEntrega + " nro=" + nro;
 	}
 
 	/**
@@ -307,51 +310,6 @@ public class Guia implements java.io.Serializable {
 	 * @generated
 	 */
 	@javax.persistence.ManyToOne
-	public LugarDato getLugarConsignatario() {
-		return this.lugarConsignatario;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setLugarConsignatario(LugarDato lugarConsignatario) {
-		this.lugarConsignatario = lugarConsignatario;
-	}
-
-	/**
-	 * @generated
-	 */
-	@javax.persistence.ManyToOne
-	public LugarDato getLugarRemitente() {
-		return this.lugarRemitente;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setLugarRemitente(LugarDato lugarRemitente) {
-		this.lugarRemitente = lugarRemitente;
-	}
-
-	/**
-	 * @generated
-	 */
-	@javax.persistence.ManyToOne
-	public LugarDato getLugarConsignatarioOtro() {
-		return this.lugarConsignatarioOtro;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setLugarConsignatarioOtro(LugarDato lugarConsignatarioOtro) {
-		this.lugarConsignatarioOtro = lugarConsignatarioOtro;
-	}
-
-	/**
-	 * @generated
-	 */
-	@javax.persistence.ManyToOne
 	public Conocimiento getConocimiento() {
 		return this.conocimiento;
 	}
@@ -366,7 +324,7 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	@javax.persistence.OneToOne
+	@javax.persistence.ManyToOne
 	public TipoPago getTipoPago() {
 		return this.tipoPago;
 	}
@@ -508,60 +466,121 @@ public class Guia implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	@javax.persistence.Transient
-	public String getOrigen() {
-		return this.origen;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setOrigen(String origen) {
-		this.origen = origen;
-	}
-
-	/**
-	 * @generated
-	 */
-	@javax.persistence.Transient
-	public String getDestino() {
-		return this.destino;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setDestino(String destino) {
-		this.destino = destino;
-	}
-
-	/**
-	 * @generated
-	 */
-	@javax.persistence.Transient
-	public String getRemitente() {
+	@javax.persistence.ManyToOne
+	public Cliente getRemitente() {
 		return this.remitente;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setRemitente(String remitente) {
+	public void setRemitente(Cliente remitente) {
 		this.remitente = remitente;
 	}
 
 	/**
 	 * @generated
 	 */
-	@javax.persistence.Transient
-	public String getConsignatario() {
+	@javax.persistence.ManyToOne
+	public Cliente getConsignatario() {
 		return this.consignatario;
 	}
 
 	/**
 	 * @generated
 	 */
-	public void setConsignatario(String consignatario) {
+	public void setConsignatario(Cliente consignatario) {
 		this.consignatario = consignatario;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.ManyToOne
+	public Usuario getUsuarioRegistro() {
+		return this.usuarioRegistro;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setUsuarioRegistro(Usuario usuarioRegistro) {
+		this.usuarioRegistro = usuarioRegistro;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.ManyToOne
+	public Usuario getUsuarioEntrega() {
+		return this.usuarioEntrega;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setUsuarioEntrega(Usuario usuarioEntrega) {
+		this.usuarioEntrega = usuarioEntrega;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.ManyToOne
+	public Oficina getOficinaOrigen() {
+		return this.oficinaOrigen;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setOficinaOrigen(Oficina oficinaOrigen) {
+		this.oficinaOrigen = oficinaOrigen;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.ManyToOne
+	public Oficina getOficinaDestino() {
+		return this.oficinaDestino;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setOficinaDestino(Oficina oficinaDestino) {
+		this.oficinaDestino = oficinaDestino;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "guia")
+	public java.util.Set<Item> getItems() {
+		return this.items;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setItems(java.util.Set<Item> items) {
+		this.items = items;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addItems(Item items) {
+		getItems().add(items);
+		items.setGuia(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeItems(Item items) {
+		getItems().remove(items);
+		items.setGuia(null);
 	}
 }

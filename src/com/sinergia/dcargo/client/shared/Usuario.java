@@ -5,6 +5,7 @@ package com.sinergia.dcargo.client.shared;
  * @generated
  */
 @javax.persistence.Entity
+@javax.persistence.Table(name = "usuario")
 public class Usuario extends Persona implements java.io.Serializable {
 	/**
 	 * @generated
@@ -44,12 +45,17 @@ public class Usuario extends Persona implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private java.util.Set<LugarDato> lugaresDatos = new java.util.HashSet<LugarDato>();
+	private java.util.Set<Conocimiento> conocimientos = new java.util.HashSet<Conocimiento>();
 
 	/**
 	 * @generated
 	 */
-	private java.util.Set<Conocimiento> conocimientos = new java.util.HashSet<Conocimiento>();
+	private java.util.Set<Guia> guiasRegistro = new java.util.HashSet<Guia>();
+
+	/**
+	 * @generated
+	 */
+	private java.util.Set<Guia> guiasEntrega = new java.util.HashSet<Guia>();
 
 	/**
 	 * @generated
@@ -155,37 +161,6 @@ public class Usuario extends Persona implements java.io.Serializable {
 	 * @generated
 	 */
 	@javax.persistence.OneToMany(mappedBy = "usuario")
-	public java.util.Set<LugarDato> getLugaresDatos() {
-		return this.lugaresDatos;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setLugaresDatos(java.util.Set<LugarDato> lugaresDatos) {
-		this.lugaresDatos = lugaresDatos;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void addLugaresDatos(LugarDato lugaresDatos) {
-		getLugaresDatos().add(lugaresDatos);
-		lugaresDatos.setUsuario(this);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void removeLugaresDatos(LugarDato lugaresDatos) {
-		getLugaresDatos().remove(lugaresDatos);
-		lugaresDatos.setUsuario(null);
-	}
-
-	/**
-	 * @generated
-	 */
-	@javax.persistence.OneToMany(mappedBy = "usuario")
 	public java.util.Set<Conocimiento> getConocimientos() {
 		return this.conocimientos;
 	}
@@ -211,5 +186,67 @@ public class Usuario extends Persona implements java.io.Serializable {
 	public void removeConocimientos(Conocimiento conocimientos) {
 		getConocimientos().remove(conocimientos);
 		conocimientos.setUsuario(null);
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "usuarioRegistro")
+	public java.util.Set<Guia> getGuiasRegistro() {
+		return this.guiasRegistro;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setGuiasRegistro(java.util.Set<Guia> guiasRegistro) {
+		this.guiasRegistro = guiasRegistro;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addGuiasRegistro(Guia guiasRegistro) {
+		getGuiasRegistro().add(guiasRegistro);
+		guiasRegistro.setUsuarioRegistro(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeGuiasRegistro(Guia guiasRegistro) {
+		getGuiasRegistro().remove(guiasRegistro);
+		guiasRegistro.setUsuarioRegistro(null);
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "usuarioEntrega")
+	public java.util.Set<Guia> getGuiasEntrega() {
+		return this.guiasEntrega;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setGuiasEntrega(java.util.Set<Guia> guiasEntrega) {
+		this.guiasEntrega = guiasEntrega;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addGuiasEntrega(Guia guiasEntrega) {
+		getGuiasEntrega().add(guiasEntrega);
+		guiasEntrega.setUsuarioEntrega(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeGuiasEntrega(Guia guiasEntrega) {
+		getGuiasEntrega().remove(guiasEntrega);
+		guiasEntrega.setUsuarioEntrega(null);
 	}
 }

@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
  * @generated
  */
 @javax.persistence.Entity
+@javax.persistence.Table(name = "oficina")
 public class Oficina implements java.io.Serializable {
 	/**
 	 * @generated
@@ -29,16 +30,21 @@ public class Oficina implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private java.util.Set<LugarDato> lugaresDatos = new java.util.HashSet<LugarDato>();
-
-	/**
-	 * @generated
-	 */
 	private java.util.Set<Conocimiento> conocimientosOrigen = new java.util.HashSet<Conocimiento>();
 	/**
 	 * @generated
 	 */
 	private java.util.Set<Conocimiento> conocimientosDestino = new java.util.HashSet<Conocimiento>();
+
+	/**
+	 * @generated
+	 */
+	private java.util.Set<Guia> guiasOrigen = new java.util.HashSet<Guia>();
+
+	/**
+	 * @generated
+	 */
+	private java.util.Set<Guia> guiasDestino = new java.util.HashSet<Guia>();
 
 	/**
 	 * @generated
@@ -117,37 +123,6 @@ public class Oficina implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	@javax.persistence.OneToMany(mappedBy = "oficina")
-	public java.util.Set<LugarDato> getLugaresDatos() {
-		return this.lugaresDatos;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setLugaresDatos(java.util.Set<LugarDato> lugaresDatos) {
-		this.lugaresDatos = lugaresDatos;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void addLugaresDatos(LugarDato lugaresDatos) {
-		getLugaresDatos().add(lugaresDatos);
-		lugaresDatos.setOficina(this);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void removeLugaresDatos(LugarDato lugaresDatos) {
-		getLugaresDatos().remove(lugaresDatos);
-		lugaresDatos.setOficina(null);
-	}
-
-	/**
-	 * @generated
-	 */
 	@javax.persistence.OneToMany(mappedBy = "oficinaOrigen")
 	public java.util.Set<Conocimiento> getConocimientosOrigen() {
 		return this.conocimientosOrigen;
@@ -158,8 +133,8 @@ public class Oficina implements java.io.Serializable {
 	 */
 	public void setConocimientosOrigen(
 			java.util.Set<Conocimiento> conocimientosOrigen) {
-		this.conocimientosOrigen = conocimientosOrigen;
-	}
+				this.conocimientosOrigen = conocimientosOrigen;
+			}
 
 	/**
 	 * @generated
@@ -190,8 +165,8 @@ public class Oficina implements java.io.Serializable {
 	 */
 	public void setConocimientosDestino(
 			java.util.Set<Conocimiento> conocimientosDestino) {
-		this.conocimientosDestino = conocimientosDestino;
-	}
+				this.conocimientosDestino = conocimientosDestino;
+			}
 
 	/**
 	 * @generated
@@ -207,5 +182,67 @@ public class Oficina implements java.io.Serializable {
 	public void removeConocimientosDestino(Conocimiento conocimientosDestino) {
 		getConocimientosDestino().remove(conocimientosDestino);
 		conocimientosDestino.setOficinaDestino(null);
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "oficinaOrigen")
+	public java.util.Set<Guia> getGuiasOrigen() {
+		return this.guiasOrigen;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setGuiasOrigen(java.util.Set<Guia> guiasOrigen) {
+		this.guiasOrigen = guiasOrigen;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addGuiasOrigen(Guia guiasOrigen) {
+		getGuiasOrigen().add(guiasOrigen);
+		guiasOrigen.setOficinaOrigen(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeGuiasOrigen(Guia guiasOrigen) {
+		getGuiasOrigen().remove(guiasOrigen);
+		guiasOrigen.setOficinaOrigen(null);
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "oficinaDestino")
+	public java.util.Set<Guia> getGuiasDestino() {
+		return this.guiasDestino;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setGuiasDestino(java.util.Set<Guia> guiasDestino) {
+		this.guiasDestino = guiasDestino;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addGuiasDestino(Guia guiasDestino) {
+		getGuiasDestino().add(guiasDestino);
+		guiasDestino.setOficinaDestino(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeGuiasDestino(Guia guiasDestino) {
+		getGuiasDestino().remove(guiasDestino);
+		guiasDestino.setOficinaDestino(null);
 	}
 }

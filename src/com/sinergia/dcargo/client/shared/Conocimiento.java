@@ -7,6 +7,7 @@ import javax.persistence.TemporalType;
  * @generated
  */
 @javax.persistence.Entity
+@javax.persistence.Table(name = "conocimiento")
 public class Conocimiento implements java.io.Serializable {
 	/**
 	 * @generated

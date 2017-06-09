@@ -15,6 +15,9 @@
 		<class>com.sinergia.dcargo.client.shared.TipoPago</class>		
 		<class>com.sinergia.dcargo.client.shared.Usuario</class>
 		<class>com.sinergia.dcargo.client.shared.Transportista</class>
+		<class>com.sinergia.dcargo.client.shared.Unidad</class>
+		<class>com.sinergia.dcargo.client.shared.Item</class>
+		<class>com.sinergia.dcargo.client.shared.Precio</class>
 		<properties>
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />

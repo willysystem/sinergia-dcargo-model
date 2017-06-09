@@ -5,6 +5,7 @@ package com.sinergia.dcargo.client.shared;
  * @generated
  */
 @javax.persistence.Entity
+@javax.persistence.Table(name = "transportista")
 public class Transportista implements java.io.Serializable {
 	/**
 	 * @generated
@@ -320,8 +321,8 @@ public class Transportista implements java.io.Serializable {
 	 */
 	public void setConocimientosChofer(
 			java.util.Set<Conocimiento> conocimientosChofer) {
-		this.conocimientosChofer = conocimientosChofer;
-	}
+				this.conocimientosChofer = conocimientosChofer;
+			}
 
 	/**
 	 * @generated

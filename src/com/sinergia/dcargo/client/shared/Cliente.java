@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
  * @generated
  */
 @javax.persistence.Entity
+@javax.persistence.Table(name = "cliente")
 public class Cliente implements java.io.Serializable {
 	/**
 	 * @generated
@@ -41,17 +42,21 @@ public class Cliente implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	private java.util.Set<LugarDato> lugaresDatos = new java.util.HashSet<LugarDato>();
-
-	/**
-	 * @generated
-	 */
 	private Integer codigo;
 
 	/**
 	 * @generated
 	 */
 	private Integer nro;
+
+	/**
+	 * @generated
+	 */
+	private java.util.Set<Guia> guiasRemitente = new java.util.HashSet<Guia>();
+	/**
+	 * @generated
+	 */
+	private java.util.Set<Guia> guiasConsignatario = new java.util.HashSet<Guia>();
 
 	/**
 	 * @generated
@@ -157,37 +162,6 @@ public class Cliente implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
-	@javax.persistence.OneToMany(mappedBy = "cliente")
-	public java.util.Set<LugarDato> getLugaresDatos() {
-		return this.lugaresDatos;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setLugaresDatos(java.util.Set<LugarDato> lugaresDatos) {
-		this.lugaresDatos = lugaresDatos;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void addLugaresDatos(LugarDato lugaresDatos) {
-		getLugaresDatos().add(lugaresDatos);
-		lugaresDatos.setCliente(this);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void removeLugaresDatos(LugarDato lugaresDatos) {
-		getLugaresDatos().remove(lugaresDatos);
-		lugaresDatos.setCliente(null);
-	}
-
-	/**
-	 * @generated
-	 */
 	public Integer getCodigo() {
 		return this.codigo;
 	}
@@ -212,5 +186,67 @@ public class Cliente implements java.io.Serializable {
 	 */
 	public void setNro(Integer nro) {
 		this.nro = nro;
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "remitente")
+	public java.util.Set<Guia> getGuiasRemitente() {
+		return this.guiasRemitente;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setGuiasRemitente(java.util.Set<Guia> guiasRemitente) {
+		this.guiasRemitente = guiasRemitente;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addGuiasRemitente(Guia guiasRemitente) {
+		getGuiasRemitente().add(guiasRemitente);
+		guiasRemitente.setRemitente(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeGuiasRemitente(Guia guiasRemitente) {
+		getGuiasRemitente().remove(guiasRemitente);
+		guiasRemitente.setRemitente(null);
+	}
+
+	/**
+	 * @generated
+	 */
+	@javax.persistence.OneToMany(mappedBy = "consignatario")
+	public java.util.Set<Guia> getGuiasConsignatario() {
+		return this.guiasConsignatario;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void setGuiasConsignatario(java.util.Set<Guia> guiasConsignatario) {
+		this.guiasConsignatario = guiasConsignatario;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void addGuiasConsignatario(Guia guiasConsignatario) {
+		getGuiasConsignatario().add(guiasConsignatario);
+		guiasConsignatario.setConsignatario(this);
+	}
+
+	/**
+	 * @generated
+	 */
+	public void removeGuiasConsignatario(Guia guiasConsignatario) {
+		getGuiasConsignatario().remove(guiasConsignatario);
+		guiasConsignatario.setConsignatario(null);
 	}
 }
