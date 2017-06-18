@@ -15,6 +15,7 @@ public class Usuario extends Persona implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
+	@javax.persistence.ManyToOne
 	private Oficina office;
 
 	/**
@@ -40,16 +41,19 @@ public class Usuario extends Persona implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
+	@javax.persistence.OneToMany(mappedBy = "usuario")
 	private java.util.Set<Conocimiento> conocimientos = new java.util.HashSet<Conocimiento>();
 
 	/**
 	 * @generated
 	 */
+	@javax.persistence.OneToMany(mappedBy = "usuarioRegistro")
 	private java.util.Set<Guia> guiasRegistro = new java.util.HashSet<Guia>();
 
 	/**
 	 * @generated
 	 */
+	@javax.persistence.OneToMany(mappedBy = "usuarioEntrega")
 	private java.util.Set<Guia> guiasEntrega = new java.util.HashSet<Guia>();
 
 	/**
@@ -60,11 +64,13 @@ public class Usuario extends Persona implements java.io.Serializable {
 	/**
 	 * @generated
 	 */
+	@javax.persistence.Transient
 	private String descripcionEstado;
 
 	/**
 	 * @generated
 	 */
+	@javax.persistence.Transient
 	private Boolean activo;
 
 	/**

@@ -33,8 +33,8 @@ public class Generate {
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://ec2-34-209-245-202.us-west-2.compute.amazonaws.com:3306/dcargo","root", "Monamis_123!");
-//			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dcargo","root", "control123!");
+//			conn = DriverManager.getConnection("jdbc:mysql://ec2-34-209-245-202.us-west-2.compute.amazonaws.com:3306/dcargo","root", "Monamis_123!");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dcargo","root", "control123!");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
