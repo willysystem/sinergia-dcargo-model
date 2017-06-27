@@ -246,9 +246,24 @@
               <generatedName>Persona</generatedName>
               <method>
                 <statements>
-                  <javaCode></javaCode>
+                  <javaCode>initObjects();
+</javaCode>
                 </statements>
               </method>
+            </operation>
+            <operation name="initObjects">
+              <type basicType="void"/>
+              <multiplicity>0</multiplicity>
+              <access>2</access>
+              <generatedName>initObjects</generatedName>
+              <objects>
+                <objectDiagram name="Objects">
+                  <width>1400</width>
+                  <height>1000</height>
+                  <lineStyle>STRAIGHT</lineStyle>
+                  <attributeTypesVisible>true</attributeTypesVisible>
+                </objectDiagram>
+              </objects>
             </operation>
           </operations>
           <generatedFiles>
@@ -2107,12 +2122,12 @@ super.tearDown();
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
-            <variable name="endestino">
+            <variable name="pagoOrigen">
               <type class="java.lang.Double"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
-            <variable name="saldo">
+            <variable name="pagoDestino">
               <type class="java.lang.Double"/>
               <multiplicity>0..1</multiplicity>
               <access>1</access>
@@ -2150,17 +2165,6 @@ super.tearDown();
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
-            <variable name="transportistaPropietario">
-              <type class="com.sinergia.dcargo.client.shared.Transportista"/>
-              <multiplicity>0..1</multiplicity>
-              <access>1</access>
-              <inverse class="com.sinergia.dcargo.client.shared.Transportista" name="conocimientosPropietario"/>
-            </variable>
-            <variable name="transportistaConductor">
-              <type class="com.sinergia.dcargo.client.shared.Transportista"/>
-              <multiplicity>0..1</multiplicity>
-              <access>1</access>
-            </variable>
             <variable name="nro">
               <type class="java.lang.Integer"/>
               <multiplicity>0..1</multiplicity>
@@ -2192,6 +2196,18 @@ super.tearDown();
               <tags>
                 <tag name="@Transient"/>
               </tags>
+            </variable>
+            <variable name="transportistaPropietario">
+              <type class="com.sinergia.dcargo.client.shared.Transportista"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <inverse class="com.sinergia.dcargo.client.shared.Transportista" name="conocimientosPropietario"/>
+            </variable>
+            <variable name="transportistaConductor">
+              <type class="com.sinergia.dcargo.client.shared.Transportista"/>
+              <multiplicity>0..1</multiplicity>
+              <access>1</access>
+              <inverse class="com.sinergia.dcargo.client.shared.Transportista" name="conocimientosConductor"/>
             </variable>
           </variables>
           <operations>
@@ -2378,13 +2394,6 @@ super.tearDown();
               <multiplicity>0..1</multiplicity>
               <access>1</access>
             </variable>
-            <variable name="conocimientosPropietario">
-              <type class="com.sinergia.dcargo.client.shared.Conocimiento"/>
-              <multiplicity>*</multiplicity>
-              <access>1</access>
-              <value>new com.sinergia.dcargo.client.shared.Conocimiento()</value>
-              <inverse class="com.sinergia.dcargo.client.shared.Conocimiento" name="transportistaPropietario"/>
-            </variable>
             <variable name="estado">
               <type class="java.lang.Character"/>
               <multiplicity>0..1</multiplicity>
@@ -2405,6 +2414,20 @@ super.tearDown();
               <tags>
                 <tag name="@Transient"/>
               </tags>
+            </variable>
+            <variable name="conocimientosPropietario">
+              <type class="com.sinergia.dcargo.client.shared.Conocimiento"/>
+              <multiplicity>*</multiplicity>
+              <access>1</access>
+              <value>new com.sinergia.dcargo.client.shared.Conocimiento()</value>
+              <inverse class="com.sinergia.dcargo.client.shared.Conocimiento" name="transportistaPropietario"/>
+            </variable>
+            <variable name="conocimientosConductor">
+              <type class="com.sinergia.dcargo.client.shared.Conocimiento"/>
+              <multiplicity>*</multiplicity>
+              <access>1</access>
+              <value>new com.sinergia.dcargo.client.shared.Conocimiento()</value>
+              <inverse class="com.sinergia.dcargo.client.shared.Conocimiento" name="transportistaConductor"/>
             </variable>
           </variables>
           <operations>
@@ -2717,50 +2740,50 @@ super.tearDown();
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <tagSymbol id="3">
-            <x>1061</x>
-            <y>853</y>
+            <x>1071</x>
+            <y>876</y>
             <connectedTo symbol="37"/>
             <tag class="com.sinergia.dcargo.client.shared.Conocimiento" variable="fechaFin" id="@Transient"/>
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <tagSymbol id="4">
-            <x>1061</x>
-            <y>827</y>
+            <x>1071</x>
+            <y>850</y>
             <connectedTo symbol="37"/>
             <tag class="com.sinergia.dcargo.client.shared.Conocimiento" variable="fechaIni" id="@Transient"/>
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <tagSymbol id="5">
-            <x>1061</x>
-            <y>801</y>
+            <x>1071</x>
+            <y>824</y>
             <connectedTo symbol="37"/>
             <tag class="com.sinergia.dcargo.client.shared.Conocimiento" variable="estadoDescripcion" id="@Transient"/>
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <tagSymbol id="6">
-            <x>1547</x>
-            <y>535</y>
+            <x>1627</x>
+            <y>534</y>
             <connectedTo symbol="33"/>
             <tag class="com.sinergia.dcargo.client.shared.Transportista" variable="brevetCi" id="@Column"/>
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <tagSymbol id="7">
-            <x>1512</x>
-            <y>731</y>
+            <x>1586</x>
+            <y>783</y>
             <connectedTo symbol="33"/>
             <tag class="com.sinergia.dcargo.client.shared.Transportista" variable="nro" id="@Transient"/>
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <tagSymbol id="8">
-            <x>1062</x>
-            <y>779</y>
+            <x>1072</x>
+            <y>802</y>
             <connectedTo symbol="37"/>
             <tag class="com.sinergia.dcargo.client.shared.Conocimiento" variable="nro" id="@Transient"/>
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <tagSymbol id="9">
-            <x>1513</x>
-            <y>683</y>
+            <x>1587</x>
+            <y>735</y>
             <connectedTo symbol="33"/>
             <tag class="com.sinergia.dcargo.client.shared.Transportista" variable="estadoDescripcion" id="@Transient"/>
             <showNotSet>true</showNotSet>
@@ -2897,15 +2920,15 @@ super.tearDown();
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <tagSymbol id="26">
-            <x>1072</x>
-            <y>664</y>
+            <x>1167</x>
+            <y>752</y>
             <connectedTo symbol="37"/>
             <tag class="com.sinergia.dcargo.client.shared.Conocimiento" variable="fechaRegistro" id="@Temporal"/>
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <tagSymbol id="27">
-            <x>1071</x>
-            <y>525</y>
+            <x>1082</x>
+            <y>534</y>
             <connectedTo symbol="37"/>
             <tag class="com.sinergia.dcargo.client.shared.Conocimiento" variable="id" id="@GeneratedValue"/>
             <showNotSet>true</showNotSet>
@@ -2925,15 +2948,15 @@ super.tearDown();
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <tagSymbol id="30">
-            <x>668</x>
-            <y>634</y>
+            <x>664</x>
+            <y>550</y>
             <connectedTo symbol="43"/>
             <tag class="com.sinergia.dcargo.client.shared.Oficina" variable="id" id="@GeneratedValue"/>
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <tagSymbol id="31">
-            <x>1551</x>
-            <y>477</y>
+            <x>1612</x>
+            <y>489</y>
             <connectedTo symbol="33"/>
             <tag class="com.sinergia.dcargo.client.shared.Transportista" variable="id" id="@GeneratedValue"/>
             <showNotSet>true</showNotSet>
@@ -2946,8 +2969,8 @@ super.tearDown();
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <classSymbol id="33">
-            <x>1344</x>
-            <y>433</y>
+            <x>1418</x>
+            <y>485</y>
             <class class="com.sinergia.dcargo.client.shared.Transportista"/>
             <attributes autoDisplay="353" accessVisible="true">
               <attribute>id</attribute>
@@ -2970,8 +2993,8 @@ super.tearDown();
             <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
           </classSymbol>
           <tagSymbol id="34">
-            <x>1530</x>
-            <y>375</y>
+            <x>1402</x>
+            <y>426</y>
             <connectedTo symbol="33"/>
             <tag class="com.sinergia.dcargo.client.shared.Transportista" id="@Table"/>
             <showNotSet>true</showNotSet>
@@ -2994,8 +3017,8 @@ super.tearDown();
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <classSymbol id="37">
-            <x>890</x>
-            <y>494</y>
+            <x>900</x>
+            <y>517</y>
             <class class="com.sinergia.dcargo.client.shared.Conocimiento"/>
             <attributes autoDisplay="353" accessVisible="true">
               <attribute>id</attribute>
@@ -3008,8 +3031,8 @@ super.tearDown();
               <attribute>estado</attribute>
               <attribute>flete</attribute>
               <attribute>acuenta</attribute>
-              <attribute>endestino</attribute>
-              <attribute>saldo</attribute>
+              <attribute>pagoOrigen</attribute>
+              <attribute>pagoDestino</attribute>
               <attribute>fechaRegistro</attribute>
               <attribute>adjunto2</attribute>
               <attribute>aclaracion</attribute>
@@ -3022,8 +3045,8 @@ super.tearDown();
             <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
           </classSymbol>
           <tagSymbol id="38">
-            <x>1051</x>
-            <y>456</y>
+            <x>1137</x>
+            <y>645</y>
             <connectedTo symbol="37"/>
             <tag class="com.sinergia.dcargo.client.shared.Conocimiento" id="@Table"/>
             <showNotSet>true</showNotSet>
@@ -3090,8 +3113,8 @@ super.tearDown();
             <showNotSet>true</showNotSet>
           </tagSymbol>
           <classSymbol id="43">
-            <x>505</x>
-            <y>502</y>
+            <x>473</x>
+            <y>519</y>
             <class class="com.sinergia.dcargo.client.shared.Oficina"/>
             <attributes autoDisplay="353" accessVisible="true">
               <attribute>id</attribute>
@@ -3100,8 +3123,8 @@ super.tearDown();
             <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
           </classSymbol>
           <tagSymbol id="44">
-            <x>321</x>
-            <y>517</y>
+            <x>289</x>
+            <y>534</y>
             <connectedTo symbol="43"/>
             <tag class="com.sinergia.dcargo.client.shared.Oficina" id="@Table"/>
             <showNotSet>true</showNotSet>
@@ -3149,7 +3172,9 @@ super.tearDown();
               <attribute>nombres</attribute>
               <attribute>nro</attribute>
             </attributes>
-            <operations autoDisplay="37" accessVisible="true" parametersVisible="true"/>
+            <operations autoDisplay="37" accessVisible="true" parametersVisible="true">
+              <operation>initObjects()</operation>
+            </operations>
           </classSymbol>
           <tagSymbol id="49">
             <x>24</x>
@@ -3179,12 +3204,12 @@ super.tearDown();
             </point>
             <end-1>
               <x>382</x>
-              <y>260</y>
+              <y>262</y>
               <connectedSymbol symbol="45"/>
             </end-1>
             <end-2>
-              <x>241</x>
-              <y>306</y>
+              <x>248</x>
+              <y>310</y>
               <connectedSymbol symbol="48"/>
               <symbolType>1</symbolType>
               <symbolLength>12</symbolLength>
@@ -3214,7 +3239,7 @@ super.tearDown();
               <atY>0.3974359</atY>
             </point>
             <end-1>
-              <x>508</x>
+              <x>476</x>
               <y>364</y>
               <w>35</w>
               <h>34</h>
@@ -3223,8 +3248,8 @@ super.tearDown();
               <text>*</text>
             </end-1>
             <end-2>
-              <x>508</x>
-              <y>502</y>
+              <x>476</x>
+              <y>519</y>
               <w>38</w>
               <h>34</h>
               <connectedSymbol symbol="43"/>
@@ -3256,7 +3281,7 @@ super.tearDown();
               <atY>0.44262296</atY>
             </point>
             <end-1>
-              <x>912</x>
+              <x>922</x>
               <y>454</y>
               <w>36</w>
               <h>34</h>
@@ -3265,8 +3290,8 @@ super.tearDown();
               <text>*</text>
             </end-1>
             <end-2>
-              <x>912</x>
-              <y>494</y>
+              <x>922</x>
+              <y>517</y>
               <w>82</w>
               <h>34</h>
               <connectedSymbol symbol="37"/>
@@ -3318,8 +3343,8 @@ super.tearDown();
             <style>RECTANGULAR</style>
           </association>
           <association id="54">
-            <x>900</x>
-            <y>498</y>
+            <x>910</x>
+            <y>521</y>
             <assocEnd-0 class="com.sinergia.dcargo.client.shared.Oficina" name="conocimientosOrigen"/>
             <assocEnd-1 class="com.sinergia.dcargo.client.shared.Conocimiento" name="oficinaOrigen"/>
             <showMultiplicity>true</showMultiplicity>
@@ -3340,8 +3365,8 @@ super.tearDown();
               <atY>0.051282052</atY>
             </point>
             <end-1>
-              <x>890</x>
-              <y>506</y>
+              <x>900</x>
+              <y>523</y>
               <w>123</w>
               <h>34</h>
               <connectedSymbol symbol="37"/>
@@ -3349,8 +3374,8 @@ super.tearDown();
               <text>*</text>
             </end-1>
             <end-2>
-              <x>610</x>
-              <y>506</y>
+              <x>578</x>
+              <y>523</y>
               <w>80</w>
               <h>34</h>
               <connectedSymbol symbol="43"/>
@@ -3360,8 +3385,8 @@ super.tearDown();
             <style>RECTANGULAR</style>
           </association>
           <association id="55">
-            <x>900</x>
-            <y>662</y>
+            <x>910</x>
+            <y>685</y>
             <assocEnd-0 class="com.sinergia.dcargo.client.shared.Oficina" name="conocimientosDestino"/>
             <assocEnd-1 class="com.sinergia.dcargo.client.shared.Conocimiento" name="oficinaDestino"/>
             <showMultiplicity>true</showMultiplicity>
@@ -3382,8 +3407,8 @@ super.tearDown();
               <atY>0.8974359</atY>
             </point>
             <end-1>
-              <x>890</x>
-              <y>572</y>
+              <x>900</x>
+              <y>589</y>
               <w>127</w>
               <h>34</h>
               <connectedSymbol symbol="37"/>
@@ -3391,8 +3416,8 @@ super.tearDown();
               <text>*</text>
             </end-1>
             <end-2>
-              <x>610</x>
-              <y>572</y>
+              <x>578</x>
+              <y>589</y>
               <w>84</w>
               <h>34</h>
               <connectedSymbol symbol="43"/>
@@ -3402,8 +3427,8 @@ super.tearDown();
             <style>RECTANGULAR</style>
           </association>
           <association id="56">
-            <x>898</x>
-            <y>812</y>
+            <x>908</x>
+            <y>835</y>
             <assocEnd-0 class="com.sinergia.dcargo.client.shared.Usuario" name="conocimientos"/>
             <assocEnd-1 class="com.sinergia.dcargo.client.shared.Conocimiento" name="usuario"/>
             <showMultiplicity>true</showMultiplicity>
@@ -3431,7 +3456,7 @@ super.tearDown();
               <atY>0.82945734</atY>
             </point>
             <end-1>
-              <x>890</x>
+              <x>900</x>
               <y>610</y>
               <w>87</w>
               <h>34</h>
@@ -3451,89 +3476,6 @@ super.tearDown();
             <style>RECTANGULAR</style>
           </association>
           <association id="57">
-            <x>1350</x>
-            <y>522</y>
-            <assocEnd-0 class="com.sinergia.dcargo.client.shared.Conocimiento" name="transportistaPropietario"/>
-            <assocEnd-1 class="com.sinergia.dcargo.client.shared.Transportista" name="conocimientosPropietario"/>
-            <showMultiplicity>true</showMultiplicity>
-            <point>
-              <connectX symbol="33"/>
-              <connectY symbol="33"/>
-              <x>0</x>
-              <y>0</y>
-              <atX>0.046296295</atX>
-              <atY>0.28301886</atY>
-            </point>
-            <point>
-              <connectX symbol="37"/>
-              <connectY symbol="37"/>
-              <x>0</x>
-              <y>0</y>
-              <atX>0.83116883</atX>
-              <atY>0.2943038</atY>
-            </point>
-            <end-1>
-              <x>1344</x>
-              <y>607</y>
-              <w>132</w>
-              <h>34</h>
-              <connectedSymbol symbol="33"/>
-              <text>+transportistaPropietario</text>
-              <text>0..1</text>
-            </end-1>
-            <end-2>
-              <x>1044</x>
-              <y>607</y>
-              <w>145</w>
-              <h>34</h>
-              <connectedSymbol symbol="37"/>
-              <text>+conocimientosPropietario</text>
-              <text>*</text>
-            </end-2>
-            <style>RECTANGULAR</style>
-          </association>
-          <association id="58">
-            <x>1350</x>
-            <y>622</y>
-            <assocEnd-0 class="com.sinergia.dcargo.client.shared.Conocimiento" name="transportistaConductor"/>
-            <showMultiplicity>true</showMultiplicity>
-            <point>
-              <connectX symbol="33"/>
-              <connectY symbol="33"/>
-              <x>0</x>
-              <y>0</y>
-              <atX>0.046296295</atX>
-              <atY>0.6</atY>
-            </point>
-            <point>
-              <connectX symbol="37"/>
-              <connectY symbol="37"/>
-              <x>0</x>
-              <y>0</y>
-              <atX>0.9220779</atX>
-              <atY>0.585443</atY>
-            </point>
-            <end-1>
-              <x>1344</x>
-              <y>718</y>
-              <w>131</w>
-              <h>34</h>
-              <connectedSymbol symbol="33"/>
-              <text>+transportistaConductor</text>
-              <text>0..1</text>
-            </end-1>
-            <end-2>
-              <x>1044</x>
-              <y>718</y>
-              <w>145</w>
-              <h>34</h>
-              <connectedSymbol symbol="37"/>
-              <text>+conocimientosPropietario</text>
-              <text>*</text>
-            </end-2>
-            <style>RECTANGULAR</style>
-          </association>
-          <association id="59">
             <x>884</x>
             <y>112</y>
             <assocEnd-0 class="com.sinergia.dcargo.client.shared.Cliente" name="guiasRemitente"/>
@@ -3581,7 +3523,7 @@ super.tearDown();
             </end-2>
             <style>RECTANGULAR</style>
           </association>
-          <association id="60">
+          <association id="58">
             <x>883</x>
             <y>198</y>
             <assocEnd-0 class="com.sinergia.dcargo.client.shared.Cliente" name="guiasConsignatario"/>
@@ -3623,7 +3565,7 @@ super.tearDown();
             </end-2>
             <style>RECTANGULAR</style>
           </association>
-          <association id="61">
+          <association id="59">
             <x>879</x>
             <y>328</y>
             <assocEnd-0 class="com.sinergia.dcargo.client.shared.Usuario" name="guiasRegistro"/>
@@ -3665,7 +3607,7 @@ super.tearDown();
             </end-2>
             <style>RECTANGULAR</style>
           </association>
-          <association id="62">
+          <association id="60">
             <x>888</x>
             <y>376</y>
             <assocEnd-0 class="com.sinergia.dcargo.client.shared.Usuario" name="guiasEntrega"/>
@@ -3707,7 +3649,7 @@ super.tearDown();
             </end-2>
             <style>RECTANGULAR</style>
           </association>
-          <association id="63">
+          <association id="61">
             <x>883</x>
             <y>330</y>
             <assocEnd-0 class="com.sinergia.dcargo.client.shared.Oficina" name="guiasOrigen"/>
@@ -3746,8 +3688,8 @@ super.tearDown();
               <text>*</text>
             </end-1>
             <end-2>
-              <x>551</x>
-              <y>502</y>
+              <x>519</x>
+              <y>519</y>
               <w>80</w>
               <h>34</h>
               <connectedSymbol symbol="43"/>
@@ -3756,7 +3698,7 @@ super.tearDown();
             </end-2>
             <style>RECTANGULAR</style>
           </association>
-          <association id="64">
+          <association id="62">
             <x>879</x>
             <y>427</y>
             <assocEnd-0 class="com.sinergia.dcargo.client.shared.Oficina" name="guiasDestino"/>
@@ -3795,8 +3737,8 @@ super.tearDown();
               <text>*</text>
             </end-1>
             <end-2>
-              <x>598</x>
-              <y>502</y>
+              <x>566</x>
+              <y>519</y>
               <w>84</w>
               <h>34</h>
               <connectedSymbol symbol="43"/>
@@ -3805,7 +3747,7 @@ super.tearDown();
             </end-2>
             <style>RECTANGULAR</style>
           </association>
-          <association id="65">
+          <association id="63">
             <x>1327</x>
             <y>126</y>
             <assocEnd-0 class="com.sinergia.dcargo.client.shared.Guia" name="items"/>
@@ -3847,7 +3789,7 @@ super.tearDown();
             </end-2>
             <style>RECTANGULAR</style>
           </association>
-          <association id="66">
+          <association id="64">
             <x>1327</x>
             <y>126</y>
             <assocEnd-0 class="com.sinergia.dcargo.client.shared.Unidad" name="items"/>
@@ -3889,7 +3831,7 @@ super.tearDown();
             </end-2>
             <style>RECTANGULAR</style>
           </association>
-          <association id="67">
+          <association id="65">
             <x>1327</x>
             <y>126</y>
             <assocEnd-0 class="com.sinergia.dcargo.client.shared.Precio" name="items"/>
@@ -3927,6 +3869,90 @@ super.tearDown();
               <h>34</h>
               <connectedSymbol symbol="19"/>
               <text>+precio</text>
+              <text>0..1</text>
+            </end-2>
+            <style>RECTANGULAR</style>
+          </association>
+          <association id="66">
+            <x>1049</x>
+            <y>589</y>
+            <assocEnd-0 class="com.sinergia.dcargo.client.shared.Transportista" name="conocimientosPropietario"/>
+            <assocEnd-1 class="com.sinergia.dcargo.client.shared.Conocimiento" name="transportistaPropietario"/>
+            <showMultiplicity>true</showMultiplicity>
+            <point>
+              <connectX symbol="37"/>
+              <connectY symbol="37"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.96753246</atX>
+              <atY>0.1875</atY>
+            </point>
+            <point>
+              <connectX symbol="33"/>
+              <connectY symbol="33"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.1589404</atX>
+              <atY>0.35443038</atY>
+            </point>
+            <end-1>
+              <x>1054</x>
+              <y>597</y>
+              <w>145</w>
+              <h>34</h>
+              <connectedSymbol symbol="37"/>
+              <text>+conocimientosPropietario</text>
+              <text>*</text>
+            </end-1>
+            <end-2>
+              <x>1418</x>
+              <y>597</y>
+              <w>132</w>
+              <h>34</h>
+              <connectedSymbol symbol="33"/>
+              <text>+transportistaPropietario</text>
+              <text>0..1</text>
+            </end-2>
+            <style>RECTANGULAR</style>
+          </association>
+          <association id="67">
+            <x>1046</x>
+            <y>748</y>
+            <assocEnd-0 class="com.sinergia.dcargo.client.shared.Transportista" name="conocimientosConductor"/>
+            <assocEnd-1 class="com.sinergia.dcargo.client.shared.Conocimiento" name="transportistaConductor"/>
+            <showMultiplicity>true</showMultiplicity>
+            <point>
+              <connectX symbol="37"/>
+              <connectY symbol="37"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.9480519</atX>
+              <atY>0.6015625</atY>
+            </point>
+            <point>
+              <connectX symbol="33"/>
+              <connectY symbol="33"/>
+              <x>0</x>
+              <y>0</y>
+              <atX>0.059602648</atX>
+              <atY>0.74050635</atY>
+            </point>
+            <end-1>
+              <x>1054</x>
+              <y>719</y>
+              <w>144</w>
+              <h>34</h>
+              <connectedSymbol symbol="37"/>
+              <text>+conocimientosConductor</text>
+              <text>*</text>
+            </end-1>
+            <end-2>
+              <x>1418</x>
+              <y>719</y>
+              <w>131</w>
+              <h>34</h>
+              <connectedSymbol symbol="33"/>
+              <text>+transportistaConductor</text>
               <text>0..1</text>
             </end-2>
             <style>RECTANGULAR</style>
